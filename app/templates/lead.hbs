@@ -1,0 +1,50 @@
+{{outlet}}
+
+{{#unless isEditing}}
+    <article id="lead">
+        <h1>
+          {{model.fullName}}
+          {{#link-to 'lead.edit' model classNames="edit"}}edit{{/link-to}}
+        </h1>
+
+        <p>
+            Name: {{model.fullName}}
+        </p>
+
+        <p>
+            Email: {{model.email}}
+        </p>
+
+        <p>
+            Phone: {{model.phone}}
+        </p>
+
+        <p>
+            <label for="view.status.elementId">Status:</label>
+          {{view "select" content=App.Lead.STATUSES value=model.status}}
+        </p>
+
+        <p>
+            <label for="view.status.elementId">Notes:</label>
+            <br>
+          {{textarea value=model.notes viewName="notes"}}
+        </p>
+
+    <p>
+      {{#if needsSaving}}
+        {{zz-button enabled=needsSaving on-click='save' theme='primary' label='Save' icon='glyphicon glyphicon-save' label-pending='Saving' icon-pending='fa fa-spinner fa-spin'}}
+          <button {{action 'cancel' on="click"}} class='btn'href='#'>Cancel</button>
+      {{/if}}
+      {{zz-button on-click='delete' theme='danger' label='Delete' icon='glyphicon glyphicon-trash' label-pending='Deleting' icon-pending='fa fa-spinner fa-spin'}}
+
+      {{#if showUnsavedMessage}}
+          <div class="unsaved">unsaved changes</div>
+      {{/if}}
+
+      {{#if isSaving}}
+          <div class="saving">saving...</div>
+      {{/if}}
+        </p>
+
+    </article>
+{{/unless}}

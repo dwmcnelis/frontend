@@ -1,0 +1,47 @@
+<article id="lead">
+    <h1>{{fullName}}</h1>
+
+    <form>
+        <fieldset>
+            <dl>
+                <dt>
+                    <label for="view.firstName.elementId">First Name:</label>
+                </dt>
+                <dd>
+                  {{input type="text" value=model.firstName  viewName="firstName"}}
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <label for="view.firstName.elementId">Last Name:</label>
+                </dt>
+                <dd>
+                  {{input type="text" value=model.lastName  viewName="lastName"}}
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <label for="view.firstName.elementId">Email:</label>
+                </dt>
+                <dd>
+                  {{input type="text" value=model.email  viewName="email"}}
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <label for="view.firstName.elementId">Phone:</label>
+                </dt>
+                <dd>
+                  {{input type="text" value=model.phone  viewName="phone"}}
+                </dd>
+            </dl>
+        </fieldset>
+        <fieldset class='actions'>
+          {{#if needsSaving}}
+            {{zz-button enabled=isPostable on-click='save' theme='primary' label='Save' icon='glyphicon glyphicon-save' label-pending='Saving' icon-pendingcd ='fa fa-spinner fa-spin'}}
+              <button {{action 'cancel' on="click"}} class='btn'href='#'>Cancel</button>
+          {{/if}}
+        </fieldset>
+
+    </form>
+</article>

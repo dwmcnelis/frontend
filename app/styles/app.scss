@@ -1,66 +1,649 @@
 
+// $page-bg: #ffb6c1;
 
-$app_width: 88%;
-$top_spacing: 60px;
+// $banner-bg: #dda0dd;
 
-article {
-  width: $app_width;
-  margin: 0 auto;
-  padding: 60px 0 0 0;
+// $sidebar-bg: #b0c4de;
+
+// $switcher-bg: #caee70;
+
+// $workspace-bg: #fffacd;
+
+// $ribbon-bg: #ffe7ba;
+
+
+// $main-bg: #eee5de;
+
+// $footer-bg: #f4a460;
+
+// .page {
+// 	background-color: $page-bg !important;
+//   //border: 1px solid red !important;
+// }
+
+// .banner {	
+// 	background-color: $banner-bg !important;
+// 	overflow-x: hidden !important;
+// 	overflow-y: hidden !important;
+// }
+
+
+// .sidebar {	
+// 	background-color: $sidebar-bg !important;
+// }
+
+// .switcher {	
+// 	background-color: $switcher-bg !important;
+// }
+
+// .workspace {	
+// 	background-color: $workspace-bg !important;
+// }
+
+// .ribbon {	
+// 	background-color: $ribbon-bg !important;
+// }
+
+// .main {	
+// 	background-color: $main-bg !important;
+// }
+
+// .footer {	
+// 	background-color: $footer-bg !important;
+// }
+
+// .group:before, .group:after {
+//     content: '';
+//     display: table;
+// }
+
+// .group:after {
+//     clear: both;
+// }
+
+// .group {
+//     zoom: 1;
+// }
+
+// .show {
+//   display: block !important;
+// }
+// .hidden {
+//   display: none !important;
+//   visibility: hidden !important;
+// }
+// .invisible {
+//   visibility: hidden;
+// }
+
+// .sr-only {
+//   display: none !important;
+//   visibility: hidden !important;
+// }
+
+// .zapped {
+//   display: none !important;
+//   visibility: hidden !important;
+// }
+
+// .finder {
+// 	background-color: orange !important;
+//   border: 5px solid red !important;
+// }
+
+
+/*
+
+html {
+	margin: 0;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
 }
 
-article#leads {
-  margin: $top_spacing 35px 0 0;
-  width: 25%;
-  background: #f6f6f6;
-  float: left;
-  padding: 15px 20px 20px;
-  h1 {
-    font-size: 20px;
-    padding-left: 6px;
-    padding-bottom: 14px;
-    a {
-      font-size: 15px;
-      float: right;
-      font-weight: normal;
-      margin: 3px 0 0 0;
-    }
-  }
-  input.search {
-    width: 96%;
-    margin: 0 0 12px 5px;
-    padding: 2px 0 3px 3px;
-  }
-  ul {
-    padding: 0;
-    li {
-      border-bottom: 1px solid #dddddd;
-      padding: 8px 6px 10px;
-      cursor: pointer;
-      list-style-type: none;
-      &:hover, &.active {
-        background: #cadef8;
-      }
-    }
-  }
+// aAX
+html.html, html.aAX {
+	overflow: visible; 
+}
+
+// aAX
+html.html, html.aAX {
+	overflow: hidden; 
+}
+
+body {
+	height: 100%;
+	width: 100%;
+	overflow: hidden; 
+}
+
+body { 
+	padding-top: 0px;
+}
+
+// aAU
+.body, .aAU {
+	overflow-x: visible; 
+}
+
+// aAU
+body.body, body.aAU {
+	overflow-x: hidden; 
+	overflow-y: hidden !important;
+}
+
+.nH {
 
 }
 
-article#lead {
+// -
+.app {
+	//position: relative;
+	//min-height: 100%;
+}
+
+// .vI8oZc cS
+.foo {
+	background: #ffffff;
+	overflow: hidden; 
+}
+
+// .wl
+.foo1 {
+}
+
+// .wq
+.foo2 {
+}
+
+// .wp
+.foo3 {
+}
+
+// .wo
+.foo4 {
+}
+
+// .wn
+.foo5 {
+}
+
+// .vI8oZc cS
+.foo1, .foo2, .foo3, .foo4, .foo5 {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+}
+
+.frame-outer {
+
+}
+
+.frame-inner {
+
+}
+
+.header-outer {
+
+}
+
+.header-inner {
+
+}
+
+.frame {
+
+}
+
+.ribbon {
+
+}
+
+.sidebar {
+	width: 202px;
+	//height: 100%;
+	min-height: 1px;
+	float: left;
+	background-color: #ccc;
+	overflow-x: hidden; 
+	overflow-y: scroll; 
+}
+
+.sidebar {
+	position: relative;
+	margin-top: 0;
+}
+
+.workspace {
+	//width: 100%;
+	//height: 100%;
+	min-height: 1px;
+	min-width: 1px;
+	float: left;
+	background-color: #f9f9f9;
+	overflow-x: hidden; 
+	overflow-y: inherit;
+}
+
+.workspace {
+	position: relative;
+	margin-top: 0;
+	overflow-x: hidden; 
+	overflow-y: inherit;
+}
+
+*/
+
+
+
+
+
+
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,300,600);
+$font-family-sans-serif:  Raleway,"Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family-serif:       Georgia, "Times New Roman", Times, serif !default;
+
+$navbar-default-bg: #312312;
+$light-orange: #ff8c00;
+$navbar-default-color: $light-orange;
+
+
+$navbar-height:                    35px !default;
+
+
+$base:              #000 !default;
+$light:             lighten($base, 66.7%) !default; // #777
+
+// Inverted navbar
+// Reset inverted navbar basics
+$navbar-inverse-color:                      lighten($light, 15%) !default;
+$navbar-inverse-bg:                         #222 !default;
+$navbar-inverse-border:                     darken($navbar-inverse-bg, 10%) !default;
+
+// Inverted navbar links
+$navbar-inverse-link-color:                 lighten($light, 15%) !default;
+$navbar-inverse-link-hover-color:           #fff !default;
+$navbar-inverse-link-hover-bg:              transparent !default;
+$navbar-inverse-link-active-color:          $navbar-inverse-link-hover-color !default;
+$navbar-inverse-link-active-bg:             darken($navbar-inverse-bg, 10%) !default;
+$navbar-inverse-link-disabled-color:        #444 !default;
+$navbar-inverse-link-disabled-bg:           transparent !default;
+
+// Inverted navbar brand label
+$navbar-inverse-brand-color:                $navbar-inverse-link-color !default;
+$navbar-inverse-brand-hover-color:          #fff !default;
+$navbar-inverse-brand-hover-bg:             transparent !default;
+
+// Inverted navbar toggle
+$navbar-inverse-toggle-hover-bg:            #333 !default;
+$navbar-inverse-toggle-icon-bar-bg:         #fff !default;
+$navbar-inverse-toggle-border-color:        #333 !default;
+
+                     
+$navbar-inverse-link-highlight-color: #1675bf;
+
+/*
+.navbar-nav {
+  > li > a {
+    border-bottom: 4px solid transparent;  
+  }
+  > li.active > a {
+    border-bottom: 4px solid $navbar-inverse-link-highlight-color;   
+  }
+}
+*/
+
+//@import 'app/styles/gmail-icons.scss';
+//@import 'app/styles/gmail-favicons.scss';
+
+//@import 'app/styles/gmail-document.scss';
+//@import 'app/styles/buzz-document.scss';
+
+//@import 'app/styles/gmail-submit.scss';
+
+//@import 'app/styles/gmail-page.scss';
+//@import 'app/styles/buzz-page.scss';
+
+//@import 'app/styles/gmail-banner.scss';
+//@import 'app/styles/buzz-banner.scss';
+
+//@import 'app/styles/gmail-extra3.scss';
+//@import 'app/styles/gmail-extra2.scss';
+
+//@import 'app/styles/fixed-sidebar.scss';
+//@import 'app/styles/knockoff.scss';
+
+
+@import 'vendor/bootstrap/styles/bootstrap';
+// @import 'vendor/bootstrap/styles/bootstrap/variables';
+// @import 'vendor/bootstrap/styles/bootstrap/mixins';
+// @import 'vendor/bootstrap/styles/bootstrap/normalize';
+// @import 'vendor/bootstrap/styles/bootstrap/print';
+// @import 'vendor/bootstrap/styles/bootstrap/glyphicons';
+// @import 'vendor/bootstrap/styles/bootstrap/scaffolding';
+// @import 'vendor/bootstrap/styles/bootstrap/type';
+// @import 'vendor/bootstrap/styles/bootstrap/code';
+// @import 'vendor/bootstrap/styles/bootstrap/grid';
+// @import 'vendor/bootstrap/styles/bootstrap/tables';
+// @import 'vendor/bootstrap/styles/bootstrap/forms';
+// @import 'vendor/bootstrap/styles/bootstrap/buttons';
+// @import 'vendor/bootstrap/styles/bootstrap/navbar';
+// @import 'vendor/bootstrap/styles/bootstrap/navs';
+// @import 'vendor/bootstrap/styles/bootstrap/utilities';
+//@import "bootstrap";
+//@import 'app/styles/zz-navbar.scss';
+
+
+//@import 'vendor/skeleton/styles/normalize';
+//@import 'vendor/skeleton/styles/skeleton';
+//@import url(http://fonts.googleapis.com/css?family=Roboto:400,700,300,400italic);
+
+
+/* $zindex-navtop:      1031 !default;
+$zindex-navtwo:      1032 !default;
+
+.navtop {
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: $zindex-navtop;
+
+  // Undo the rounded corners
+  @media (min-width: $grid-float-breakpoint) {
+    border-radius: 0;
+  }
+}
+.navtop {
+  top: 0;
+  border-width: 0 0 1px;
+}
+
+.navtwo {
+  //position: relative;
+  //right: 0;
+  //left: 0;
+  z-index: $zindex-navtwo;
+
+  // Undo the rounded corners
+  @media (min-width: $grid-float-breakpoint) {
+    border-radius: 0;
+  }
+}
+.navtwo {
+  border-width: 0 0 1px;
+}
+ */
+
+//input:-webkit-autofill {
+//    -webkit-box-shadow:0 0 0 50px #800 inset; /* Change the color to your own background color */
+//    -webkit-text-fill-color: #fff;
+//}
+//input:-webkit-autofill:focus {
+//    -webkit-box-shadow: 0 0 0 50px #800 inset; /*your box-shadow*/
+//    -webkit-text-fill-color: #fff;
+//}
+
+@import 'vendor/normalize/normalize';
+@import 'vendor/susy/susy';
+@import 'vendor/breakpoint/breakpoint';
+
+// /* Changing Susy default global settings */
+// $susy: (
+//   /* Tells Susy to use 12 columns */
+//   columns: 12,
+//   /* Tells Susy that the container has a max-width of 1120px */
+//   container: 1120px,
+//   /* Tells Susy to use border-box */
+//   global-box-sizing: border-box 
+//   );
+
+// /* Makes border-box properties */
+// @include border-box-sizing;
+
+// //$page-bg: #ffb6c1;
+// //$banner-bg: #dda0dd;
+// $sidebar-bg: #b0c4de;
+// //$switcher-bg: #caee70;
+// //$workspace-bg: #fffacd;
+// //$ribbon-bg: #ffe7ba;
+// $content-bg: #eee5de;
+// $social-bg: #f4a460;
+// $social-item-bg: #fffacd;
+
+// .wrap {
+//   @include container;
+// }
+
+// /* Tells Susy there's 8 columns in the content */
+// .content {
+//   @include span(8); 
+// 	background-color: $content-bg !important;
+// }
+
+// /* Tells Susy there's 4 columns in the sidebar, and its the last item on the row. */
+// .sidebar {
+//   @include span(4 last); 
+// 	background-color: $sidebar-bg !important;
+// }
+
+// .social {
+//   /* Adds a padding of 19px to each side of the .social container */
+//   padding: gutter();
+//   /* Adding a clearfix because all children elements are floated */
+//   @include clearfix;
+// 	background-color: $social-bg !important;
+
+//   .social__list-item {
+//   	@include gallery(1 of 10);
+// 		background-color: $social-item-bg !important;
+//   }
+// }
+
+$susy: (
+  flow: ltr,
+  math: fluid,
+  output: float,
+  gutter-position: after,
+  container: auto,
+  container-position: center,
+  columns: 4,
+  gutters: .25,
+  column-width: false,
+  global-box-sizing: content-box,
+  last-flow: to,
+  debug: (
+    image: hide,
+    color: rgba(#66f, .25),
+    output: background,
+    toggle: top right,
+  ),
+  use-custom: (
+    background-image: true,
+    background-options: false,
+    box-sizing: true,
+    clearfix: false,
+    rem: true,
+  )
+);
+
+// Colors
+$page-bg: #FFB6C1;
+$frame-bg: #800000;
+$banner-bg: #DDA0DD;
+$sidebar-bg: #B0C4DE;
+$sidebar-ribbon-bg: #7171C6;
+$switcher-bg: #CAEE70;
+$workspace-bg: #FFFACD;
+$workspace-ribbon-bg: #FFE7BA;
+$main-bg: #EEE5DE;
+$footer-bg: #F4A460;
+
+// Geometry
+$banner-height: 65px;
+$sidebar-width: 200px;
+$sidebar-gutters: 0px;
+$sidebar-ribbon-height: 40px;
+$workspace-ribbon-height: 40px;
+
+// Breakpoints
+$phone: (min-width : 400px);
+$phablet: (min-width : 550px);
+$tablet: (min-width : 750px);
+$desktop: (min-width : 1000px);
+$workstation: (min-width : 1200px);
+
+@mixin hidden {
+  display: none !important;
+  visibility: hidden;
+}
+
+@mixin shown {
+  display: block;
+  visibility: visible;
+}
+
+@mixin visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  position: absolute;
+  overflow: hidden;
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  &.focusable:active,
+  &.focusable:focus {
+    clip: auto;
+    position: static;
+    overflow: visible;
+    margin: 0;
+    width: auto;
+    height: auto;
+  }
+}
+
+@mixin visuallyshown {
+  clip: auto;
+  clip: rect(auto auto auto auto);
+  position: static;
+  overflow: visible;
   margin: 0;
-  width: 60%;
-  float: left;
-  a.edit {
-    font-size: 15px;
-    font-weight: normal;
-    margin-left: 15px;
-  }
-  .unsaved, .saving {
-    color: #770000;
-    display: inline-block;
-    padding: 0 0 0 20px;
-  }
-  .saving {
-    color: #004010;
-  }
+  width: auto;
+  height: auto;
+}
+
+@mixin invisible {
+  visibility: hidden;
+}
+
+html.html {
+	overflow: visible; 
+}
+
+html.html {
+	overflow: hidden; 
+}
+
+body {
+	height: 100%;
+	width: 100%;
+	overflow: hidden; 
+}
+
+body { 
+	padding-top: 0px;
+}
+
+.body {
+	overflow-x: visible; 
+}
+
+body.body {
+	overflow-x: hidden; 
+	overflow-y: hidden !important;
+}
+
+.ember-view {
+}
+
+.page {
+  @include span(100%);
+}
+
+.banner {
+	@include visuallyhidden;
+	background-color: $banner-bg; 
+
+	@include breakpoint($phablet) {
+		@include visuallyshown;
+		@include span(100% of 1);
+		padding: 10px;
+		height: $banner-height;
+	}
+
+	@include breakpoint($tablet) {
+	}
+}
+
+.sidebar {
+	@include visuallyhidden;
+
+	@include breakpoint($phablet) {
+		@include visuallyshown;
+		@include span(1 of 2 ($sidebar-width $sidebar-gutters) static isolate);
+	}
+	background-color: $sidebar-bg; 
+}
+
+.sidebar-ribbon {
+	@include span(100%);
+	padding: 10px;
+	height: $sidebar-ribbon-height;
+	background-color: $sidebar-ribbon-bg; 
+}
+
+.sidebar-main {
+	@include span(100%);
+	overflow-x: hidden !important;
+	overflow-y: auto !important;
+	background-color: $sidebar-bg;
+}
+
+.sidebar-inner {
+	margin: 15px 15px 25px 15px;
+	overflow: hidden; 
+}
+
+.workspace {
+	@include breakpoint($phablet) {
+		margin-left: span(1 of 2 ($sidebar-width $sidebar-gutters) static wide);
+		margin-top: $banner-height;
+	} 
+	background-color: $workspace-bg;
+}
+
+.workspace-full {
+	@include breakpoint($phablet) {
+		margin-top: $banner-height;
+	} 
+	background-color: $workspace-bg;	
+}
+
+.workspace-ribbon {
+	@include span(100%);
+	padding: 10px;
+	height: $workspace-ribbon-height;
+	background-color: $workspace-ribbon-bg; 
+}
+
+.workspace-main {
+	@include span(100%);
+	overflow-x: hidden !important;
+	overflow-y: auto !important;
+	background-color: $main-bg;
+}
+
+.workspace-inner {
+	margin: 15px 15px 25px 15px;
+	overflow: hidden; 
 }

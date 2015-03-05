@@ -1,6 +1,11 @@
-import DS from 'ember-data';
+// app/models/lead.js
 
-export default DS.Model.extend({
+import Ember from 'ember';
+import DS from 'ember-data';
+import EmberValidations from 'ember-validations';
+
+
+export default DS.Model.extend(EmberValidations.Mixin, {
 
   firstName: DS.attr('string'),
   lastName: DS.attr('string'),
@@ -11,12 +16,35 @@ export default DS.Model.extend({
   }),
   notes: DS.attr('string'),
 
+  validations: {
+    firstName: {
+      presence: true,
+      //format: { with: /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/, allowBlank: true, message: 'must be an email address'  }
+      //presence: true,
+      // length: {
+      //   minimum: 3
+      // }
+    },
+    lastName: {
+      presence: true,
+      //presence: true,
+      // length: {
+      //   minimum: 1
+      // }
+    }
+  },
+
+  isntValid: Ember.computed.not('isValid'),
+
   fullName: (function() {
-    return this.get('firstName') + ' ' + this.get('lastName');
+    var firstName = this.get('firstName');
+    var lastName = this.get('lastName');
+    return (!Ember.isEmpty(firstName) ? firstName : '') + ' ' + (!Ember.isEmpty(lastName) ? lastName : '');
   }).property('firstName', 'lastName'),
+
   STATUSES: ['new', 'in progress', 'closed', 'bad'],
-  valid: function(fields) {
-    return fields.firstName && fields.lastName;
-  }
+  // valid: function(fields) {
+  //   return fields.firstName && fields.lastName;
+  // }
 
 });

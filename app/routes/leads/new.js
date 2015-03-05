@@ -1,15 +1,28 @@
+// app/routes/leads/new.js
+
 import Ember from 'ember';
 import AuthenticatedRouteMixin from 'simple-auth/mixins/authenticated-route-mixin';
 
 export default Ember.Route.extend(AuthenticatedRouteMixin, {
 
-  setupController: function(controller) {
-    controller.set('firstName',null);
-    controller.set('lastName',null);
-    controller.set('email',null);
-    controller.set('phone',null);
-    controller.set('errors', null);
-    return;
-  }
+	model: function() {
+		return this.store.createRecord('lead', {});
+	},
+
+  actions: {
+		willTransition: function(transition) {
+			if (this.controller.get('needsSaving')) {
+				transition.abort();
+			} else {
+				var lead = this.controller.get('model');
+				if (Ember.isEmpty(lead.id)) {
+         	lead.destroyRecord();
+        }
+				// Bubble the `willTransition` action so that
+				// parent routes can decide whether or not to abort.
+				return true;
+			}
+		}
+	}
 
 });

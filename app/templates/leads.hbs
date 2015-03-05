@@ -1,10 +1,2 @@
-<article id="leads">
-    <h1>Clients{{#link-to 'leads.new'}}New Client{{/link-to}}</h1>
-  {{input value="" placeholder="search" class="search"}}
-    <ul>
-      {{#each lead in leads}}
-        {{#link-to 'lead' lead tagName="li"}}{{lead.fullName}}{{/link-to}}
-      {{/each}}
-    </ul>
-</article>
+{{! app/templates/leads.hbs }}
 {{outlet}}

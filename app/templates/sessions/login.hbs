@@ -1,19 +1,17 @@
 {{! app/templates/session/login.hbs }}
 
 <article id="session">
-  <form>
-    {{#if errors}}
-      {{zz-alert theme='danger' label='Invalid Username/Password'}}
-    {{/if}}
-    <div {{bind-attr class=formGroupClass}}>
-      <label class="control-label" for="identification">Username</label>
-      {{input id='identification' class="form-control" placeholder='Username' value=identification}}
-    </div>
-    <div {{bind-attr class=formGroupClass}}>
-      <label class="control-label" for="password">Password</label>
-      {{input id='password' class="form-control" placeholder='Password' type='password' value=password}}
-    </div>
-    {{zz-button enabled=isPostable on-click='login' theme='primary' label='Login' icon='glyphicon glyphicon-log-in' label-pending='Logging in' icon-pending='fa fa-spinner fa-spin'}}
-  </form>
-</article>
+  <div class='center-block' style="width: 320px; margin-top: 40px; margin-bottom: 40px;">
+  {{#zz-form model=model}}
+    {{! #if errors}}
+      {{! zz-alert theme='danger' label='Invalid Username/Password'}}
+    {{! /if}}
 
+		{{zz-input property="identification" label="Username" placeholder="Username"}}
+		{{zz-input property="password" label="Password" placeholder="Password" type='password'}}
+
+
+    {{zz-button enabled=isValid action='login' theme='primary' label='Login' icon='glyphicon glyphicon-log-in' label-pending='Logging in' icon-pending='fa fa-spinner fa-spin'}}
+  {{/zz-form}}
+  </div>
+</article>

@@ -1,29 +1,20 @@
+{{! app/templates/leads/new.hbs }}
 <article id="lead">
-    <h1>New Lead</h1>
+  <h1>New Lead</h1>
 
-    <form>
-      {{#if errors}}
-          <div class="alert alert-danger"><i class="glyphicon glyphicon-exclamation-sign"></i> Invalid Username/Password.</div>
-      {{/if}}
-        <div {{bind-attr class=formGroupClass}}>
-            <label class="control-label" for="firstName">First Name</label>
-          {{input id='firstName' class="form-control" placeholder='Username' value=firstName}}
-        </div>
-        <div {{bind-attr class=formGroupClass}}>
-            <label class="control-label" for="lastName">Last Name</label>
-          {{input id='lastName' class="form-control" placeholder='Password' value=lastName}}
-        </div>
-        <div {{bind-attr class=formGroupClass}}>
-            <label class="control-label" for="email">Email</label>
-          {{input id='email' class="form-control" placeholder='Email' value=email}}
-        </div>
-        <div {{bind-attr class=formGroupClass}}>
-            <label class="control-label" for="phone">Phone</label>
-          {{input id='phone' class="form-control" placeholder='Phone' value=phone}}
-        </div>
-        {{zz-button enabled=isPostable on-click='save' theme='primary' label='Save' icon='glyphicon glyphicon-save' label-pending='Saving' icon-pending='fa fa-spinner fa-spin'}}
-        <button {{action 'cancel' on="click"}} class='btn'href='#'>Cancel</button>
-    </form>
+  {{#zz-form model=model}}
+    {{! #if errors}}
+      {{! zz-alert theme='danger' label='Invalid Username/Password'}}
+    {{! /if}}
 
+    {{zz-input property="firstName" label="First Name" placeholder="First Name"}}
+    {{zz-input property="lastName" label="Last Name" placeholder="Last Name"}}
+    {{zz-input property="email" label="Email" placeholder="Email"}}
+    {{zz-input property="phone" label="Phone" placeholder="Phone"}}
+
+
+    {{zz-button enabled=needsSaving action='save' theme='primary' label='Save' icon='glyphicon glyphicon-save' label-pending='Saving' icon-pending='fa fa-spinner fa-spin'}}
+    {{zz-button action='cancel' label='Cancel'}}
+  {{/zz-form}}
 
 </article>

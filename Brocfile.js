@@ -22,26 +22,20 @@ var app = new EmberApp({
 // please specify an object with the list of modules as keys
 // along with the exports of each module as its value.
 
-app.import('bower_components/bootstrap/dist/css/bootstrap.css');
-app.import('bower_components/bootstrap/dist/css/bootstrap.css.map', {
-  destDir: 'assets'
-});
-app.import('bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.eot', {
+app.import('vendor/bootstrap/fonts/glyphicons-halflings-regular.eot', {
   destDir: 'fonts'
 });
-app.import('bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf', {
+app.import('vendor/bootstrap/fonts/glyphicons-halflings-regular.svg', {
   destDir: 'fonts'
 });
-app.import('bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.svg', {
+app.import('vendor/bootstrap/fonts/glyphicons-halflings-regular.ttf', {
   destDir: 'fonts'
 });
-app.import('bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.woff', {
+app.import('vendor/bootstrap/fonts/glyphicons-halflings-regular.woff', {
   destDir: 'fonts'
 });
-app.import('bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2', {
+app.import('vendor/bootstrap/fonts/glyphicons-halflings-regular.woff2', {
   destDir: 'fonts'
 });
-
-app.import('bower_components/bootstrap/dist/js/bootstrap.js');
 
 module.exports = app.toTree();

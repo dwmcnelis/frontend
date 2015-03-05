@@ -1,52 +1,47 @@
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            {{#link-to 'leads' class='navbar-brand'}}Client Buzz{{/link-to}}
-        </div>
-        <div class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-                <li class="active">{{#link-to 'leads' class='navbar-brand'}}Clients{{/link-to}}</li>
-                {{#if session.isAuthenticated}}
-                  <li><a{{ action 'invalidateSession' }}>Logout</a></li>
-                {{else}}
-                  <li>{{#link-to 'sessions.login'}}Login{{/link-to}}</li>
-                {{/if}}
-            </ul>
-        </div>
+{{! app/templates/application.hbs }}
+<div class="page">
+
+    <div class="banner">
+      {{outlet "banner"}}
+      {{#if session.isAuthenticated}}
+        {{#link-to 'sessions.logout'}}Logout{{/link-to}}
+      {{else}}
+        {{#link-to 'sessions.login'}}Login{{/link-to}}
+      {{/if}}
     </div>
-</nav>
 
-{{#if showJumbotron}}
+    {{#if session.isAuthenticated }}
+      <div class="sidebar">
+        <div class="sidebar-ribbon">
+          {{outlet "sidebar-ribbon"}} 
+        </div>
+        <div class="sidebar-main">
+          <div class="sidebar-inner">
+            {{outlet "sidebar-main"}}      
+          </div>
+        </div>
+      </div>
 
-<header class="jumbotron subhead" id="overview">
-    <div class="container">
-        <h1>Buzz, Buzz, Buzz ...</h1>
-        <p class="lead">Build client loyalty with one to one marketing.</p>
-    </div>
-</header>
+      <div class="workspace">
+          <div class="workspace-ribbon">
+            {{outlet "workspace-ribbon"}}
+          </div>
+          <div class="workspace-main">
+            <div class="workspace-inner">
+              {{outlet "workspace-main"}}
+              {{outlet}}
+            </div> 
+          </div> 
+      </div>
+    {{else}}
+      <div class="workspace-full">
+        <div class="workspace-main">
+          <div class="workspace-inner">
+            {{outlet}}
+          </div> 
+      </div> 
+      </div> 
+    {{/if}} 
 
-{{/if}}
 
-<div class="container">
-  {{outlet}}
 </div>
-
-<footer class="footer">
-    <div class="container">
-        <p>© 2014 - 2015 by Client Buzz Ltd. All rights reserved.</p>
-        <ul class="footer-links">
-            <!--
-            <li><</li>
-            <li class="muted">·</li>
-            <li></li>
-            <li class="muted">·</li>
-            <li></li>
-            -->
-        </ul>
-    </div>
-</footer>

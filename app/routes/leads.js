@@ -10,18 +10,27 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
   },
 
   renderTemplate: function() {
-	  this.render('leads.search', {
-	    outlet: 'banner'
+	  this.render('master-detail');
+	  this.render('leads.search-content', {
+      into: 'master-detail',
+	    outlet: 'banner-content',
 	  });
-	  this.render('leads.sidebar', {
-	    outlet: 'sidebar-main'
+	  this.render('leads.master-ribbon', {
+      into: 'master-detail',
+	    outlet: 'master-ribbon'
 	  });
-	  this.render('leads.sidebar-ribbon', {
-	    outlet: 'sidebar-ribbon'
+	  this.render('leads.master-content', {
+      into: 'master-detail',
+	    outlet: 'master-content'
 	  });
-	  this.render('leads', {
-	    outlet: 'workspace-main'
-	  });
+	  // this.render('leads.detail-ribbon', {
+    //   into: 'master-detail',
+	  //   outlet: 'detail-ribbon'
+	  // });
+	  // this.render('leads', {
+   //    into: 'master-detail',
+	  //   //outlet: 'detail-content'
+	  // });
 	}
 
 });

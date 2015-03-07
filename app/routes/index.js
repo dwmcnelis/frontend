@@ -6,17 +6,26 @@ import AuthenticatedRouteMixin from 'simple-auth/mixins/authenticated-route-mixi
 export default Ember.Route.extend(AuthenticatedRouteMixin, {
 
 renderTemplate: function() {
-	  this.render('index.search', {
-	    outlet: 'banner'
+	  this.render('master-detail');
+	  this.render('index.search-content', {
+      into: 'master-detail',
+	    outlet: 'banner-content',
 	  });
-	  this.render('index.sidebar', {
-	    outlet: 'sidebar-main'
+	  this.render('index.master-ribbon', {
+      into: 'master-detail',
+	    outlet: 'master-ribbon'
 	  });
-	  this.render('index.sidebar-ribbon', {
-	    outlet: 'sidebar-ribbon'
+	  this.render('index.master-content', {
+      into: 'master-detail',
+	    outlet: 'master-content'
 	  });
+	  // this.render('index.detail-ribbon', {
+    //   into: 'master-detail',
+	  //   outlet: 'detail-ribbon'
+	  // });
 	  this.render('index', {
-	    outlet: 'workspace-main'
+      into: 'master-detail',
+	    outlet: 'detail-content'
 	  });
 	}
 

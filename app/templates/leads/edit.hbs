@@ -1,6 +1,6 @@
-{{! app/templates/lead/edit.hbs }}
-<article id="lead">
-    <h1>{{fullName}}</h1>
+{{! app/templates/leads/edit.hbs }}
+<div>  
+  <h1>{{fullName}}</h1>
 
   {{#zz-form model=model}}
     {{! #if errors}}
@@ -16,6 +16,5 @@
 
     {{zz-button enabled=needsSaving action='save' theme='primary' label='Save' icon='glyphicon glyphicon-save' label-pending='Saving' icon-pending='fa fa-spinner fa-spin'}}
     {{zz-button action='cancel' label='Cancel' classNames='button'}}
-    {{zz-button action='delete' theme='danger' label='Delete' icon='glyphicon glyphicon-trash' label-pending='Deleting' icon-pending='fa fa-spinner fa-spin'}}
   {{/zz-form}}
-</article>
+</div>

@@ -27,7 +27,7 @@ export default Ember.ObjectController.extend({
       return promise(new Ember.RSVP.Promise(function(res, rej) {
         var lead = self.get('model');
         if (lead.save()) {
-          return self.transitionToRoute('lead',lead);
+          return self.transitionToRoute('leads.show',lead);
         } else {
           return rej("Failed");
         }

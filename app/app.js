@@ -24,19 +24,19 @@ App.reopenClass ({
     var height = Ember.$(window).height();
 
     var bannerHeight = (width >= 500 ? 60 : 0);
-    var sidebarHeight = (height-bannerHeight)+'px';
-    var sidebarRibbonHeight = 40;
-    var sidebarMainHeight = (height-bannerHeight-sidebarRibbonHeight)+'px';
-    var workspaceHeight = (height-bannerHeight)+'px';
-    var workspaceRibbonHeight = 40;
-    var workspaceMainHeight = (height-bannerHeight-workspaceRibbonHeight)+'px';
-    // console.debug('resizer: sidebar height: '+sidebarHeight+' sidebar-main height: '+sidebarMainHeight);
-    // console.debug('resizer: workspace height: '+workspaceHeight+' workspace-main height: '+workspaceMainHeight);
+    var masterHeight = (height-bannerHeight)+'px';
+    var masterRibbonHeight = 40;
+    var masterContentHeight = (height-bannerHeight-masterRibbonHeight)+'px';
+    var detailHeight = (height-bannerHeight)+'px';
+    var detailRibbonHeight = 40;
+    var detailContentHeight = (height-bannerHeight-detailRibbonHeight)+'px';
     Ember.run.later(function () {
-      Ember.$('.sidebar').height(sidebarHeight);
-      Ember.$('.sidebar-main').height(sidebarMainHeight);
-      Ember.$('.workspace').height(workspaceHeight);
-      Ember.$('.workspace-main').height(workspaceMainHeight);
+      Ember.$('.page').height(height);
+      Ember.$('.full').height(height);
+      Ember.$('.master').height(masterHeight);
+      Ember.$('.master-content').height(masterContentHeight);
+      Ember.$('.detail').height(detailHeight);
+      Ember.$('.detail-content').height(detailContentHeight);
     }, 50);
   }
 

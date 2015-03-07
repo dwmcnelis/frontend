@@ -18,9 +18,8 @@ Router.map(function() {
   // Leads
   this.resource('leads', { path: '/leads' }, function() {
     this.route('new');
-    this.resource('lead', { path: '/:id' }, function() {
-      this.route('edit');
-    });
+    this.route("show", { path: "/:id" });
+    this.route("edit", { path: "/:id/edit" });
   });
 
 });

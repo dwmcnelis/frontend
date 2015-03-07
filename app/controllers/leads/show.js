@@ -7,6 +7,7 @@ export default Ember.ObjectController.extend({
   showUnsavedMessage: (function() {
     return this.get('isDirty') && !this.get('isSaving');
   }).property('isDirty', 'isSaving'),
+  
   needsSaving: (function() {
     return this.get('isDirty') && !this.get('isSaving');
   }).property('isDirty', 'isSaving'),
@@ -16,7 +17,7 @@ export default Ember.ObjectController.extend({
     cancel: function() {
       var lead = this.get('model');
       lead.rollback();
-      return this.transitionToRoute('lead',lead);
+      return this.transitionToRoute('leads.show',lead);
     },
 
     save: function(promise) {

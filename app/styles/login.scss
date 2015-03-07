@@ -1,0 +1,11 @@
+
+// Defaults
+$login-bg: #C6E2FF !default;
+
+.login {
+		width: 400px;
+		padding: 40px;
+		//@include vertical-center;
+		@include center;
+		background-color: $login-bg; 
+}

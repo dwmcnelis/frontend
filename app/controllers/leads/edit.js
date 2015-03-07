@@ -11,9 +11,13 @@ export default Ember.ObjectController.extend({
   actions: {
 
     cancel: function() {
-      var lead = this.get('model');
-      lead.rollback();
-      return this.transitionToRoute('lead',lead);
+      try {
+        var lead = this.get('model');
+        lead.rollback();
+        return this.transitionToRoute('leads.show',lead);
+      } catch(e) {
+        return this.transitionToRoute('leads');
+      }
     },
 
     save: function(promise) {
@@ -21,7 +25,7 @@ export default Ember.ObjectController.extend({
       return promise(new Ember.RSVP.Promise(function(res, rej) {
         var lead = self.get('model');
         if (lead.save()) {
-          return self.transitionToRoute('lead',lead);
+          return self.transitionToRoute('leads.show',lead);
         } else {
           return rej("Failed");
         }

@@ -9,6 +9,17 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
 		return this.store.createRecord('lead', {});
 	},
 
+	renderTemplate: function() {
+    // this.render('leads.edit-ribbon', {
+    //   into: 'master-detail',
+    //   outlet: 'detail-ribbon',
+    // });
+    this.render('leads.new', {
+      into: 'master-detail',
+      outlet: 'detail-content',
+    });
+  },
+
   actions: {
 		willTransition: function(transition) {
 			if (this.controller.get('needsSaving')) {

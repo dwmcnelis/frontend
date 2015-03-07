@@ -1,0 +1,39 @@
+
+@import 'app/styles/breakpoints.scss';
+
+// Defaults
+$detail-ribbon-height: 40px !default;
+$master-width: 200px !default;
+$master-gutters: 0px !default;
+$detail-bg: #FFFACD !default;
+$detail-ribbon-bg: #FFE7BA !default;
+$detail-ribbon-bd: #EFEFEF !default;
+$detail-content-bg: #EEE5DE !default;
+
+.detail {
+	@include breakpoint($phablet) {
+		margin-left: span(1 of 2 ($master-width $master-gutters) static wide);
+		margin-top: $banner-height;
+	} 
+	background-color: $detail-bg;
+}
+
+.detail-ribbon {
+	@include span(100%);
+	padding: 6px;
+	height: $detail-ribbon-height;
+	background-color: $detail-ribbon-bg; 
+	border-bottom: 2px solid $detail-ribbon-bd;
+}
+
+.detail-content {
+	@include span(100%);
+	overflow-x: hidden !important;
+	overflow-y: auto !important;
+	background-color: $detail-content-bg;
+}
+
+.detail-inner {
+	margin: 15px 15px 25px 15px;
+	overflow: hidden; 
+}

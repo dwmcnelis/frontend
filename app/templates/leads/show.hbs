@@ -1,9 +1,6 @@
-{{! app/templates/lead.hbs }}
-{{outlet}}
-
-{{#unless isEditing}}
-<div class="">  
-  <h1>{{fullName}} {{#link-to 'lead.edit' model classNames='btn btn-default btn-xs'}}edit{{/link-to}}</h1>
+{{! app/templates/leads/show.hbs }}
+<div>  
+  <h1>{{fullName}}</h1>
   <p>
       Email: {{email}}
   </p>
@@ -27,6 +24,3 @@
   {{/if}}
   </p>
 </div>
-
-
-{{/unless}}

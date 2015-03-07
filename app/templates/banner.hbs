@@ -1,3 +1,24 @@
 <div class="banner">
-  {{outlet}}
-</div>
+	<div class="banner-brand">
+    {{#link-to 'index'}}
+      <div class="banner-brand-inner">
+      </div>
+    {{/link-to}}
+  </div> {{! banner-brand }} 
+  <div class="banner-rest">
+    <div class="banner-search">
+      <div class="banner-search-inner">
+        {{outlet "banner-content"}}      
+      </div> {{! banner-search-inner }}
+    </div> {{! banner-search }}
+    <div class="banner-ribbon">
+      <div class="banner-ribbon-content">
+        {{#if session.isAuthenticated}}
+          {{#link-to 'sessions.logout'}}Logout{{/link-to}}
+        {{else}}
+          {{#link-to 'sessions.login'}}Login{{/link-to}}
+        {{/if}}
+      </div> {{! banner-ribbon-content }}
+    </div> {{! banner-ribbon }}
+  </div> {{! banner-rest }}
+</div> {{! banner }}

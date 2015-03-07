@@ -1,0 +1,46 @@
+
+// Defaults
+$page-bg: #FFB6C1 !default;
+
+html {
+	height: 100%;
+	width: 100%;
+}
+
+
+html.html {
+	overflow: visible; 
+}
+
+html.html {
+	overflow: hidden; 
+}
+
+body {
+	height: 100%;
+	width: 100%;
+	overflow: hidden; 
+}
+
+body { 
+	padding-top: 0px;
+}
+
+.body {
+	overflow-x: visible; 
+}
+
+body.body {
+	overflow-x: hidden; 
+	overflow-y: hidden !important;
+}
+
+.ember-view {
+	height: 100%;
+}
+
+.page {
+  @include span(100%);
+	height: 100%;
+	background-color: $page-bg; 
+}

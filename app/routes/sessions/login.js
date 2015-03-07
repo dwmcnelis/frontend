@@ -16,6 +16,14 @@ export default Ember.Route.extend(UnauthenticatedRouteMixin, {
 
 	model: function() {
 		return this.store.createRecord('identification', {identification: 'davemcnelis@gmail.com'});
- 	}
+ 	},
+
+ 	renderTemplate: function() {
+	  this.render('full');
+	  this.render('sessions.login', {
+      into: 'full'
+	  });
+	}
+
 
 });

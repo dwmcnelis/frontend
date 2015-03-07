@@ -1,0 +1,100 @@
+
+@import 'app/styles/breakpoints.scss';
+
+// Defaults
+$banner-height: 65px !default;
+$banner-bg: #DDA0DD !default;
+$banner-brand-width: 200px !default;
+$banner-gutters: 0px !default;
+$banner-brand-bg: #BA55D3 !default;
+$banner-search-phone-width: 200px !default;
+$banner-search-phablet-width: 300px !default;
+$banner-search-tablet-width: 400px !default;
+$banner-search-desktop-width: 450px !default;
+$banner-search-workstation-width: 500px !default;
+$banner-search-bg: #CDB5CD !default;
+$banner-ribbon-bg: #FFE1FF !default;
+
+.banner {
+	@include span(100%);
+	height: $banner-height;
+	background-color: $banner-bg; 
+}
+
+.banner-brand {
+	@include visuallyhidden;
+	@include breakpoint($tablet) {
+		@include visuallyshown;
+		@include span(1 of 2 ($banner-brand-width $banner-gutters) static isolate);
+		height: $banner-height;
+	}
+	background-color: $banner-brand-bg; 
+}
+
+.banner-brand-inner {
+	width: 93px;
+	height: 33px;
+	margin: 16px 87px 16px 20px;
+	background-image: url("/assets/images/cb_logo.png");
+}
+
+.banner-rest {
+	margin-left: 0px;
+	@include breakpoint($tablet) {
+		margin-left: span(1 of 2 ($banner-brand-width $banner-gutters) static wide);
+	}
+	height: $banner-height;
+	background-color: $banner-brand-bg; 
+}
+
+.banner-search {
+	@include span(1 of 2 ($banner-search-phone-width $banner-gutters) static isolate);
+	@include breakpoint($phablet) {
+		@include span(1 of 2 ($banner-search-phablet-width $banner-gutters) static isolate);
+	}
+	@include breakpoint($tablet) {
+		@include span(1 of 2 ($banner-search-tablet-width $banner-gutters) static isolate);
+	}
+	@include breakpoint($desktop) {
+		@include span(1 of 2 ($banner-search-desktop-width $banner-gutters) static isolate);
+	}
+	@include breakpoint($workstation) {
+		@include span(1 of 2 ($banner-search-workstation-width $banner-gutters) static isolate);
+	}
+	height: $banner-height;
+	background-color: $banner-search-bg;	
+}
+
+.banner-search-inner {
+	height: 100%;
+	width: 100%;
+	padding: 15px;
+}
+
+.banner-search-inner :first-child {
+	width: 100%;
+}
+
+.banner-ribbon {
+	margin-left: span(1 of 2 ($banner-search-phone-width $banner-gutters) static wide);
+	@include breakpoint($phablet) {
+		margin-left: span(1 of 2 ($banner-search-phablet-width $banner-gutters) static wide);
+	}
+	@include breakpoint($tablet) {
+		margin-left: span(1 of 2 ($banner-search-tablet-width $banner-gutters) static wide);
+	}
+	@include breakpoint($desktop) {
+		margin-left: span(1 of 2 ($banner-search-desktop-width $banner-gutters) static wide);
+	}
+	@include breakpoint($workstation) {
+		margin-left: span(1 of 2 ($banner-search-workstation-width $banner-gutters) static wide);
+	}
+	height: $banner-height;
+	background-color: $banner-ribbon-bg; 
+}
+
+.banner-ribbon-content {
+	@include float-right;
+	padding: 20px 15px 15px 15px;
+}
+

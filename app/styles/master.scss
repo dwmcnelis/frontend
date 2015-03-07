@@ -1,0 +1,41 @@
+
+@import 'app/styles/breakpoints.scss';
+
+// Defaults
+$master-width: 200px !default;
+$master-gutters: 0px !default;
+$master-ribbon-height: 40px !default;
+$master-bg: #B0C4DE !default;
+$master-content-bg: #B0C4DE !default;
+$master-ribbon-bg: #7171C6 !default;
+$master-ribbon-bd: #EFEFEF !default;
+
+.master {
+	@include visuallyhidden;
+
+	@include breakpoint($phablet) {
+		@include visuallyshown;
+		@include span(1 of 2 ($master-width $master-gutters) static isolate);
+	}
+	background-color: $master-bg; 
+}
+
+.master-ribbon {
+	@include span(100%);
+	padding: 10px;
+	height: $master-ribbon-height;
+	background-color: $master-ribbon-bg; 
+	border-bottom: 2px solid $master-ribbon-bd;
+}
+
+.master-content {
+	@include span(100%);
+	overflow-x: hidden !important;
+	overflow-y: auto !important;
+	background-color: $master-content-bg;
+}
+
+.master-inner {
+	margin: 15px 15px 25px 15px;
+	overflow: hidden; 
+}

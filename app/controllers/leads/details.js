@@ -1,4 +1,4 @@
-// app/controllers/lead/show.js
+// app/controllers/lead/details.js
 
 import Ember from 'ember';
 
@@ -17,14 +17,15 @@ export default Ember.ObjectController.extend({
     cancel: function() {
       var lead = this.get('model');
       lead.rollback();
-      return this.transitionToRoute('leads.show',lead);
+      return this.transitionToRoute('leads.summary',lead);
     },
 
     save: function(promise) {
       var self = this;
+      var lead = this.get('model');
       return promise(new Ember.RSVP.Promise(function(res, rej) {
         if (self.get('model').save()) {
-          return res("OK");
+          return self.transitionToRoute('leads.summary',lead);
         } else {
           return rej("Failed");
         }

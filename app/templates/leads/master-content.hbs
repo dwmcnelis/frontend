@@ -1,11 +1,11 @@
 {{! app/templates/leads/master-content.hbs }}
-<table class="table table-hover table-condensed">
+<table class="table table-hover table-condensed borderless">
   <thead>
   </thead>
   <tbody>
   {{#each lead in leads}}
     <tr>
-    	{{#link-to 'leads.show' lead tagName="td"}}{{lead.fullName}}{{/link-to}}
+    	{{#link-to 'leads.summary' lead tagName="td"}}{{lead.fullName}}{{/link-to}}
     </tr>
   {{/each}}
   </tbody>

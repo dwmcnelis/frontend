@@ -1,0 +1,20 @@
+{{! app/templates/leads/details.hbs }}
+<div>  
+  <h1>{{fullName}}</h1>
+
+  {{#zz-form model=model}}
+    {{! #if errors}}
+      {{! zz-alert theme='danger' label='Invalid Username/Password'}}
+    {{! /if}}
+
+    {{zz-input property="firstName" label="First Name" placeholder="First Name"}}
+    {{zz-input property="lastName" label="Last Name" placeholder="Last Name"}}
+    {{zz-input property="email" label="Email" placeholder="Email"}}
+    {{zz-input property="phone" label="Phone" placeholder="Phone"}}
+    {{zz-text property="notes" label="Notes" placeholder="Notes"}}
+
+
+    {{zz-button enabled=needsSaving action='save' theme='primary' label='Save' icon='glyphicon glyphicon-save' label-pending='Saving' icon-pending='fa fa-spinner fa-spin'}}
+    {{zz-button action='cancel' label='Cancel' classNames='button'}}
+  {{/zz-form}}
+</div>

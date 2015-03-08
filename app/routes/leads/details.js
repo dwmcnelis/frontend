@@ -1,4 +1,4 @@
-// app/routes/lead/edit.js
+// app/routes/lead.js
 
 import Ember from 'ember';
 import AuthenticatedRouteMixin from 'simple-auth/mixins/authenticated-route-mixin';
@@ -14,15 +14,15 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
   },
 
   renderTemplate: function() {
-    this.render('leads.edit-ribbon', {
+	  this.render('leads.details-ribbon', {
       into: 'master-detail',
-      outlet: 'detail-ribbon',
-    });
-    this.render('leads.edit', {
+	    outlet: 'detail-ribbon',
+	  });
+	  this.render('leads.details', {
       into: 'master-detail',
-      outlet: 'detail-content',
-    });
-  }
+	    outlet: 'detail-content',
+	  });
+	}
 
 
 });

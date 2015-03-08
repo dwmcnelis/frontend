@@ -8,6 +8,7 @@ $master-ribbon-height: 40px !default;
 $master-bg: #B0C4DE !default;
 $master-content-bg: #B0C4DE !default;
 $master-ribbon-bg: #7171C6 !default;
+$master-ribbon-bd-thick: 3px !default;
 $master-ribbon-bd: #EFEFEF !default;
 
 .master {
@@ -22,10 +23,10 @@ $master-ribbon-bd: #EFEFEF !default;
 
 .master-ribbon {
 	@include span(100%);
-	padding: 10px;
+	padding: 10px 15px 10px 15px;
 	height: $master-ribbon-height;
 	background-color: $master-ribbon-bg; 
-	border-bottom: 2px solid $master-ribbon-bd;
+	border-bottom: $master-ribbon-bd-thick solid $master-ribbon-bd;
 }
 
 .master-content {

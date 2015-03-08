@@ -1,4 +1,4 @@
-// app/controllers/lead/show.js
+// app/controllers/lead/sports.js
 
 import Ember from 'ember';
 

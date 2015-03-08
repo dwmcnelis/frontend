@@ -31,6 +31,8 @@ $font-family-serif:       Georgia, "Times New Roman", Times, serif !default;
 // Colors
 // $page-bg: #FFB6C1;
 // $full-bg: #FDF5E6;
+// $tab-bg: #AB82FF;
+// $tab-bd: #1874CD;
 // $banner-bg: #DDA0DD;
 // $banner-brand-bg: #BA55D3;
 // $banner-search-bg: #CDB5CD;
@@ -45,32 +47,40 @@ $font-family-serif:       Georgia, "Times New Roman", Times, serif !default;
 // $detail-content-bg: #EEE5DE;
 
 // Greyscale
-// $page-bg: #FFFFFF;
-// $full-bg: #FFFFFF;
-// $banner-bg: #E8E8E8;
-// $banner-brand-bg: #E8E8E8;
-// $banner-search-bg: #E8E8E8;
-// $banner-ribbon-bg: #E8E8E8;
-// $master-bg: #FFFFFF;
-// $master-content-bg: #FFFFFF;
-// $master-ribbon-bg: #FFFFFF;
-// $master-ribbon-bd: #EFEFEF;
-// $detail-bg: #FFFFFF;
-// $detail-ribbon-bg: #FFFFFF;
-// $detail-ribbon-bd: #EFEFEF;
-// $detail-content-bg: #FFFFFF;
+$page-bg: #FFFFFF;
+$full-bg: #FFFFFF;
+$tab-bg: #FFFFFF;
+$tab-bd: #1874CD;
+$banner-bg: #E8E8E8;
+$banner-brand-bg: #E8E8E8;
+$banner-search-bg: #E8E8E8;
+$banner-ribbon-bg: #E8E8E8;
+$master-bg: #FFFFFF;
+$master-content-bg: #FFFFFF;
+$master-ribbon-bg: #FFFFFF;
+$master-ribbon-bd: #EFEFEF;
+$detail-bg: #FFFFFF;
+$detail-ribbon-bg: #FFFFFF;
+$detail-ribbon-bd: #EFEFEF;
+$detail-content-bg: #FFFFFF;
 
 // Geometry
+$tab-bd-thick: 3px;
 $banner-height: 65px;
 $banner-brand-width: 200px;
 $master-width: 200px;
-$master-ribbon-height: 40px;
-$detail-ribbon-height: 40px;
+$master-ribbon-height: 44px;
+$detail-ribbon-height: 44px;
 
 @import 'app/styles/page.scss';
 @import 'app/styles/full.scss';
+@import 'app/styles/tab.scss';
 @import 'app/styles/banner.scss';
 @import 'app/styles/master.scss';
 @import 'app/styles/detail.scss';
 @import 'app/styles/login.scss';
+
+.borderless td, .borderless th {
+    border: none !important;
+}
 

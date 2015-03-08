@@ -1,4 +1,4 @@
-// app/controllers/lead/show.js
+// app/controllers/lead/friends.js
 
 import Ember from 'ember';
 

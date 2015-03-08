@@ -20,6 +20,11 @@ Router.map(function() {
     this.route('new');
     this.route("show", { path: "/:id" });
     this.route("edit", { path: "/:id/edit" });
+    this.route("summary", { path: "/:id/summary" });
+    this.route("details", { path: "/:id/details" });
+    this.route("family", { path: "/:id/family" });
+    this.route("friends", { path: "/:id/friends" });
+    this.route("sports", { path: "/:id/sports" });
   });
 
 });

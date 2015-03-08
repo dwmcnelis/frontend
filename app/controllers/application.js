@@ -1,7 +1,7 @@
 // app/controllers/application.js
 
 import Ember from 'ember';
-import App from '../app'
+import App from '../app';
 
 export default Ember.ObjectController.extend({
 	currentPathChange: function () {

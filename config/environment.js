@@ -23,8 +23,8 @@ module.exports = function(environment) {
   ENV['simple-auth'] = {
 
     authenticationRoute: 'sessions.login',
-    routeAfterAuthentication: 'index',
-    routeIfAlreadyAuthenticated: 'index',
+    routeAfterAuthentication: 'leads',
+    routeIfAlreadyAuthenticated: 'leads',
     sessionPropertyName: 'session',
     authorizer: 'simple-auth-authorizer:token',
     session: 'simple-auth-session:main',

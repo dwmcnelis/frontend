@@ -1,9 +1,9 @@
-{{! app/templates/leads/show-ribbon.hbs }}
+{{! app/templates/leads/family-ribbon.hbs }}
 
 {{#link-to 'leads' classNames='btn btn-default btn-sm' activeClass=""}}<i class="glyphicon glyphicon-arrow-left"></i>{{/link-to}}
 
-{{#link-to 'leads.summary' model classNames='tab active'}}Summary{{/link-to}}
+{{#link-to 'leads.summary' model classNames='tab'}}Summary{{/link-to}}
 {{#link-to 'leads.details' model classNames='tab'}}Details{{/link-to}}
-{{#link-to 'leads.family' model classNames='tab'}}Family{{/link-to}}
+{{#link-to 'leads.family' model classNames='tab active'}}Family{{/link-to}}
 {{#link-to 'leads.friends' model classNames='tab'}}Friends{{/link-to}}
 {{#link-to 'leads.sports' model classNames='tab'}}Sports{{/link-to}}

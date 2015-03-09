@@ -1,0 +1,46 @@
+
+// Defaults
+$zz-tab-active: #1874CD !default;
+$zz-tab-inactive: #AAAAAA !default;
+$zz-tab-hover: #666666 !default;
+$zz-tab-height: 32px !default;
+$zz-tab-background: #AB82FF !default;
+$zz-tab-border: 3px !default;
+
+.zz-tab {
+	display: inline-block;
+	height: $zz-tab-height;
+	//height: 100%;
+	padding: 0px 4px 0px 4px;
+	margin: 0px 6px 0px 6px;
+	background-color: $zz-tab-background; 
+}
+
+.zz-tab.active {
+	background-color: $zz-tab-background; 
+	border-bottom: $zz-tab-border solid $zz-tab-active;
+}
+
+.zz-tab > a {
+	display: block;
+	color: $zz-tab-inactive;
+	font-weight: bold;
+	height: 100%;
+	width: 100%;
+	text-decoration: none !important;
+}
+
+.zz-tab > a:hover {
+	color:$zz-tab-hover;
+	font-weight: bold;
+}
+
+.zz-tab > a:active {
+	color: $zz-tab-active;
+	font-weight: bold;
+}
+
+.zz-tab.active > a {
+	color: $zz-tab-active;
+	font-weight: bold;
+}

@@ -44,6 +44,7 @@
   "dependencies": {
     "zz-alert": "git+ssh://git@github.com:dwmcnelis/zz-alert.git",
     "zz-button": "../zz-button",
-    "zz-form": "../zz-form"
+    "zz-form": "../zz-form",
+    "zz-tab": "../zz-tab"
   }
 }

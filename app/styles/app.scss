@@ -1,5 +1,7 @@
 
 @import url(http://fonts.googleapis.com/css?family=Raleway:400,300,600);
+@import url(http://fonts.googleapis.com/css?family=Lato:400,300,600);
+
 $font-family-sans-serif:  Raleway,"Helvetica Neue", Helvetica, Arial, sans-serif !default;
 $font-family-serif:       Georgia, "Times New Roman", Times, serif !default;
 
@@ -45,12 +47,14 @@ $font-family-serif:       Georgia, "Times New Roman", Times, serif !default;
 // $detail-ribbon-bg: #FFE7BA;
 // $detail-ribbon-bd: #EFEFEF;
 // $detail-content-bg: #EEE5DE;
+// $zz-tab-active: #1874CD;
+// $zz-tab-inactive: #AAAAAA;
+// $zz-tab-hover: #666666;
+// $zz-tab-background: #AB82FF;
 
 // Greyscale
 $page-bg: #FFFFFF;
 $full-bg: #FFFFFF;
-$tab-bg: #FFFFFF;
-$tab-bd: #1874CD;
 $banner-bg: #E8E8E8;
 $banner-brand-bg: #E8E8E8;
 $banner-search-bg: #E8E8E8;
@@ -63,9 +67,13 @@ $detail-bg: #FFFFFF;
 $detail-ribbon-bg: #FFFFFF;
 $detail-ribbon-bd: #EFEFEF;
 $detail-content-bg: #FFFFFF;
+$zz-tab-active: #1874CD;
+$zz-tab-inactive: #AAAAAA;
+$zz-tab-hover: #666666;
+$zz-tab-background: #FFFFFF;
 
 // Geometry
-$tab-bd-thick: 3px;
+$zz-tab-border: 3px;
 $banner-height: 65px;
 $banner-brand-width: 200px;
 $master-width: 200px;
@@ -74,11 +82,13 @@ $detail-ribbon-height: 44px;
 
 @import 'app/styles/page.scss';
 @import 'app/styles/full.scss';
-@import 'app/styles/tab.scss';
 @import 'app/styles/banner.scss';
 @import 'app/styles/master.scss';
 @import 'app/styles/detail.scss';
 @import 'app/styles/login.scss';
+@import 'app/styles/grids.scss';
+@import 'app/styles/zz-tab.scss';
+@import 'app/styles/zz-statistic.scss';
 
 .borderless td, .borderless th {
     border: none !important;

@@ -27,10 +27,10 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
       into: 'master-detail',
 	    outlet: 'detail-ribbon',
 	  });
-	  // this.render('leads', {
-   //    into: 'master-detail',
-	  //   //outlet: 'detail-content'
-	  // });
+	  this.render('leads.detail-content', {
+      into: 'master-detail',
+	    outlet: 'detail-content'
+	  });
 	}
 
 });

@@ -1,0 +1,127 @@
+// Defaults
+$zz-statistic-font-family: Lato;
+$zz-statistic-font-weight: 400 !default;
+$zz-statistic-line-height: 1em !default;
+$zz-statistic-mini-value-font-size: 1.5rem !default;
+$zz-statistic-mini-label-font-size: 1.25rem !default;
+$zz-statistic-tiny-value-font-size: 2rem !default;
+$zz-statistic-tiny-label-font-size: 1.5rem !default;
+$zz-statistic-small-value-font-size: 3rem !default;
+$zz-statistic-small-label-font-size: 1.5rem !default;
+$zz-statistic-value-font-size: 3.5rem !default;
+$zz-statistic-label-font-size: 1.75rem !default;
+$zz-statistic-large-value-font-size: 4rem !default;
+$zz-statistic-large-label-font-size: 2rem !default;
+$zz-statistic-huge-value-font-size: 5rem !default;
+$zz-statistic-huge-label-font-size: 2.5rem !default;
+$zz-statistic-giant-value-font-size: 6rem !default;
+$zz-statistic-giant-label-font-size: 3rem !default;
+$zz-statistic-immense-value-font-size: 7rem !default;
+$zz-statistic-immense-label-font-size: 3.5rem !default;
+$zz-statistic-max-width: 300px !default;
+$zz-statistic-value-color: #1D1D1D !default;
+$zz-statistic-label-color: #BFBFBF !default;
+$zz-statistic-label-color: #BFBFBF !default;
+$zz-statistic-background: #FFFFFF !default;
+
+.zz-statistic {
+	display: block;
+	float: left;
+	margin: 0 1em 2em;
+	max-width: $zz-statistic-max-width;
+	background-color: $zz-statistic-background; 
+}
+
+.zz-statistic>.value {
+	display: inline-block;
+	vertical-align: middle;
+	font-family: $zz-statistic-font-family,'Helvetica Neue',Arial,Helvetica,sans-serif;
+	font-weight: $zz-statistic-font-weight;
+	line-height: $zz-statistic-line-height;
+	color: $zz-statistic-value-color;
+	text-transform: uppercase;
+	text-align: center;	
+}
+
+.zz-statistic>.value~.label {
+	margin-top: .25rem;
+}
+
+.zz-statistic>.label {
+	display: block;
+	font-weight: $zz-statistic-font-weight;
+	color: $zz-statistic-label-color;
+	text-transform: none;
+	text-align: center;
+}
+	
+.zz-statistic>.value .icon {
+	display: inline-block;
+	opacity: 1;
+	width: auto;
+	margin: 0;
+}
+
+.mini.zz-statistic>.value {
+	font-size: $zz-statistic-mini-value-font-size;
+}
+
+.mini.zz-statistic>.label {
+	font-size: $zz-statistic-mini-label-font-size;
+}
+
+.tiny.zz-statistic>.value {
+	font-size: $zz-statistic-tiny-value-font-size;
+}
+
+.tiny.zz-statistic>.label {
+	font-size: $zz-statistic-tiny-label-font-size;
+}
+
+.small.zz-statistic>.value {
+	font-size: $zz-statistic-small-value-font-size;
+}
+
+.small.zz-statistic>.label {
+	font-size: $zz-statistic-small-label-font-size;
+}
+
+.zz-statistic>.value {
+	font-size: $zz-statistic-value-font-size;
+}
+
+.zz-statistic>.label {
+	font-size: $zz-statistic-label-font-size;
+}
+
+.large.zz-statistic>.value {
+	font-size: $zz-statistic-large-value-font-size;
+}
+
+.large.zz-statistic>.label {
+	font-size: $zz-statistic-large-label-font-size;
+}
+
+.huge.zz-statistic>.value {
+	font-size: $zz-statistic-huge-value-font-size;
+}
+
+.huge.zz-statistic>.label {
+	font-size: $zz-statistic-huge-label-font-size;
+}
+
+.giant.zz-statistic>.value {
+	font-size: $zz-statistic-giant-value-font-size;
+}
+
+.giant.zz-statistic>.label {
+	font-size: $zz-statistic-giant-label-font-size;
+}
+
+.immense.zz-statistic>.value {
+	font-size: $zz-statistic-immense-value-font-size;
+}
+
+.immense.zz-statistic>.label {
+	font-size: $zz-statistic-immense-label-font-size;
+}

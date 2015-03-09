@@ -1,0 +1,31 @@
+
+@import 'app/styles/mixins.scss';
+@import 'app/styles/breakpoints.scss';
+
+//$total-columns: 2; 	// columns
+//$column-width: 1em; // columns are 4em wide
+//$gutter-width: 0.5em; // with 1em gutters
+//$grid-padding: 0.5em; // and 1em padding on the grid container
+
+.one-of-two {
+	@include span(1 at 1 of 2);
+}
+
+.two-of-two {
+	@include span(1 at 2 of 2);
+}
+
+.center {
+	@include center;
+}
+
+.horizontal-center {
+	@include horizontal-center;
+}
+
+.vertical-center {
+	@include vertical-center;
+}
+
+
+

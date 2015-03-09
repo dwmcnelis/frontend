@@ -1,0 +1,9 @@
+{{! app/templates/leads/detail-ribbon.hbs }}
+
+{{#link-to 'leads' classNames='btn btn-default btn-sm' activeClass=""}}<i class="glyphicon glyphicon-arrow-left"></i>{{/link-to}}
+
+{{zz-tab label='Summary' linkTo='leads.summary' resource=model}}
+{{zz-tab label='Details' linkTo='leads.details' resource=model}}
+{{zz-tab label='Family' linkTo='leads.family' resource=model}}
+{{zz-tab label='Friends' linkTo='leads.friends' resource=model}}
+{{zz-tab label='Sports' linkTo='leads.sports' resource=model}}

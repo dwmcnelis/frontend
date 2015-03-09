@@ -14,7 +14,7 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
   },
 
   renderTemplate: function() {
-	  this.render('leads.sports-ribbon', {
+	  this.render('leads.detail-ribbon', {
       into: 'master-detail',
 	    outlet: 'detail-ribbon',
 	  });

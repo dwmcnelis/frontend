@@ -1,0 +1,29 @@
+{{! app/templates/components/zz-statistic.hbs }}
+{{#if labelAbove}}
+  <div class="label">
+    {{#if label}}
+      {{label}}
+    {{/if}}
+  </div>
+{{/if}}
+<div class="value">
+  {{#if icon}}
+      <i {{bind-attr class=icon}}></i>
+  {{else}}
+    {{#if image}}
+        <img {{bind-attr src=image}}>
+    {{/if}}
+  {{/if}}
+  {{#if value}}
+    {{value}}
+  {{else}}
+    {{yield}}
+  {{/if}}
+</div>
+{{#unless labelAbove}}
+  <div class="label">
+    {{#if label}}
+      {{label}}
+    {{/if}}
+  </div>
+{{/unless}}

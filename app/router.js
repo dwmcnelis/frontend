@@ -15,8 +15,8 @@ Router.map(function() {
   this.route('sessions.login', { path: '/login'});
   this.route('sessions.logout', { path: '/logout'});
 
-  // Leads
-  this.resource('leads', { path: '/leads' }, function() {
+  // Clients
+  this.resource('clients', { path: '/clients' }, function() {
     this.route('new');
     this.route("show", { path: "/:id" });
     this.route("details", { path: "/:id/details" });

@@ -29,17 +29,3 @@ export default DS.Model.extend(EmberValidations.Mixin, {
   }
 
 });
-
-
-// import Ember from 'ember';
-
-// export default Ember.Object.extend({
-
-//   identification: null,
-//   password: null,
-
-//   valid: function(fields) {
-//    return fields.identification && fields.password;
-//  	}
-  
-// });

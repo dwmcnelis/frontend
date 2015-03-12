@@ -1,46 +1,49 @@
+// app/templates/styles/zz-tab.scss 
 
 // Defaults
-$zz-tab-active: #1874CD !default;
-$zz-tab-inactive: #AAAAAA !default;
-$zz-tab-hover: #666666 !default;
-$zz-tab-height: 32px !default;
-$zz-tab-background: #AB82FF !default;
-$zz-tab-border: 3px !default;
+$zzTabColor: $componentDisabledColor !default;
+$zzTabActiveColor: $componentActiveColor !default;
+$zzTabHoverColor: $colorGrayMediumDark !default;
+$zzTabBackgroundColor: $componentBackgroundColor !default;
+$zzTabTopPadding: 14px !default;
+$zzTabBottomPadding: 5px !default;
+$zzTabRightMargin: 24px !default;
+$zzTabBorderThickness: 3px !default;
 
 .zz-tab {
 	display: inline-block;
-	height: $zz-tab-height;
-	//height: 100%;
-	padding: 0px 4px 0px 4px;
-	margin: 0px 6px 0px 6px;
-	background-color: $zz-tab-background; 
+	height: 100%;
+	margin-right: $zzTabRightMargin;
+	background-color: $zzTabBackgroundColor; 
 }
 
 .zz-tab.active {
-	background-color: $zz-tab-background; 
-	border-bottom: $zz-tab-border solid $zz-tab-active;
+	background-color: $zzTabBackgroundColor; 
+	border-bottom: $zzTabBorderThickness solid $zzTabActiveColor;
 }
 
 .zz-tab > a {
-	display: block;
-	color: $zz-tab-inactive;
+	display: inline-block;
+	color: $zzTabColor;
 	font-weight: bold;
 	height: 100%;
-	width: 100%;
+	padding-top: $zzTabTopPadding;
+	padding-bottom: $zzTabBottomPadding;
 	text-decoration: none !important;
+	cursor: pointer !important; 
 }
 
 .zz-tab > a:hover {
-	color:$zz-tab-hover;
+	color:$zzTabHoverColor;
 	font-weight: bold;
 }
 
 .zz-tab > a:active {
-	color: $zz-tab-active;
+	color: $zzTabActiveColor;
 	font-weight: bold;
 }
 
 .zz-tab.active > a {
-	color: $zz-tab-active;
+	color: $zzTabActiveColor;
 	font-weight: bold;
 }

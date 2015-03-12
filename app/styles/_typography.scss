@@ -1,0 +1,37 @@
+// app/styles/typography.scss
+
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,300,600);
+@import url(http://fonts.googleapis.com/css?family=Georgia:400,300,600);
+@import url(http://fonts.googleapis.com/css?family=Lato:400,300,600);
+
+// Families
+$sansSerifFontFamily: Raleway,"Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$serifFontFamily: Georgia, "Times New Roman", Times, serif !default;
+$monospaceFontFamily:  Menlo, Monaco, Consolas, "Courier New", monospace !default;
+$statisticsFontFamily: Lato,"Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$baseFontFamily: $sansSerifFontFamily !default;
+
+// Sizes
+$baseFontSize: 14px !default;
+$largeFontSize: ceil(($baseFontSize * 1.25)) !default; // ~18px
+$smallFontSize: ceil(($baseFontSize * 0.85)) !default; // ~12px
+$h1FontSize: floor(($baseFontSize * 2.6)) !default; // ~36px
+$h2FontSize: floor(($baseFontSize * 2.15)) !default; // ~30px
+$h3FontSize: ceil(($baseFontSize * 1.7)) !default; // ~24px
+$h4FontSize: ceil(($baseFontSize * 1.25)) !default; // ~18px
+$h5FontSize: $baseFontSize !default;
+$h6FontSize: ceil(($baseFontSize * 0.85)) !default; // ~12px
+
+// Line heights
+$baseLineHeight: 1.428571429 !default; // For components (20/14)
+$computedLineHeight: floor(($baseFontSize * $baseLineHeight)) !default; // For margin/padding (~20px)
+
+// Headings
+$headingsFontFamily: inherit !default; // from <body>
+$headingsFontWeight: 500 !default;
+$headingsLineHeight: 1.1 !default;
+$headingsColor: inherit !default; // from <body>
+
+// Caret
+$baseCaretWidth: 4px !default;
+$largeCaretWidth: 5px !default;

@@ -1,0 +1,9 @@
+// app/styles/zz-dropdown-button-toggle.scss 
+
+// Defaults
+
+// Prevent the focus on the dropdown toggle when closing dropdowns
+.zz-dropdown-button-toggle:focus {
+  outline: 0;
+}
+

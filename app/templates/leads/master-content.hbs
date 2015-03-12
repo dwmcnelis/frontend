@@ -5,7 +5,7 @@
   <tbody>
   {{#each lead in leads}}
     <tr>
-    	{{#link-to 'leads.summary' lead tagName="td"}}{{lead.fullName}}{{/link-to}}
+    	{{#link-to 'leads.show' lead tagName="td"}}{{lead.fullName}}{{/link-to}}
     </tr>
   {{/each}}
   </tbody>

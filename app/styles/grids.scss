@@ -1,6 +1,8 @@
+// app/styles/grids.scss
 
-@import 'app/styles/mixins.scss';
-@import 'app/styles/breakpoints.scss';
+@import 'susy';
+@import 'breakpoints';
+@import 'mixins/alignment';
 
 //$total-columns: 2; 	// columns
 //$column-width: 1em; // columns are 4em wide

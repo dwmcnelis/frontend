@@ -1,0 +1,66 @@
+// app/styles/zz-dropdown.scss
+
+// Defaults
+$zzDropdownLinkActiveColor: $componentActiveColor;
+$zzDropdownLinkActiveBackgroundColor: $componentActiveBackgroundColor;
+$zzDropdownZIndex: 1000;
+$zzDropdownBackgroundColor: $colorWhite !default;
+$zzDropdownBorderColor: rgba(0,0,0,.15) !default;
+$zzDropdownFallbackBorderColor: $colorGrayLight !default;
+$zzDropdownDividerBackgroundColor: $colorGrayLighter !default;
+$zzDropdownLinkColor: $colorGrayDark !default;
+$zzDropdownLinkHoverColor: darken($colorGrayDark, 5%) !default;
+$zzDropdownLinkHoverBackgroundColor: $colorGrayLightest !default;
+$zzDropdownLinkActiveColor: $componentActiveColor !default;
+$zzDropdownLinkActiveBackgroundColor: $componentActiveBackgroundColor !default;
+$zzDropdownLinkDisabledColor: $colorGrayLight !default;
+$dropdown-header-color: $colorGrayLight !default;
+
+// Dropdown arrow/caret
+.caret {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 2px;
+  vertical-align: middle;
+  border-top:   $baseCaretWidth solid;
+  border-right: $baseCaretWidth solid transparent;
+  border-left:  $baseCaretWidth solid transparent;
+}
+
+// The dropdown wrapper
+.zz-dropup,
+.zz-dropdown {
+  position: relative;
+}
+
+// Dropdown section headers
+.zz-dropdown-header {
+  display: block;
+  padding: 3px 20px;
+  font-size: $smallFontSize;
+  line-height: $baseLineHeight;
+  color: $dropdown-header-color;
+  white-space: nowrap; // as with > li > a
+}
+
+// Backdrop to catch body clicks on mobile, etc.
+.zz-dropdown-backdrop {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: ($zzDropdownZIndex - 10);
+}
+
+// Allow for dropdowns to go bottom up (aka, dropup-menu)
+.zz-dropup{
+  // Reverse the caret
+  .caret {
+    border-top: 0;
+    border-bottom: $baseCaretWidth solid;
+    content: "";
+  }
+}
+

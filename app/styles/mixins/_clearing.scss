@@ -1,0 +1,15 @@
+// app/styles/mixins/_clearing.scss
+
+// Clearing mixins
+//
+
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: " "; // Use space as Opera contenteditable work-around
+    display: table; // Use table as child element top-margin work-around 
+  }
+  &:after {
+    clear: both;
+  }
+}

@@ -1,0 +1,102 @@
+// app/styles/_colors.scss
+
+// Colors
+//
+
+// Grayscale
+$colorGrayBase: #000000 !default;
+$colorGray1: lighten($colorGrayBase,  6.67%) !default; // #111111
+$colorGray2: lighten($colorGrayBase, 13.50%) !default; // #222222
+$colorGray3: lighten($colorGrayBase, 20.00%) !default; // #333333
+$colorGray4: lighten($colorGrayBase, 36.67%) !default; // #444444
+$colorGray5: lighten($colorGrayBase, 33.33%) !default; // #555555
+$colorGray6: lighten($colorGrayBase, 40.00%) !default; // #666666
+$colorGray7: lighten($colorGrayBase, 46.67%) !default; // #777777
+$colorGray8: lighten($colorGrayBase, 53.33%) !default; // #888888
+$colorGray9: lighten($colorGrayBase, 60.00%) !default; // #999999
+$colorGrayA: lighten($colorGrayBase, 66.67%) !default; // #aaaaaa
+$colorGrayB: lighten($colorGrayBase, 73.33%) !default; // #bbbbbb
+$colorGrayC: lighten($colorGrayBase, 80.00%) !default; // #cccccc
+$colorGrayD: lighten($colorGrayBase, 86.67%) !default; // #bbbbbb
+$colorGrayE: lighten($colorGrayBase, 93.33%) !default; // #eeeeee
+$colorWhite: #ffffff !default;
+$colorGrayDarkest: $colorGray1;
+$colorGrayDarker: $colorGray2;
+$colorGrayDark: $colorGray3;
+$colorGrayMediumDarkest: $colorGray4;
+$colorGrayMediumDarker: $colorGray5;
+$colorGrayMediumDark: $colorGray6;
+$colorGrayMedium: $colorGray7;
+$colorGrayMedium2: $colorGray8;
+$colorGrayMediumLight: $colorGray9;
+$colorGrayMediumLighter: $colorGrayA;
+$colorGrayMediumLightest: $colorGrayB;
+$colorGrayLight: $colorGrayC;
+$colorGrayLighter: $colorGrayD;
+$colorGrayLightest: $colorGrayE;
+$colorBlack: #000000 !default;
+
+// Greens
+$colorTurquoise: #1abc9c;
+$colorGreenSea: #16a085;
+$colorEmerald: #2ecc71;
+$colorNephritis: #27ae60;
+$colorGreen1: $colorTurquoise;
+$colorGreen2: $colorGreenSea;
+$colorGreen3: $colorEmerald;
+$colorGreen4: $colorNephritis;
+
+// Blues
+$colorPeterRiver: #3498db;
+$colorBelizeHole: #2980b9;
+$colorWetAsphalt: #34495e;
+$colorMidnightBlue: #2c3e50;
+$colorBlue1: $colorPeterRiver;
+$colorBlue2: $colorBelizeHole;
+$colorBlue3: $colorWetAsphalt;
+$colorBlue4: $colorMidnightBlue;
+
+// Purples
+$colorAmethyst: #9b59b6;
+$colorWisteria: #8e44ad;
+$colorPurple1: $colorAmethyst;
+$colorPurple2: $colorWisteria;
+
+// Yellows
+$colorSunflower: #F1C40F;
+$colorYellow1: $colorSunflower;
+
+// Oranges
+$colorOrange: #f39c12;
+$colorCarrot: #e67e22;
+$colorPumpkin: #d35400;
+$colorOrange1: $colorOrange;
+$colorOrange2: $colorCarrot;
+$colorOrange3: $colorPumpkin;
+
+// Reds
+$colorAlizarin: #e74c3c;
+$colorPomegranate: #c0392b;
+$colorRed1: $colorAlizarin;
+$colorRed2: $colorPomegranate;
+
+// Grays
+$colorClouds: #ecf0f1;
+$colorSilver: #bdc3c7;
+$colorConcrete: #95a5a6;
+$colorAsbestos: #7f8c8d;
+$colorGray1: $colorClouds;
+$colorGray2: $colorSilver;
+$colorGray3: $colorConcrete;
+$colorGray4: $colorAsbestos;
+
+// Types
+$colorDefault: $colorGrayMediumLighter !default;
+$colorPrimary: #1874cd !default;
+$colorSecondary: $colorAlizarin !default;
+$colorTertiary: $colorGreenSea !default;
+$colorSuccess: #5cb85c !default;
+$colorInfo: #5bc0de !default;
+$colorWarning: #f0ad4e !default;
+$colorDanger: #d9534f !default;
+

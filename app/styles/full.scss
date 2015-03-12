@@ -1,7 +1,8 @@
+// app/styles/full.scss
 
 // Defaults
-$full-bg: #FDF5E6 !default;
+$fullBackgroundColor: $colorWhite !default;
 
 .full {
-	background-color: $full-bg; 
+	background-color: $fullBackgroundColor; 
 }

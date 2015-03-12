@@ -1,0 +1,9 @@
+{{! app/templates/components/zz-clip-button.hbs }}
+{{#if icon}}
+    <i {{bind-attr class=icon}}></i>
+{{/if}}
+{{#if label}}
+  {{label}}
+{{else}}
+  {{yield}}
+{{/if}}

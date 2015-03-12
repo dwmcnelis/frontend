@@ -1,0 +1,116 @@
+// app/styles/_common.scss
+
+// Common styles
+//
+
+@import "mixins/visibility";
+@import "mixins/positioning";
+@import "mixins/clearing";
+@import "mixins/alignment";
+@import "mixins/text";
+
+// Visability
+//
+.hidden {
+  @include hidden;
+}
+
+.shown {
+  @include shown;
+}
+
+.hidden {
+  @include hidden;
+}
+
+.visuallyhidden {
+  @include visuallyhidden;
+}
+
+.visuallyshown {
+  @include visuallyshown;
+}
+
+.invisible {
+  @include invisible;
+}
+
+// Display
+.block {
+  display: block !important;
+}
+
+.inline-block {
+  display: inline-block !important;
+}
+
+// Overflow
+.overflow-auto {
+  overflow: auto !important;
+}
+
+.overflow-hidden {
+  overflow: hidden !important;
+}
+
+.overflow-scroll {
+  overflow: scroll !important;
+}
+
+// Size
+.height-full {
+  height: 100% !important;
+}
+
+.height-auto {
+  height: auto !important;
+}
+
+.width-full {
+  width: 100% !important;
+}
+
+.width-auto {
+  width: auto !important;
+}
+
+
+// Positioning
+//
+.float-left {
+  float: left !important;
+}
+
+.float-right {
+  float: right !important;
+}
+
+// Clearing
+//
+.clearfix {
+  @include clearfix;
+}
+
+// Alignment
+//
+.vertical-center {
+  @include vertical-center;
+}
+
+.horizontal-center {
+  @include horizontal-center;
+}
+
+.center {
+  @include center;
+}
+
+.center-block {
+  @include center-block;
+}
+
+// Text
+//
+.text-truncate {
+  @include text-truncate;
+}

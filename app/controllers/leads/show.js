@@ -1,8 +1,11 @@
 // app/controllers/lead/show.js
 
+
 import Ember from 'ember';
 
 export default Ember.ObjectController.extend({
+
+  clipboard_content: 'This content should now be in the clipboard!',
 
   showUnsavedMessage: (function() {
     return this.get('isDirty') && !this.get('isSaving');

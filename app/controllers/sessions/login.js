@@ -21,7 +21,7 @@ export default Ember.ObjectController.extend(AuthenticationControllerMixin, {
 
         self.get(config['simple-auth'].sessionPropertyName).authenticate(authenticator, data).then(function() {
           console.debug('session: '+Ember.inspect(self.get('session').get('content')));
-          return res("OK");
+          return self.transitionTo('leads');
         }, function() {
           //self.get('model').set('errors', 'Unauthorized');
           return rej("Failed");

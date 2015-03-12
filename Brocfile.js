@@ -38,4 +38,6 @@ app.import('vendor/bootstrap/fonts/glyphicons-halflings-regular.woff2', {
   destDir: 'fonts'
 });
 
+app.import('vendor/zeroclipboard/ZeroClipboard.js');
+
 module.exports = app.toTree();

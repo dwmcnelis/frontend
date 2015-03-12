@@ -1,96 +1,74 @@
+// app/styles/app.scss
 
-@import url(http://fonts.googleapis.com/css?family=Raleway:400,300,600);
-@import url(http://fonts.googleapis.com/css?family=Lato:400,300,600);
+// Base styles
+@import 'typography';
+@import 'colors';
+@import 'components';
+
+// Overides
 
 $font-family-sans-serif:  Raleway,"Helvetica Neue", Helvetica, Arial, sans-serif !default;
 $font-family-serif:       Georgia, "Times New Roman", Times, serif !default;
 
-@import 'vendor/bootstrap/styles/bootstrap';
-// @import 'vendor/bootstrap/styles/bootstrap/variables';
-// @import 'vendor/bootstrap/styles/bootstrap/mixins';
+$border-radius-base:        2px;
+$border-radius-large:       3px;
+$border-radius-small:       1px;
+
+// Vendor styles
+
+// @import 'vendor/bootstrap/styles/bootstrap';
+@import 'vendor/bootstrap/styles/bootstrap/variables';
+@import 'vendor/bootstrap/styles/bootstrap/mixins';
 // @import 'vendor/bootstrap/styles/bootstrap/normalize';
 // @import 'vendor/bootstrap/styles/bootstrap/print';
-// @import 'vendor/bootstrap/styles/bootstrap/glyphicons';
-// @import 'vendor/bootstrap/styles/bootstrap/scaffolding';
+@import 'vendor/bootstrap/styles/bootstrap/glyphicons';
+@import 'vendor/bootstrap/styles/bootstrap/scaffolding';
 // @import 'vendor/bootstrap/styles/bootstrap/type';
 // @import 'vendor/bootstrap/styles/bootstrap/code';
 // @import 'vendor/bootstrap/styles/bootstrap/grid';
-// @import 'vendor/bootstrap/styles/bootstrap/tables';
-// @import 'vendor/bootstrap/styles/bootstrap/forms';
-// @import 'vendor/bootstrap/styles/bootstrap/buttons';
+@import 'vendor/bootstrap/styles/bootstrap/tables';
+@import 'vendor/bootstrap/styles/bootstrap/forms';
+@import 'vendor/bootstrap/styles/bootstrap/buttons';
 // @import 'vendor/bootstrap/styles/bootstrap/navbar';
 // @import 'vendor/bootstrap/styles/bootstrap/navs';
 // @import 'vendor/bootstrap/styles/bootstrap/utilities';
-
 @import 'vendor/normalize/normalize';
 @import 'vendor/susy/susy';
 @import 'vendor/breakpoint/breakpoint';
 
-@import 'app/styles/mixins.scss';
-@import 'app/styles/susy.scss';
-@import 'app/styles/breakpoints.scss';
+// Mixins
+@import 'mixins';
 
-// Colors
-// $page-bg: #FFB6C1;
-// $full-bg: #FDF5E6;
-// $tab-bg: #AB82FF;
-// $tab-bd: #1874CD;
-// $banner-bg: #DDA0DD;
-// $banner-brand-bg: #BA55D3;
-// $banner-search-bg: #CDB5CD;
-// $banner-ribbon-bg: #FFE1FF;
-// $master-bg: #B0C4DE;
-// $master-content-bg: #B0C4DE;
-// $master-ribbon-bg: #7171C6;
-// $master-ribbon-bd: #EFEFEF;
-// $detail-bg: #FFFACD;
-// $detail-ribbon-bg: #FFE7BA;
-// $detail-ribbon-bd: #EFEFEF;
-// $detail-content-bg: #EEE5DE;
-// $zz-tab-active: #1874CD;
-// $zz-tab-inactive: #AAAAAA;
-// $zz-tab-hover: #666666;
-// $zz-tab-background: #AB82FF;
+// Component styles
+@import 'zz-alert';
+@import 'zz-button';
+@import 'zz-button-bar';
+@import 'zz-button-group';
+@import 'zz-clip-button';
+@import 'zz-dropdown';
+@import 'zz-dropdown-button-toggle';
+@import 'zz-dropdown-menu';
+@import 'zz-dropdown-tab-toggle';
+@import 'zz-tab';
+@import 'zz-tab-bar';
+@import 'zz-tab-group';
+@import 'zz-tooltip';
+@import 'zz-statistic';
 
-// Greyscale
-$page-bg: #FFFFFF;
-$full-bg: #FFFFFF;
-$banner-bg: #E8E8E8;
-$banner-brand-bg: #E8E8E8;
-$banner-search-bg: #E8E8E8;
-$banner-ribbon-bg: #E8E8E8;
-$master-bg: #FFFFFF;
-$master-content-bg: #FFFFFF;
-$master-ribbon-bg: #FFFFFF;
-$master-ribbon-bd: #EFEFEF;
-$detail-bg: #FFFFFF;
-$detail-ribbon-bg: #FFFFFF;
-$detail-ribbon-bd: #EFEFEF;
-$detail-content-bg: #FFFFFF;
-$zz-tab-active: #1874CD;
-$zz-tab-inactive: #AAAAAA;
-$zz-tab-hover: #666666;
-$zz-tab-background: #FFFFFF;
-
-// Geometry
-$zz-tab-border: 3px;
-$banner-height: 65px;
-$banner-brand-width: 200px;
-$master-width: 200px;
-$master-ribbon-height: 44px;
-$detail-ribbon-height: 44px;
-
-@import 'app/styles/page.scss';
-@import 'app/styles/full.scss';
-@import 'app/styles/banner.scss';
-@import 'app/styles/master.scss';
-@import 'app/styles/detail.scss';
-@import 'app/styles/login.scss';
-@import 'app/styles/grids.scss';
-@import 'app/styles/zz-tab.scss';
-@import 'app/styles/zz-statistic.scss';
+// View styles
+@import 'page';
+@import 'common';
+@import 'grids';
+@import 'full';
+@import 'banner';
+@import 'master';
+@import 'detail';
+@import 'login';
+.detail-ribbon {
+	display: inline-block;
+	min-width: 2560px;
+}
 
 .borderless td, .borderless th {
     border: none !important;
 }
-

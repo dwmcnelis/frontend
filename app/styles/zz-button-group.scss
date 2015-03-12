@@ -1,0 +1,19 @@
+// app/styles/zz-button-group.scss
+
+// Button group styles
+//
+$zzButtonGroupTopPadding: 2px !default;
+$zzButtonGroupTopBottomPadding: 2px !default;
+
+.zz-button-group {
+	position: relative;
+	display: inline-block;
+	float: left;
+	height: 100% !important;
+	margin-right: 5px;
+	padding-top: $zzButtonGroupTopPadding;
+	padding-bottom: $zzButtonGroupTopBottomPadding;
+	vertical-align: middle;
+	white-space: nowrap;
+}
+

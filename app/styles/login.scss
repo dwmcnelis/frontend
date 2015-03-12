@@ -1,11 +1,14 @@
+// app/styles/login.scss
+
+@import 'mixins/alignment';
 
 // Defaults
-$login-bg: #F0F8FF !default;
+$loginBackgroundColor: #f0f8ff !default;
 
 .login {
 		width: 400px;
 		padding: 40px;
 		//@include vertical-center;
 		@include center;
-		background-color: $login-bg; 
+		background-color: $loginBackgroundColor; 
 }

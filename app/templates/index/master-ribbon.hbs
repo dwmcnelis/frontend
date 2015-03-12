@@ -1,1 +1,18 @@
-{{#link-to 'leads'}}Index{{/link-to}}
+{{! app/templates/index/master-ribbon.hbs }}
+{{!-- {{#link-to 'leads'}}Index{{/link-to}} --}}
+{{#zz-tab-bar}}
+	{{#zz-tab-group}}
+		{{#zz-dropdown}}
+		  {{#zz-dropdown-tab-toggle extraClasses="active"}}
+		    Home <span class="caret"></span>
+		  {{/zz-dropdown-tab-toggle}}
+		  
+		  {{#zz-dropdown-menu tagName="ul" closeOnChildClick="a:link"}}
+		    <li class="active">{{#link-to 'index'}}Home{{/link-to}}</li>
+		    <li>{{#link-to 'leads'}}Clients{{/link-to}}</li>
+		    <li>{{#link-to 'index'}}Campaigns{{/link-to}}</li>
+		    <li>{{#link-to 'index'}}Analytics{{/link-to}}</li>
+		  {{/zz-dropdown-menu}}
+		{{/zz-dropdown}}
+	{{/zz-tab-group}}  
+{{/zz-tab-bar}}  

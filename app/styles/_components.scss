@@ -1,0 +1,20 @@
+// app/styles/_components.scss
+
+// Colors
+$componentColor: $colorBlack !default;
+$componentHoverColor: $colorPrimary !default;
+$componentBackgroundColor: $colorWhite !default;
+$componentHoverBackgroundColor: $colorWhite !default;
+$componentActiveColor: $colorPrimary !default;
+$componentActiveHoverColor: $colorPrimary !default;
+$componentActiveBackgroundColor: $colorWhite !default;
+$componentActiveHoverBackgroundColor: $colorWhite !default;
+$componentDisabledColor: $colorGrayMediumLighter !default;
+$componentDisabledHoverColor: $colorGrayMediumLighter !default;
+$componentDisabledBackgroundColor: $colorWhite !default;
+$componentDisabledHoverBackgroundColor: $colorWhite !default;
+
+// Borders
+$baseBorderRadius: 2px !default;
+$largeBorderRadius: 3px !default;
+$smallBorderRadius: 1px !default;

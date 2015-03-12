@@ -1,37 +1,38 @@
+// app/styles/detail.scss
 
-@import 'app/styles/breakpoints.scss';
+@import 'susy';
+@import 'breakpoints';
 
 // Defaults
-$detail-ribbon-height: 44px !default;
-$master-width: 200px !default;
-$master-gutters: 0px !default;
-$detail-bg: #FFFACD !default;
-$detail-ribbon-bg: #FFE7BA !default;
-$detail-ribbon-bd: #EFEFEF !default;
-$detail-ribbon-bd-thick: 3px !default;
-$detail-content-bg: #EEE5DE !default;
+$masterWidth: 200px !default;
+$masterGutterWidth: 0px !default;
+$detailRibbonHeight: 44px !default;
+$detailBackgroundColor: $colorWhite !default;
+$detailRibbonBackgroundColor: $detailBackgroundColor !default;
+$detailRibbonBorderColor: $colorGrayLighter !default;
+$detailRibbonBorderThickness: 3px !default;
+$detailContentBackgroundColor: $detailBackgroundColor !default;
 
 .detail {
 	@include breakpoint($phablet) {
-		margin-left: span(1 of 2 ($master-width $master-gutters) static wide);
-		margin-top: $banner-height;
+		margin-left: span(1 of 2 ($masterWidth $masterGutterWidth) static wide);
+		margin-top: $bannerHeight;
 	} 
-	background-color: $detail-bg;
+	background-color: $detailBackgroundColor;
 }
 
 .detail-ribbon {
 	@include span(100%);
-	padding: 6px 20px 6px 20px;
-	height: $detail-ribbon-height;
-	background-color: $detail-ribbon-bg; 
-	border-bottom: $detail-ribbon-bd-thick solid $detail-ribbon-bd;
+	height: $detailRibbonHeight;
+	background-color: $detailRibbonBackgroundColor; 
+	border-bottom: $detailRibbonBorderThickness solid $detailRibbonBorderColor;
 }
 
 .detail-content {
 	@include span(100%);
 	overflow-x: hidden !important;
 	overflow-y: auto !important;
-	background-color: $detail-content-bg;
+	background-color: $detailContentBackgroundColor;
 }
 
 .detail-inner {

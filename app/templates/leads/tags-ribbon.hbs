@@ -1,0 +1,28 @@
+{{! app/templates/leads/detail-ribbon.hbs }}
+{{!-- {{#zz-button-bar}}
+	{{#zz-button-group}}
+		{{#link-to 'leads' classNames='btn btn-default btn-sm' activeClass=""}}<i class="glyphicon glyphicon-arrow-left"></i>{{/link-to}}
+	{{/zz-button-group}}  
+{{/zz-button-bar}}
+ --}}
+{{#zz-tab-bar}}
+	{{#zz-tab-group}}
+		{{zz-tab label='Client' linkTo='leads.show' resource=model}}
+		{{zz-tab label='Details' linkTo='leads.details' resource=model}}
+		{{zz-tab label='Tags' linkTo='leads.tags' resource=model}}
+	{{/zz-tab-group}}
+
+	{{#zz-tab-group}}
+		{{#zz-dropdown}}
+		  {{#zz-dropdown-tab-toggle}}
+		    More <span class="caret"></span>
+		  {{/zz-dropdown-tab-toggle}}
+		  
+		  {{#zz-dropdown-menu tagName="ul" closeOnChildClick="a:link"}}
+		    <li>{{#link-to 'leads.show' model}}Client{{/link-to}}</li>
+		    <li>{{#link-to 'leads.details' model}}Details{{/link-to}}</li>
+		    <li>{{#link-to 'leads.tags' model}}Tags{{/link-to}}</li>
+		  {{/zz-dropdown-menu}}
+		{{/zz-dropdown}}
+	{{/zz-tab-group}}  
+{{/zz-tab-bar}}

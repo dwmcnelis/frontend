@@ -4,7 +4,7 @@
 
   {{#zz-form model=model}}
     {{! #if errors}}
-      {{! zz-alert theme='danger' label='Invalid Username/Password'}}
+      {{! zz-alert kind='danger' label='Invalid Username/Password'}}
     {{! /if}}
 
     {{zz-input property="firstName" label="First Name" placeholder="First Name"}}
@@ -14,7 +14,7 @@
     {{zz-text property="notes" label="Notes" placeholder="Notes"}}
 
 
-    {{zz-button enabled=needsSaving action='save' theme='primary' label='Save' icon='glyphicon glyphicon-save' label-pending='Saving' icon-pending='fa fa-spinner fa-spin'}}
+    {{zz-button enabled=needsSaving action='save' kind='primary' label='Save' icon='glyphicon glyphicon-save' label-pending='Saving' icon-pending='fa fa-spinner fa-spin'}}
     {{zz-button action='cancel' label='Cancel' classNames='button'}}
   {{/zz-form}}
 </div>

@@ -2,13 +2,13 @@
 <div class='login'>
   {{#zz-form model=model}}
     {{! #if errors}}
-      {{! zz-alert theme='danger' label='Invalid Username/Password'}}
+      {{! zz-alert kind='danger' label='Invalid Username/Password'}}
     {{! /if}}
 
   	{{zz-input property="identification" label="Username" placeholder="Username"}}
   	{{zz-input property="password" label="Password" placeholder="Password" type='password'}}
 
 
-    {{zz-button enabled=isValid action='login' theme='primary' label='Login' icon='glyphicon glyphicon-log-in' label-pending='Logging in' icon-pending='fa fa-spinner fa-spin'}}
+    {{zz-button enabled=isValid action='login' kind='primary' label='Login' icon='glyphicon glyphicon-log-in' label-pending='Logging in' icon-pending='fa fa-spinner fa-spin'}}
   {{/zz-form}}
 </div>

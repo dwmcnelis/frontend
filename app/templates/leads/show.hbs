@@ -1,7 +1,7 @@
 {{! app/templates/leads/show.hbs }}
-
-<div>  
+<div>
   <h1>{{fullName}}</h1>
+  <div class="one-of-two">
   <p>
       Email: {{email}}
   </p>
@@ -25,3 +25,7 @@
   {{/if}}
   </p>
 </div>
+</div>
+  <div class="two-of-two">
+    {{zz-statistic value="47" label='Buzzes' size='large' icon='glyphicon glyphicon-bullhorn'}}
+  </div>

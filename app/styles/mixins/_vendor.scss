@@ -1,0 +1,12 @@
+// app/styles/zz-button-group.scss
+
+// Button group styles
+//
+
+// Vendor prefixer mixin.
+@mixin vendor($property, $value) {
+	-webkit-#{$property}: $value;
+	-moz-#{$property}: $value;
+	#{$property}: $value;
+}
+

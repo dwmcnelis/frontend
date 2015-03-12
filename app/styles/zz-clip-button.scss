@@ -1,0 +1,16 @@
+// app/styles/zz-clip-button.scss
+
+// Clip button styles
+//
+
+// Defaults
+$zzClipButtonColor: #333333 !default;
+$zzClipButtonBackground: #ffffff !default;
+$zzClipButtonBorder: #cccccc !default;
+
+.zz-clip-button.hover,
+.zz-clip-button.active, {
+  color: $zzClipButtonColor;
+  background-color: darken($zzClipButtonBackground, 10%);
+  border-color: darken($zzClipButtonBorder, 12%);
+}

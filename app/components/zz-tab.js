@@ -1,4 +1,3 @@
-// app/components/zz-tab.js
 // addon/components/zz_tab.js
 
 import Ember from 'ember';
@@ -38,7 +37,15 @@ export default Ember.Component.extend({
 
   // Bind the specified properties as the classes of the DOM element.
   //
-  classNameBindings: ['active'],
+  classNameBindings: ['active', 'extraClasses'],
+
+  // Extra css classes 
+  //
+  // @property {Ember.String}
+  // @default  null
+  // @public
+  //
+  extraClasses: null,
 
   // The label to display.
   // @property action

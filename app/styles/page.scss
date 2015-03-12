@@ -1,6 +1,9 @@
+// app/styles/page.scss
+
+@import 'susy';
 
 // Defaults
-$page-bg: #FFB6C1 !default;
+$pageBackgroundColor: $colorWhite !default;
 
 html {
 	height: 100%;
@@ -35,12 +38,8 @@ body.body {
 	overflow-y: hidden !important;
 }
 
-.ember-view {
-	height: 100%;
-}
-
 .page {
   @include span(100%);
 	height: 100%;
-	background-color: $page-bg; 
+	background-color: $pageBackgroundColor; 
 }

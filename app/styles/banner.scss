@@ -1,34 +1,43 @@
+// app/styles/banner.scss
 
-@import 'app/styles/breakpoints.scss';
+@import 'susy';
+@import 'breakpoints';
+@import 'mixins/visibility';
 
 // Defaults
-$banner-height: 65px !default;
-$banner-bg: #DDA0DD !default;
-$banner-brand-width: 200px !default;
-$banner-gutters: 0px !default;
-$banner-brand-bg: #BA55D3 !default;
-$banner-search-phone-width: 200px !default;
-$banner-search-phablet-width: 300px !default;
-$banner-search-tablet-width: 400px !default;
-$banner-search-desktop-width: 450px !default;
-$banner-search-workstation-width: 500px !default;
-$banner-search-bg: #CDB5CD !default;
-$banner-ribbon-bg: #FFE1FF !default;
+$bannerHeight: 65px !default;
+$bannerBackgroundColor: $colorGrayLightest !default;
+$bannerBrandWidth: 200px !default;
+$bannerGutterWidth: 0px !default;
+$bannerBrandBackgroundColor: $bannerBackgroundColor !default;
+$bannerSearchPhoneWidth: 200px !default;
+$bannerSearchPhabletWidth: 300px !default;
+$bannerSearchTabletWidth: 400px !default;
+$bannerSearchDesktopWidth: 450px !default;
+$bannerSearchWorkstationWidth: 500px !default;
+$bannerSearchButtonWidth: 40px !default;
+$bannerSearchInputPhoneWidth: 128px !default;
+$bannerSearchInputPhabletWidth: 228px !default;
+$bannerSearchInputTabletWidth: 328px !default;
+$bannerSearchInputDesktopWidth: 358px !default;
+$bannerSearchInputWorkstationWidth: 428px !default;
+$bannerSearchBackgroundColor: $bannerBackgroundColor !default;
+$bannerRibbonBackgroundColor: $bannerBackgroundColor !default;
 
 .banner {
 	@include span(100%);
-	height: $banner-height;
-	background-color: $banner-bg; 
+	height: $bannerHeight;
+	background-color: $bannerBackgroundColor; 
 }
 
 .banner-brand {
 	@include visuallyhidden;
 	@include breakpoint($tablet) {
 		@include visuallyshown;
-		@include span(1 of 2 ($banner-brand-width $banner-gutters) static isolate);
-		height: $banner-height;
+		@include span(1 of 2 ($bannerBrandWidth $bannerGutterWidth) static isolate);
+		height: $bannerHeight;
 	}
-	background-color: $banner-brand-bg; 
+	background-color: $bannerBrandBackgroundColor; 
 }
 
 .banner-brand-inner {
@@ -41,28 +50,28 @@ $banner-ribbon-bg: #FFE1FF !default;
 .banner-rest {
 	margin-left: 0px;
 	@include breakpoint($tablet) {
-		margin-left: span(1 of 2 ($banner-brand-width $banner-gutters) static wide);
+		margin-left: span(1 of 2 ($bannerBrandWidth $bannerGutterWidth) static wide);
 	}
-	height: $banner-height;
-	background-color: $banner-brand-bg; 
+	height: $bannerHeight;
+	background-color: $bannerBrandBackgroundColor; 
 }
 
 .banner-search {
-	@include span(1 of 2 ($banner-search-phone-width $banner-gutters) static isolate);
+	@include span(1 of 2 ($bannerSearchPhoneWidth $bannerGutterWidth) static isolate);
 	@include breakpoint($phablet) {
-		@include span(1 of 2 ($banner-search-phablet-width $banner-gutters) static isolate);
+		@include span(1 of 2 ($bannerSearchPhabletWidth $bannerGutterWidth) static isolate);
 	}
 	@include breakpoint($tablet) {
-		@include span(1 of 2 ($banner-search-tablet-width $banner-gutters) static isolate);
+		@include span(1 of 2 ($bannerSearchTabletWidth $bannerGutterWidth) static isolate);
 	}
 	@include breakpoint($desktop) {
-		@include span(1 of 2 ($banner-search-desktop-width $banner-gutters) static isolate);
+		@include span(1 of 2 ($bannerSearchDesktopWidth $bannerGutterWidth) static isolate);
 	}
 	@include breakpoint($workstation) {
-		@include span(1 of 2 ($banner-search-workstation-width $banner-gutters) static isolate);
+		@include span(1 of 2 ($bannerSearchWorkstationWidth $bannerGutterWidth) static isolate);
 	}
-	height: $banner-height;
-	background-color: $banner-search-bg;	
+	height: $bannerHeight;
+	background-color: $bannerSearchBackgroundColor;	
 }
 
 .banner-search-inner {
@@ -71,26 +80,53 @@ $banner-ribbon-bg: #FFE1FF !default;
 	padding: 15px;
 }
 
-.banner-search-inner :first-child {
-	width: 100%;
+// .banner-search-inner :first-child {
+// 	width: 75%;
+// }
+
+.banner-search-inner input {
+	width: $bannerSearchInputPhoneWidth;
+	@include breakpoint($phablet) {
+		width: $bannerSearchInputPhabletWidth;
+	}
+	@include breakpoint($tablet) {
+		width: $bannerSearchInputTabletWidth;
+	}
+	@include breakpoint($desktop) {
+		width: $bannerSearchInputDesktopWidth;
+	}
+	@include breakpoint($workstation) {
+		width: $bannerSearchInputWorkstationWidth;
+	}
+	padding: 4px;
+	//border-width: 1px 0px 1px 1px !important;
+	border-right: none;
+}
+
+.banner-search-inner button {
+	position: relative;
+	display: inline-block;
+	float: right;
+	//border-width: 1px 1px 1px 0px !important;
+	border-left: none;
 }
 
 .banner-ribbon {
-	margin-left: span(1 of 2 ($banner-search-phone-width $banner-gutters) static wide);
+	margin-left: span(1 of 2 ($bannerSearchPhoneWidth $bannerGutterWidth) static wide);
 	@include breakpoint($phablet) {
-		margin-left: span(1 of 2 ($banner-search-phablet-width $banner-gutters) static wide);
+		margin-left: span(1 of 2 ($bannerSearchPhabletWidth $bannerGutterWidth) static wide);
 	}
 	@include breakpoint($tablet) {
-		margin-left: span(1 of 2 ($banner-search-tablet-width $banner-gutters) static wide);
+		margin-left: span(1 of 2 ($bannerSearchTabletWidth $bannerGutterWidth) static wide);
 	}
 	@include breakpoint($desktop) {
-		margin-left: span(1 of 2 ($banner-search-desktop-width $banner-gutters) static wide);
+		margin-left: span(1 of 2 ($bannerSearchDesktopWidth $bannerGutterWidth) static wide);
 	}
 	@include breakpoint($workstation) {
-		margin-left: span(1 of 2 ($banner-search-workstation-width $banner-gutters) static wide);
+		margin-left: span(1 of 2 ($bannerSearchWorkstationWidth $bannerGutterWidth) static wide);
 	}
-	height: $banner-height;
-	background-color: $banner-ribbon-bg; 
+	height: $bannerHeight;
+	background-color: $bannerRibbonBackgroundColor; 
 }
 
 .banner-ribbon-content {

@@ -1,0 +1,137 @@
+// app/styles/zz-dropdown-menu.scss
+
+// Defaults
+
+// The dropdown menu (ul)
+.zz-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: $zzDropdownZIndex;
+  display: none; // none by default, but block on "open" of the menu
+  float: left;
+  min-width: 160px;
+  padding: 5px 0;
+  margin: 2px 0 0; // override default ul
+  list-style: none;
+  font-size: $baseFontSize;
+  text-align: left; // Ensures proper alignment if parent has it changed (e.g., modal footer)
+  background-color: $zzDropdownBackgroundColor;
+  border: 1px solid $zzDropdownFallbackBorderColor; // IE8 fallback
+  border: 1px solid $zzDropdownBorderColor;
+  border-radius: $baseBorderRadius;
+  @include box-shadow(0 6px 12px rgba(0,0,0,.175));
+  background-clip: padding-box;
+
+  // Aligns the dropdown menu to right
+  //
+  // Deprecated as of 3.1.0 in favor of `.zz-dropdown-menu-[dir]`
+  &.pull-right {
+    right: 0;
+    left: auto;
+  }
+
+  // Dividers (basically an hr) within the dropdown
+  .divider {
+    @include nav-divider($zzDropdownDividerBackgroundColor);
+  }
+
+  // Links within the dropdown menu
+  > li > a {
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: normal;
+    line-height: $baseLineHeight;
+    color: $zzDropdownLinkColor;
+    white-space: nowrap; // prevent links from randomly breaking onto new lines
+  }
+}
+
+// Hover/Focus state
+.zz-dropdown-menu > li > a {
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    color: $zzDropdownLinkHoverColor;
+    background-color: $zzDropdownLinkHoverBackgroundColor;
+  }
+}
+
+// Active state
+.zz-dropdown-menu > .active > a {
+  &,
+  &:hover,
+  &:focus {
+    color: $zzDropdownLinkActiveColor;
+    text-decoration: none;
+    outline: 0;
+    font-weight: bold;
+    background-color: $zzDropdownLinkActiveBackgroundColor;
+  }
+}
+
+// Disabled state
+//
+// Gray out text and ensure the hover/focus state remains gray
+
+.zz-dropdown-menu > .disabled > a {
+  &,
+  &:hover,
+  &:focus {
+    color: $zzDropdownLinkDisabledColor;
+  }
+
+  // Nuke hover/focus effects
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    background-color: transparent;
+    background-image: none; // Remove CSS gradient
+    @include reset-filter;
+    cursor: $cursor-disabled;
+  }
+}
+
+// Open state for the dropdown
+.open {
+  // Show the menu
+  > .zz-dropdown-menu {
+    display: block;
+  }
+
+  // Remove the outline when :focus is triggered
+  > a {
+    outline: 0;
+  }
+}
+
+// Menu positioning
+//
+// Add extra class to `.zz-dropdown-menu` to flip the alignment of the dropdown
+// menu with the parent.
+.zz-dropdown-menu-right {
+  left: auto; // Reset the default from `.zz-dropdown-menu`
+  right: 0;
+}
+
+.zz-dropdown-menu-left {
+  left: 0;
+  right: auto;
+}
+
+// Right aligned dropdowns
+.pull-right > .zz-dropdown-menu {
+  right: 0;
+  left: auto;
+}
+
+// Allow for dropdowns to go bottom up (aka, dropup-menu)
+.zz-dropup {
+  // Different positioning for bottom up menu
+  .zz-dropdown-menu {
+    top: auto;
+    bottom: 100%;
+    margin-bottom: 2px;
+  }
+}

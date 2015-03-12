@@ -1,4 +1,3 @@
-// app/components/zz-statistic.js
 // addon/components/zz_statistic.js
 
 import Ember from 'ember';
@@ -38,7 +37,15 @@ export default Ember.Component.extend({
 
   // Bind the specified properties as the classes of the DOM element.
   //
-  classNameBindings: ['size'],
+  classNameBindings: ['size', 'extraClasses'],
+
+  // Extra css classes 
+  //
+  // @property {Ember.String}
+  // @default  null
+  // @public
+  //
+  extraClasses: null,
 
   // The value of the statistic.
   // @property value

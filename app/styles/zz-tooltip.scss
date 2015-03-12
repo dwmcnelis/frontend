@@ -1,0 +1,243 @@
+// app/styles/zz-tooltip.scss
+
+// Tooltip styles
+//
+
+// Defaults
+$zzTooltipFontSize: 12px;
+$zzTooltipVerticalPadding: 8px;
+$zzTooltipHorizontalPadding: 10px;
+$zzTooltipTooltipHeight: $zzTooltipFontSize + 2 * $zzTooltipVerticalPadding !default;
+$zzTooltipArrowBorderWidth: 6px !default;
+$zzTooltipArrowOffsetX: 3 * $zzTooltipArrowBorderWidth !default;
+$zzTooltipTextShadowDarkenAmount: 25% !default;
+$zzTooltipShadowWidth: 2 !default;
+$zzTooltipTransitionDistance: 8px !default;
+$zzTooltipShowDelay: 100ms !default;
+$zzTooltipHideDelay: 0ms !default;
+$zzTooltipZIndex: 1070 !default;
+$zzTooltipDefaultColor: $colorGrayDarker !default;
+$zzTooltipPrimaryColor: $colorPrimary !default;
+$zzTooltipSuccessColor: $colorSuccess !default;
+$zzTooltipInfoColor: $colorInfo !default;
+$zzTooltipWarningColor: $colorWarning !default;
+$zzTooltipDangerColor: $colorDanger !default;
+
+@import "mixins/vendor";
+
+// Generates border-color rules for all 4 positions
+@mixin arrow-border-color($color, $isInsideSelector: "true") {
+	@each $position in top, bottom, left, right {
+		// if the current mixin is called from within a selector, use a '&'. Otherwise not.
+		@if $isInsideSelector == "true" {
+			&.tooltip-#{$position}:before {
+				border-#{$position}-color: $color;
+			}
+		}
+		@else {
+			.tooltip-#{$position}:before {
+				border-#{$position}-color: $color;
+			}
+		}
+	}
+}
+
+// Set margin on tooltip using translate transform
+@mixin set-margin($property, $transitionDirection) {
+	$value: unquote("#{$property}(#{$zzTooltipTransitionDistance * $transitionDirection})");
+	&:after, &:before {
+		@include vendor('transform', $value);
+	}
+}
+
+@mixin tooltip-type($color) {
+	&:after {
+		background-color: $color;
+		text-shadow: 0 -1px 0px darken($color, $zzTooltipTextShadowDarkenAmount);
+	}
+
+	@include arrow-border-color($color);
+}
+
+.tooltip, [data-tooltip] {
+	position: relative;
+	display: inline-block;
+
+	&:before, &:after {
+		position: absolute;
+
+		@include vendor('transform', translate3d(0, 0, 0)); // Force transform
+
+		visibility: hidden;
+		opacity: 0;
+		z-index: $zzTooltipZIndex;
+		pointer-events: none;
+
+		@include vendor('transition', 0.3s ease);
+		@include vendor('transition-delay', $zzTooltipHideDelay);
+	}
+
+	&:hover:before, &:hover:after,
+	&:focus:before, &:focus:after {
+		visibility: visible;
+		opacity: 1;
+	}
+
+	&:hover:before, &:hover:after {
+		@include vendor('transition-delay', $zzTooltipShowDelay);
+	}
+
+	// Arrow
+	&:before {
+		content: '';
+		position: absolute;
+		background: transparent;
+		border: $zzTooltipArrowBorderWidth solid transparent;
+		// move z-index 1 up than :after so that it shows over box-shadow
+		z-index: $zzTooltipZIndex + 1;
+	}
+
+	// Body
+	&:after {
+		content: attr(data-tooltip); // The magic!
+		background: $zzTooltipDefaultColor;
+		color: white;
+		padding: $zzTooltipVerticalPadding $zzTooltipHorizontalPadding;
+		font-size: $zzTooltipFontSize;
+		line-height: $zzTooltipFontSize; // Vertical centering.
+		white-space: nowrap; // Prevent breaking to new line.
+	}
+}
+
+@mixin vertical-positioned-tooltip($propertyY, $transitionDirection) {
+	&:before {
+		margin-#{$propertyY}: -2 * $zzTooltipArrowBorderWidth;
+	}
+
+	&:after {
+		margin-left: -1 * $zzTooltipArrowOffsetX;
+	}
+
+	&:before, &:after {
+		#{$propertyY}: 100%;
+		left: 50%;
+	}
+
+	&:hover, &:focus {
+		@include set-margin('translateY', $transitionDirection);
+	}
+}
+
+@mixin horizontal-positioned-tooltip($propertyX, $transitionDirection) {
+	&:before {
+		margin-#{$propertyX}: -2 * $zzTooltipArrowBorderWidth;
+		margin-bottom: -1 * $zzTooltipArrowBorderWidth;
+	}
+
+	&:after {
+		margin-bottom: -1 * floor($zzTooltipTooltipHeight / 2);
+	}
+
+	&:before, &:after {
+		#{$propertyX}: 100%;
+		bottom: 50%;
+	}
+
+	&:hover, &:focus {
+		@include set-margin('translateX', $transitionDirection);
+	}
+}
+
+@include arrow-border-color($zzTooltipDefaultColor, 'false');
+
+.tooltip-top {
+	@include vertical-positioned-tooltip('bottom', -1);
+}
+
+.tooltip-bottom {
+	@include vertical-positioned-tooltip('top', 1);
+}
+
+.tooltip-right {
+	@include horizontal-positioned-tooltip('left', 1);
+}
+
+.tooltip-left {
+	@include horizontal-positioned-tooltip('right', -1);
+}
+
+.tooltip, [data-tooltip] {
+	&:after {
+		text-shadow: 0 -1px 0px darken($zzTooltipDefaultColor, $zzTooltipTextShadowDarkenAmount);
+		box-shadow: unquote(($zzTooltipShadowWidth)+'px ') unquote(($zzTooltipShadowWidth)+'px ') unquote((2*$zzTooltipShadowWidth)+'px ') rgba(0, 0, 0, 0.3);
+
+
+	}
+}
+
+.tooltip-default {
+	@include tooltip-type($zzTooltipDefaultColor)
+}
+
+.tooltip-primary {
+	@include tooltip-type($zzTooltipPrimaryColor)
+}
+
+.tooltip-success {
+	@include tooltip-type($zzTooltipSuccessColor)
+}
+
+.tooltip-info {
+	@include tooltip-type($zzTooltipInfoColor)
+}
+
+.tooltip-warning {
+	@include tooltip-type($zzTooltipWarningColor)
+}
+
+.tooltip-danger {
+	@include tooltip-type($zzTooltipDangerColor);
+}
+
+.tooltip-always {
+	&:after, &:before {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	&.tooltip-top {
+		@include set-margin('translateY', -1);
+	}
+
+	&.tooltip-bottom {
+		@include set-margin('translateY', 1);
+	}
+
+	&.tooltip-left {
+		@include set-margin('translateX', -1);
+	}
+
+	&.tooltip-right {
+		@include set-margin('translateX', 1);
+	}
+}
+
+.tooltip-rounded {
+	&:after {
+		border-radius: 4px;
+	}
+}
+
+.tooltip-no-animate {
+	&:before, &:after {
+		@include vendor('transition-duration', 0ms);
+	}
+}
+
+.tooltip-bounce {
+	&:before, &:after {
+		-webkit-transition: opacity 0.3s ease, visibility 0.3s ease, -webkit-transform 0.3s cubic-bezier(.71,1.7,.77,1.24);
+		-moz-transition: opacity 0.3s ease, visibility 0.3s ease, -moz-transform 0.3s cubic-bezier(.71,1.7,.77,1.24);
+		transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s cubic-bezier(.71,1.7,.77,1.24);
+	}
+}

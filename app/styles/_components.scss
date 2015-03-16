@@ -2,17 +2,27 @@
 
 // Colors
 $componentColor: $colorBlack !default;
-$componentHoverColor: $colorPrimary !default;
+$componentHoverColor: $primaryColor !default;
 $componentBackgroundColor: $colorWhite !default;
 $componentHoverBackgroundColor: $colorWhite !default;
-$componentActiveColor: $colorPrimary !default;
-$componentActiveHoverColor: $colorPrimary !default;
+$componentActiveColor: $primaryColor !default;
+$componentActiveHoverColor: $primaryColor !default;
 $componentActiveBackgroundColor: $colorWhite !default;
 $componentActiveHoverBackgroundColor: $colorWhite !default;
 $componentDisabledColor: $colorGrayMediumLighter !default;
 $componentDisabledHoverColor: $colorGrayMediumLighter !default;
 $componentDisabledBackgroundColor: $colorWhite !default;
 $componentDisabledHoverBackgroundColor: $colorWhite !default;
+
+// Padding
+$baseVerticalPadding: 6px !default;
+$baseHorizontalPadding: 12px !default;
+$tinyVerticalPadding: 1px !default;
+$tinyHorizontalPadding: 5px !default;
+$smallVerticalPadding: 5px !default;
+$smallHorizontalPadding: 10px !default;
+$largeVerticalPadding: 10px !default;
+$largeHorizontalPadding: 16px !default;
 
 // Borders
 $baseBorderRadius: 2px !default;

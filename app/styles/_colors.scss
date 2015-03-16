@@ -17,7 +17,7 @@ $colorGray9: lighten($colorGrayBase, 60.00%) !default; // #999999
 $colorGrayA: lighten($colorGrayBase, 66.67%) !default; // #aaaaaa
 $colorGrayB: lighten($colorGrayBase, 73.33%) !default; // #bbbbbb
 $colorGrayC: lighten($colorGrayBase, 80.00%) !default; // #cccccc
-$colorGrayD: lighten($colorGrayBase, 86.67%) !default; // #bbbbbb
+$colorGrayD: lighten($colorGrayBase, 86.67%) !default; // #dddddd
 $colorGrayE: lighten($colorGrayBase, 93.33%) !default; // #eeeeee
 $colorWhite: #ffffff !default;
 $colorGrayDarkest: $colorGray1;
@@ -91,12 +91,40 @@ $colorGray3: $colorConcrete;
 $colorGray4: $colorAsbestos;
 
 // Types
-$colorDefault: $colorGrayMediumLighter !default;
-$colorPrimary: #1874cd !default;
-$colorSecondary: $colorAlizarin !default;
-$colorTertiary: $colorGreenSea !default;
-$colorSuccess: #5cb85c !default;
-$colorInfo: #5bc0de !default;
-$colorWarning: #f0ad4e !default;
-$colorDanger: #d9534f !default;
+$defaultColor: $colorGrayMediumLighter !default;
+$primaryColor: #1874cd !default;
+$secondaryColor: $colorAlizarin !default;
+$tertiaryColor: $colorGreenSea !default;
+$successColor: #5cb85c !default;
+$infoColor: #5bc0de !default;
+$warningColor: #f0ad4e !default;
+$dangerColor: #d9534f !default;
 
+// States
+$defaultStateColor: #3c763d !default;
+$defaultStateBackgroundColor: #dff0d8 !default;
+$defaultStateBorderColor: darken(adjust-hue($defaultStateBackgroundColor, -10), 5%) !default;
+$successStateColor: #3c763d !default;
+$successStateBackgroundColor: #dff0d8 !default;
+$successStateBorderColor: darken(adjust-hue($successStateBackgroundColor, -10), 5%) !default;
+$infoStateColor: #31708f !default;
+$infoStateBackgroundColor: #d9edf7 !default;
+$infoStateBorderColor: darken(adjust-hue($infoStateBackgroundColor, -10), 7%) !default;
+$warningStateColor: #8a6d3b !default;
+$warningStateBackgroundColor: #fcf8e3 !default;
+$warningStateBorderColor: darken(adjust-hue($warningStateBackgroundColor, -10), 5%) !default;
+$dangerStateColor: #a94442 !default;
+$dangerStateBackgroundColor: #f2dede !default;
+$dangerStateBorderColor: darken(adjust-hue($dangerStateBackgroundColor, -10), 5%) !default;
+
+// Base
+$textColor: $colorBlack !default;
+$bodyBackgroundColor: $colorWhite !default;
+
+// Headings
+$headingsColor: inherit !default; // from <body>
+
+// Links
+$linkColor: $primaryColor !default;
+$linkHoverColor: darken($linkColor, 15%) !default;
+$linkDisabledColor: $colorGrayMediumLighter !default;

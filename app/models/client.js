@@ -38,7 +38,14 @@ export default DS.Model.extend(EmberValidations.Mixin, {
   fullName: (function() {
     var firstName = this.get('firstName');
     var lastName = this.get('lastName');
-    return (!Ember.isEmpty(firstName) ? firstName : '') + ' ' + (!Ember.isEmpty(lastName) ? lastName : '');
+    var status = this.get('status');
+    return (!Ember.isEmpty(firstName) ? firstName : '') + ' ' + (!Ember.isEmpty(lastName) ? lastName : '') + ' ('+status+')';
+  }).property('firstName', 'lastName'),
+
+  sortName: (function() {
+    var firstName = this.get('firstName');
+    var lastName = this.get('lastName');
+    return (!Ember.isEmpty(lastName) ? lastName : '') + (!Ember.isEmpty(firstName) ? ', '+ firstName : '');
   }).property('firstName', 'lastName'),
 
   STATUSES: ['new', 'in progress', 'closed', 'bad'],

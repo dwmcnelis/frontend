@@ -1,0 +1,35 @@
+// app/styles/_close.scss
+
+// Close styles
+//
+
+// Defaults
+$closeFontWeight: bold !default;
+$closeColor: #000 !default;
+$closeTextShadow: 0 1px 0 #fff !default;
+
+.close {
+  float: right;
+  font-size: ($baseFontSize * 2.0);
+  font-weight: $closeFontWeight;
+  line-height: 1;
+  color: $closeColor;
+  text-shadow: $closeTextShadow;
+  @include opacity(.2);
+
+  &:hover,
+  &:focus {
+    color: $closeColor;
+    text-decoration: none;
+    cursor: pointer;
+    @include opacity(.5);
+  }
+}
+
+button.close {
+  padding: 0;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  -webkit-appearance: none;
+}

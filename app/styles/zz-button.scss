@@ -1,4 +1,177 @@
 // app/styles/zz-button.scss
 
+// Defaults
+$zzButtonFontWeight: normal !default;
+$zzButtonDarken: 5% !default;
+$zzButtonColor: $colorGrayDark !default;
+$zzButtonBackgroundColor: $defaultColor !default;
+$zzButtonBorderColor: $colorGrayLight !default;
+$zzButtonDefaultColor: $colorGrayDark !default;
+$zzButtonDefaultBackgroundColor: $colorWhite !default;
+$zzButtonDefaultBorderColor: $colorGrayLight !default;
+$zzButtonPrimaryColor: $colorWhite !default;
+$zzButtonPrimaryBackgroundColor: $primaryColor !default;
+$zzButtonPrimaryBorderColor: darken($zzButtonPrimaryBackgroundColor, $zzButtonDarken) !default;
+$zzButtonSuccessColor: $colorWhite !default;
+$zzButtonSuccessBackgroundColor: $successColor !default;
+$zzButtonSuccessBorderColor: darken($zzButtonSuccessBackgroundColor, $zzButtonDarken) !default;
+$zzButtonInfoColor: $colorWhite !default;
+$zzButtonInfoBackgroundColor: $infoColor !default;
+$zzButtonInfoBorderColor: darken($zzButtonInfoBackgroundColor, $zzButtonDarken) !default;
+$zzButtonWarningColor: $colorWhite !default;
+$zzButtonWarningBackgroundColor: $warningColor !default;
+$zzButtonWarningBorderColor: darken($zzButtonWarningBackgroundColor, $zzButtonDarken) !default;
+$zzButtonDangerColor: $colorWhite !default;
+$zzButtonDangerBackgroundColor: $dangerColor !default;
+$zzButtonDangerBorderColor: darken($zzButtonDangerBackgroundColor, $zzButtonDarken) !default;
+
+@import 'mixins/boxes';
+@import 'mixins/buttons';
+@import 'mixins/effects';
+@import 'mixins/focus';
+@import 'mixins/selection';
+
 // Button styles
 //
+
+.zz-button {
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: $zzButtonFontWeight;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  @include button-look($zzButtonColor, $zzButtonBackgroundColor, $zzButtonBorderColor);
+  @include button-size($baseVerticalPadding, $baseHorizontalPadding, $font-size-base, $line-height-base, $border-radius-base);
+  @include user-select(none);
+
+  &,
+  &:active,
+  &.active {
+    &:focus,
+    &.focus {
+      @include tab-focus;
+    }
+  }
+
+  &:hover,
+  &:focus,
+  &.focus {
+    color: $zzButtonDefaultColor;
+    text-decoration: none;
+  }
+
+  &:active,
+  &.active {
+    outline: 0;
+    background-image: none;
+    @include box-shadow(inset 0 3px 5px rgba(0,0,0,.125));
+  }
+
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    cursor: $cursorDisabled;
+    pointer-events: none;
+    @include opacity(.65);
+    @include box-shadow(none);
+  }
+}
+
+
+// Kinds
+.zz-button-default {
+  @include button-look($zzButtonDefaultColor, $zzButtonDefaultBackgroundColor, $zzButtonDefaultBorderColor);
+}
+.zz-button-primary {
+  @include button-look($zzButtonPrimaryColor, $zzButtonPrimaryBackgroundColor, $zzButtonPrimaryBorderColor);
+}
+
+.zz-button-success {
+  @include button-look($zzButtonSuccessColor, $zzButtonSuccessBackgroundColor, $zzButtonSuccessBorderColor);
+}
+
+.zz-button-info {
+  @include button-look($zzButtonInfoColor, $zzButtonInfoBackgroundColor, $zzButtonInfoBorderColor);
+}
+
+.zz-button-warning {
+  @include button-look($zzButtonWarningColor, $zzButtonWarningBackgroundColor, $zzButtonWarningBorderColor);
+}
+
+.zz-button-danger {
+  @include button-look($zzButtonDangerColor, $zzButtonDangerBackgroundColor, $zzButtonDangerBorderColor);
+}
+
+// Links
+.zz-button-link {
+  color: $linkColor;
+  font-weight: normal;
+  border-radius: 0;
+
+  &,
+  &:active,
+  &.active,
+  &[disabled],
+  fieldset[disabled] & {
+    background-color: transparent;
+    @include box-shadow(none);
+  }
+  &,
+  &:hover,
+  &:focus,
+  &:active {
+    border-color: transparent;
+  }
+  &:hover,
+  &:focus {
+    color: $linkHoverColor;
+    text-decoration: $linkHoverDecoration;
+    background-color: transparent;
+  }
+  &[disabled],
+  fieldset[disabled] & {
+    &:hover,
+    &:focus {
+      color: $linkDisabledColor;
+      text-decoration: none;
+    }
+  }
+}
+
+// Sizes
+.zz-button-large {
+  // line-height: ensure even-numbered height of button next to large input
+  @include button-size($largeVerticalPadding, $largeHorizontalPadding, $largeFontSize, $largeLineHeight, $largeBorderRadius);
+}
+.zz-button-small {
+  // line-height: ensure proper height of button next to small input
+  @include button-size($smallVerticalPadding, $smallHorizontalPadding, $smallFontSize, $smallLineHeight, $smallBorderRadius);
+}
+.zz-button-tiny {
+  @include button-size($tinyVerticalPadding, $padding-xs-horizontal, $smallFontSize, $smallLineHeight, $smallBorderRadius);
+}
+
+// Block button
+.zz-button-block {
+  display: block;
+  width: 100%;
+}
+
+// Vertically space out multiple block buttons
+.zz-button-block + .zz-button-block {
+  margin-top: 5px;
+}
+
+// Specificity overrides
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  &.zz-button-block {
+    width: 100%;
+  }
+}

@@ -42,7 +42,7 @@ export default Ember.Component.extend({
   // @property {Ember.String}
   // @default  null
   //
-  dropdownOpen: Ember.computed.alias('parentView.dropdownOpen'),
+  open: Ember.computed.alias('parentView.open'),
 
   // Close on child click 
   //
@@ -62,9 +62,9 @@ export default Ember.Component.extend({
 
     if (target !== element) {
       if ((closeOnChildClick === true || closeOnChildClick === "true") && target.closest(element).length) {
-        this.set('dropdownOpen', false);
+        this.set('open', false);
       } else if (closeOnChildClick && target.closest(element.find(closeOnChildClick)).length) {
-        this.set('dropdownOpen', false);
+        this.set('open', false);
       }
     }
   }

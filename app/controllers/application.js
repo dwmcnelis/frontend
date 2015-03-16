@@ -6,6 +6,6 @@ import App from '../app';
 export default Ember.ObjectController.extend({
 	currentPathChange: function () {
 		App.resizer();
-	}.observes('currentPath')
+	}.observes('currentPath'),
 
 });

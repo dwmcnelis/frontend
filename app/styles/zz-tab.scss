@@ -3,6 +3,10 @@
 // Defaults
 $zzTabColor: $componentDisabledColor !default;
 $zzTabActiveColor: $componentActiveColor !default;
+$zzTabDefaultActiveColor: $componentActiveColor !default;
+$zzTabPrimaryActiveColor: $primaryColor !default;
+$zzTabSecondaryActiveColor: $secondaryColor !default;
+$zzTabTertiaryActiveColor: $tertiaryColor !default;
 $zzTabHoverColor: $colorGrayMediumDark !default;
 $zzTabBackgroundColor: $componentBackgroundColor !default;
 $zzTabTopPadding: 14px !default;
@@ -17,9 +21,22 @@ $zzTabBorderThickness: 3px !default;
 	background-color: $zzTabBackgroundColor; 
 }
 
+// Kinds
 .zz-tab.active {
 	background-color: $zzTabBackgroundColor; 
 	border-bottom: $zzTabBorderThickness solid $zzTabActiveColor;
+}
+.zz-tab-default.active {
+	border-bottom: $zzTabBorderThickness solid $zzTabDefaultActiveColor;
+}
+.zz-tab-primary.active {
+	border-bottom: $zzTabBorderThickness solid $zzTabPrimaryActiveColor;
+}
+.zz-tab-secondary.active {
+	border-bottom: $zzTabBorderThickness solid $zzTabSecondaryActiveColor;
+}
+.zz-tab-tertiary.active {
+	border-bottom: $zzTabBorderThickness solid $zzTabTertiaryActiveColor;
 }
 
 .zz-tab > a {
@@ -46,4 +63,37 @@ $zzTabBorderThickness: 3px !default;
 .zz-tab.active > a {
 	color: $zzTabActiveColor;
 	font-weight: bold;
+}
+
+// Kinds
+.zz-tab-default > a:active {
+	color: $zzTabDefaultActiveColor;
+}
+
+.zz-tab-default.active > a {
+	color: $zzTabDefaultActiveColor;
+}
+
+.zz-tab-primary > a:active {
+	color: $zzTabPrimaryActiveColor;
+}
+
+.zz-tab-primary.active > a {
+	color: $zzTabPrimaryActiveColor;
+}
+
+.zz-tab-secondary > a:active {
+	color: $zzTabSecondaryActiveColor;
+}
+
+.zz-tab-secondary.active > a {
+	color: $zzTabSecondaryActiveColor;
+}
+
+.zz-tab-tertiary > a:active {
+	color: $zzTabTertiaryActiveColor;
+}
+
+.zz-tab-tertiary.active > a {
+	color: $zzTabTertiaryActiveColor;
 }

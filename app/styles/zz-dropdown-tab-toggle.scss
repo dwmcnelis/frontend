@@ -3,6 +3,10 @@
 // Defaults
 $zzTabColor: $componentDisabledColor !default;
 $zzTabActiveColor: $componentActiveColor !default;
+$zzTabDefaultActiveColor: $componentActiveColor !default;
+$zzTabPrimaryActiveColor: $primaryColor !default;
+$zzTabSecondaryActiveColor: $secondaryColor !default;
+$zzTabTertiaryActiveColor: $tertiaryColor !default;
 $zzTabHoverColor: $colorGrayMediumDark !default;
 $zzTabBackgroundColor: $componentBackgroundColor !default;
 $zzTabTopPadding: 14px !default;
@@ -54,3 +58,36 @@ a.zz-dropdown-tab-toggle.active {
 	color: $zzTabActiveColor;
 	font-weight: bold;
 }
+// Kinds
+a:active.zz-dropdown-tab-toggle-default  {
+	color: $zzTabDefaultActiveColor;
+}
+
+a.zz-dropdown-tab-toggle-default.active {
+	color: $zzTabDefaultActiveColor;
+}
+
+a:active.zz-dropdown-tab-toggle-primary  {
+	color: $zzTabPrimaryActiveColor;
+}
+
+a.zz-dropdown-tab-toggle-primary.active {
+	color: $zzTabPrimaryActiveColor;
+}
+
+a:active.zz-dropdown-tab-toggle-secondary  {
+	color: $zzTabSecondaryActiveColor;
+}
+
+a.zz-dropdown-tab-toggle-secondary.active {
+	color: $zzTabSecondaryActiveColor;
+}
+
+a:active.zz-dropdown-tab-toggle-tertiary  {
+	color: $zzTabTertiaryActiveColor;
+}
+
+a.zz-dropdown-tab-toggle-tertiary.active {
+	color: $zzTabTertiaryActiveColor;
+}
+

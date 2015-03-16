@@ -1,17 +1,30 @@
 {{! app/templates/components/zz-tab.hbs }}
 {{#if linkTo}}
-	{{#link-to linkTo resource}}
-		{{#if iconClass}}
-	    <i {{bind-attr class=icon}}></i>
-		{{/if}}
-		{{#if label}}
-		  {{label}}
-		{{else}}
-		  {{yield}}
-		{{/if}}
-	{{/link-to}}
+	{{#if resource}}
+		{{#link-to linkTo resource}}
+			{{#if icon}}
+		    <i {{bind-attr class=icon}}></i>
+			{{/if}}
+			{{#if label}}
+			  {{label}}
+			{{else}}
+			  {{yield}}
+			{{/if}}
+		{{/link-to}}
+	{{else}}
+		{{#link-to linkTo}}
+			{{#if icon}}
+		    <i {{bind-attr class=icon}}></i>
+			{{/if}}
+			{{#if label}}
+			  {{label}}
+			{{else}}
+			  {{yield}}
+			{{/if}}
+		{{/link-to}}
+	{{/if}}
 {{else}}
-	{{#if iconClass}}
+	{{#if icon}}
 	    <i {{bind-attr class=icon}}></i>
 	{{/if}}
 	{{#if label}}

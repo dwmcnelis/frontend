@@ -1,12 +1,6 @@
 {{! app/templates/clients/master-content.hbs }}
-<table class="table table-hover table-condensed borderless">
-  <thead>
-  </thead>
-  <tbody>
-  {{#each client in clients}}
-    <tr>
-    	{{#link-to 'clients.show' client tagName="td"}}{{client.fullName}}{{/link-to}}
-    </tr>
-  {{/each}}
-  </tbody>
-</table>
+{{#zz-list list=this filterTerm=searchTerm filterBy=filterBy sortBy=sortBy groupBy=groupBy as |client|}}
+  {{#link-to 'clients.show' client current-when="clients.show clients.details clients.tags"}}
+    {{client.sortName}}
+  {{/link-to}}
+{{/zz-list}}

@@ -23,7 +23,7 @@ export default Ember.Component.extend({
   // @property {Ember.Array} classNames
   // @default {Ember.Array} 'zz-dropdown-menu'
   //
-  classNames: ['zz-dropdown-button-toggle','zz-dropdown-toggle','btn','btn-default'],
+  classNames: ['zz-dropdown-button-toggle','zz-dropdown-toggle','zz-button','zz-button-default'],
 
   // Bind the specified properties as the classes of the DOM element.
   //

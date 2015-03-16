@@ -1,9 +1,9 @@
 {{! app/templates/session/login.hbs }}
-<div class='login'>
+<div class='login-box'>
   {{#zz-form model=model}}
-    {{! #if errors}}
-      {{! zz-alert kind='danger' label='Invalid Username/Password'}}
-    {{! /if}}
+    {{#if errors}}
+      {{zz-alert kind='danger' message=errors}}
+    {{/if}}
 
   	{{zz-input property="identification" label="Username" placeholder="Username"}}
   	{{zz-input property="password" label="Password" placeholder="Password" type='password'}}

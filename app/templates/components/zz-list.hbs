@@ -1,0 +1,12 @@
+{{! app/templates/components/zz-list.hbs }}
+{{#each result as |item|}}
+	{{#if item.isKey}}
+	<li>{{item.key}}</li>
+	{{else}}
+		{{#zz-list-item}}
+			{{yield item}}
+		{{/zz-list-item}}
+		{{/if}}
+
+
+{{/each}}

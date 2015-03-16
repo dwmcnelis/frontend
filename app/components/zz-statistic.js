@@ -43,43 +43,36 @@ export default Ember.Component.extend({
   //
   // @property {Ember.String}
   // @default  null
-  // @public
   //
   extraClasses: null,
 
   // The value of the statistic.
   // @property value
-  // @public
   //
   value: null,
 
   // The label to display (if any).
   // @property label
-  // @public
   //
   label: null,
 
   // The icon class of the statistic (if any).
   // @property action
-  // @public
   //
   icon: null,
 
   // The image source of the statistic (if any).
   // @property action
-  // @public
   //
   image: null,
 
   // The image source of the statistic (if any).
   // @property action
-  // @public
   //
   size: '',
 
   // Display label above statistic.
   // @property resource
-  // @public
   //
   labelAbove: false
 

@@ -3,6 +3,13 @@
 // Images mixins
 //
 
+
+@mixin responsive-image($display: block) {
+  display: $display;
+  max-width: 100%;
+  height: auto;
+}
+
 @mixin retina-image($image, $width, $height) {
   @media (min--moz-device-pixel-ratio: 1.3),
          (-o-min-device-pixel-ratio: 2.6/2),
@@ -14,4 +21,3 @@
     background-size: $width $height;
   }
 }
-

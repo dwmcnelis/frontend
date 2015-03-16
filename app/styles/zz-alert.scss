@@ -2,3 +2,119 @@
 
 // Alert styles
 //
+
+// Defaults
+$zzAlertFontWeight: normal !default;
+$zzAlertPadding: 15px !default;
+$zzAlertBorderRadius: $baseBorderRadius !default;
+$zzAlertLinkFontWeight: bold !default;
+$zzAlertColor: $defaultStateColor !default;
+$zzAlertBackgroundColor: $defaultStateBackgroundColor !default;
+$zzAlertBorderColor: $defaultStateBorderColor !default;
+$zzAlertDefaultColor: $defaultStateColor !default;
+$zzAlertDefaultBackgroundColor: $defaultStateBackgroundColor !default;
+$zzAlertDefaultBorderColor: $defaultStateBorderColor !default;
+$zzAlertSuccessColor: $successStateColor !default;
+$zzAlertSuccessBackgroundColor: $successStateBackgroundColor !default;
+$zzAlertSuccessBorderColor: $successStateBorderColor !default;
+$zzAlertInfoColor: $infoStateColor !default;
+$zzAlertInfoBackgroundColor: $infoStateBackgroundColor !default;
+$zzAlertInfoBorderColor: $infoStateBorderColor !default;
+$zzAlertWarningColor: $warningStateColor !default;
+$zzAlertWarningBackgroundColor: $warningStateBackgroundColor !default;
+$zzAlertWarningBorderColor: $warningStateBorderColor !default;
+$zzAlertDangerColor: $dangerStateColor !default;
+$zzAlertDangerBackgroundColor: $dangerStateBackgroundColor !default;
+$zzAlertDangerBorderColor: $dangerStateBorderColor !default;
+
+@import 'close';
+
+@mixin alert-look($color, $background, $border) {
+  color: $color;
+  background-color: $background;
+  border-color: $border;
+
+  hr {
+    border-top-color: darken($border, 5%);
+  }
+
+  a {
+    color: darken($color, 10%);
+  }
+}
+
+.zz-alert {
+  display: none; // none by default, but block on "open" of the alert
+  padding: $zzAlertPadding;
+  margin-bottom: $computedLineHeight;
+  border: 1px solid transparent;
+  border-radius: $zzAlertBorderRadius;
+
+  // Headings for larger alerts
+  h4 {
+    margin-top: 0;
+    color: inherit;
+  }
+  
+  // Provide class for links that match alerts
+  .alert-link {
+    font-weight: $zzAlertLinkFontWeight;
+  }
+
+  // Improve alignment and spacing of inner content
+  > p,
+  > ul {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  > h4 + p {
+    margin-top: 5px;
+  }
+  
+  > p + p {
+    margin-top: 5px;
+  }
+}
+
+// Open state for the alert
+.zz-alert.open {
+  display: block;
+}
+
+// Dismissible alerts
+//
+// Expand the right padding and account for the close button's positioning.
+
+.zz-alert-dismissible {
+  padding-right: ($zzAlertPadding + 20);
+  position: relative;
+
+  // Adjust close link position
+  .close {
+    position: absolute;
+    top: 2px;
+    right: 8px;
+   }
+}
+
+// Kinds
+.zz-alert-default {
+  @include alert-look($zzAlertDefaultColor, $zzAlertDefaultBackgroundColor, $zzAlertDefaultBorderColor);
+}
+
+.zz-alert-success {
+  @include alert-look($zzAlertSuccessColor, $zzAlertSuccessBackgroundColor, $zzAlertSuccessBorderColor);
+}
+
+.zz-alert-info {
+  @include alert-look($zzAlertInfoColor, $zzAlertInfoBackgroundColor, $zzAlertInfoBorderColor);
+}
+
+.zz-alert-warning {
+  @include alert-look($zzAlertWarningColor, $zzAlertWarningBackgroundColor, $zzAlertWarningBorderColor);
+}
+
+.zz-alert-danger {
+  @include alert-look($zzAlertDangerColor, $zzAlertDangerBackgroundColor, $zzAlertDangerBorderColor);
+}

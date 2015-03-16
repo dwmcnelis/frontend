@@ -1,0 +1,38 @@
+// app/styles/zz-list-item.scss
+
+// Defaults
+$zzListItemHoverBackgroundColor: $colorGrayLightest !default;
+$zzListItemHoverColor: $primaryColor !default;
+$zzListItemActiveColor: $secondaryColor !default;
+$zzListItemActiveBackgroundColor: $secondaryColor !default;
+
+.zz-list .zz-list-item {
+	width: 100%;
+	padding-left: 25px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+  cursor: pointer;
+	border-left: 5px solid $zzListBackgroundColor;
+}
+
+.zz-list .zz-list-item:hover {
+	background: $zzListItemHoverBackgroundColor;
+
+	> a {
+		color: $zzListItemHoverColor;
+		font-weight: bold; 
+		text-decoration: none;
+	}
+}
+
+.zz-list .zz-list-item.active {
+	border-left: 5px solid $zzListItemActiveBackgroundColor;
+
+	 > a {
+		color: $zzListItemActiveColor;
+		font-weight: bold; 
+		text-decoration: none;
+	}
+}
+
+

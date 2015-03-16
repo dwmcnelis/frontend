@@ -27,7 +27,7 @@ export default Ember.Component.extend({
   //
   // @property {Ember.Array} classNames
   //
-  classNames: ['zz-button', 'btn'],
+  classNames: ['zz-button'],
 
   // Bind the specified properties as the classes of the DOM element.
   //
@@ -69,6 +69,18 @@ export default Ember.Component.extend({
   // @public
   //
   'action': void 0,
+
+  // The link-to route.
+  // @property linkTo
+  // @public
+  //
+  linkTo: void 0,
+
+  // The link-to resource.
+  // @property resource
+  // @public
+  //
+  resource: void 0,
 
   // The size of the button
   //
@@ -127,14 +139,14 @@ export default Ember.Component.extend({
   //
   // @function kindClass
   // @observes kind
-  // @returns  {Ember.String} Defaults to "btn-default"
+  // @returns  {Ember.String} Defaults to "zz-button-default"
   //
   kindClass: (function() {
     var kind = this.get('kind');
-    return !Ember.isEmpty(kind) ? 'btn-'+kind : null;
+    return !Ember.isEmpty(kind) ? 'zz-button-'+kind : null;
   }).property('kind'),
   
-  // Converted size string to Bootstrap button class
+  // Converted size string to button size class
   //
   // @function sizeClass
   // @observes size
@@ -146,16 +158,9 @@ export default Ember.Component.extend({
 
     switch (size) {
       case 'tiny':
-        sizeClass = 'btn-xs';
-        break;
       case 'small':
-        sizeClass = 'btn-sm';
-        break;
-      case 'medium':
-        sizeClass = null;
-        break;
       case 'large':
-        sizeClass = 'btn-lg';
+        sizeClass = 'zz-button-'+size;
         break;
       default:
         sizeClass = null;

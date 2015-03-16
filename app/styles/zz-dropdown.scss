@@ -2,6 +2,10 @@
 
 // Defaults
 $zzDropdownLinkActiveColor: $componentActiveColor;
+$zzDropdownLinkDefaultActiveColor: $componentActiveColor;
+$zzDropdownLinkPrimaryActiveColor: $primaryColor;
+$zzDropdownLinkSecondaryActiveColor: $secondaryColor;
+$zzDropdownLinkTertiaryActiveColor: $tertiaryColor;
 $zzDropdownLinkActiveBackgroundColor: $componentActiveBackgroundColor;
 $zzDropdownZIndex: 1000;
 $zzDropdownBackgroundColor: $colorWhite !default;

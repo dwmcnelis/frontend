@@ -1,43 +1,42 @@
 // app/styles/app.scss
 
-// Base styles
-@import 'typography';
-@import 'colors';
-@import 'components';
-
-// Overides
-
-$font-family-sans-serif:  Raleway,"Helvetica Neue", Helvetica, Arial, sans-serif !default;
-$font-family-serif:       Georgia, "Times New Roman", Times, serif !default;
-
-$border-radius-base:        2px;
-$border-radius-large:       3px;
-$border-radius-small:       1px;
+// Mixins
+@import 'mixins';
 
 // Vendor styles
+@import 'vendor/normalize/normalize';
+@import 'vendor/susy/susy';
+@import 'vendor/breakpoint/breakpoint';
 
+// Overrides
+// $someVar: 'here';
+
+// Base styles
+@import 'colors';
+@import 'typography';
+@import "glyphicons";
+@import 'components';
+@import 'scaffolding';
+@import 'forms';
+
+// Bootstrap
 // @import 'vendor/bootstrap/styles/bootstrap';
 @import 'vendor/bootstrap/styles/bootstrap/variables';
 @import 'vendor/bootstrap/styles/bootstrap/mixins';
 // @import 'vendor/bootstrap/styles/bootstrap/normalize';
 // @import 'vendor/bootstrap/styles/bootstrap/print';
-@import 'vendor/bootstrap/styles/bootstrap/glyphicons';
-@import 'vendor/bootstrap/styles/bootstrap/scaffolding';
+// @import 'vendor/bootstrap/styles/bootstrap/glyphicons';
+// @import 'vendor/bootstrap/styles/bootstrap/scaffolding';
 // @import 'vendor/bootstrap/styles/bootstrap/type';
 // @import 'vendor/bootstrap/styles/bootstrap/code';
 // @import 'vendor/bootstrap/styles/bootstrap/grid';
 @import 'vendor/bootstrap/styles/bootstrap/tables';
 @import 'vendor/bootstrap/styles/bootstrap/forms';
-@import 'vendor/bootstrap/styles/bootstrap/buttons';
+// @import 'vendor/bootstrap/styles/bootstrap/buttons';
 // @import 'vendor/bootstrap/styles/bootstrap/navbar';
 // @import 'vendor/bootstrap/styles/bootstrap/navs';
 // @import 'vendor/bootstrap/styles/bootstrap/utilities';
-@import 'vendor/normalize/normalize';
-@import 'vendor/susy/susy';
-@import 'vendor/breakpoint/breakpoint';
 
-// Mixins
-@import 'mixins';
 
 // Component styles
 @import 'zz-alert';
@@ -49,6 +48,8 @@ $border-radius-small:       1px;
 @import 'zz-dropdown-button-toggle';
 @import 'zz-dropdown-menu';
 @import 'zz-dropdown-tab-toggle';
+@import 'zz-list';
+@import 'zz-list-item';
 @import 'zz-tab';
 @import 'zz-tab-bar';
 @import 'zz-tab-group';
@@ -63,6 +64,7 @@ $border-radius-small:       1px;
 @import 'banner';
 @import 'master';
 @import 'detail';
+@import 'list';
 @import 'login';
 .detail-ribbon {
 	display: inline-block;

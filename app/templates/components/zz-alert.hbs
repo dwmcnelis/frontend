@@ -1,12 +1,15 @@
 {{! app/templates/components/zz-alert.hbs }}
-{{#if dismissable}}
-    <button {{action "dismiss"}} class="close" data-dismiss="alert" type="button">
-        <span aria-hidden="true">&times;</span>
-        <span class="sr-only">Close</span>
-    </button>
+{{#if dismissible}}
+  <button {{action "close"}} class="close" type="button">
+    <span aria-hidden="true">&times;</span>
+    <span class="sr-only">Close</span>
+  </button>
 {{/if}}
-{{#if labelContent}}
-  {{labelContent}}
+{{#if title}}
+  <h4>{{title}}</h4>
+{{/if}}
+{{#if message}}
+  <p>{{message}}</p>
 {{else}}
-  {{yield}}
+  <p>{{yield}}</p>
 {{/if}}

@@ -1,10 +1,9 @@
-{{! app/templates/clients/detail-ribbon.hbs }}
+{{! app/templates/clients/tags-ribbon.hbs }}
 {{!-- {{#zz-button-bar}}
 	{{#zz-button-group}}
-		{{#link-to 'clients' classNames='btn btn-default btn-sm' activeClass=""}}<i class="glyphicon glyphicon-arrow-left"></i>{{/link-to}}
+		{{zz-button linkTo='clients' activeClass="" icon='glyphicon glyphicon-arrow-left'}}
 	{{/zz-button-group}}  
-{{/zz-button-bar}}
- --}}
+{{/zz-button-bar}} --}}
 {{#zz-tab-bar}}
 	{{#zz-tab-group}}
 		{{zz-tab label='Client' linkTo='clients.show' resource=model}}

@@ -17,11 +17,11 @@ $zzTooltipShowDelay: 100ms !default;
 $zzTooltipHideDelay: 0ms !default;
 $zzTooltipZIndex: 1070 !default;
 $zzTooltipDefaultColor: $colorGrayDarker !default;
-$zzTooltipPrimaryColor: $colorPrimary !default;
-$zzTooltipSuccessColor: $colorSuccess !default;
-$zzTooltipInfoColor: $colorInfo !default;
-$zzTooltipWarningColor: $colorWarning !default;
-$zzTooltipDangerColor: $colorDanger !default;
+$zzTooltipPrimaryColor: $primaryColor !default;
+$zzTooltipSuccessColor: $successColor !default;
+$zzTooltipInfoColor: $infoColor !default;
+$zzTooltipWarningColor: $warningColor !default;
+$zzTooltipDangerColor: $dangerColor !default;
 
 @import "mixins/vendor";
 

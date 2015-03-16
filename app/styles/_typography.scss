@@ -24,13 +24,14 @@ $h6FontSize: ceil(($baseFontSize * 0.85)) !default; // ~12px
 
 // Line heights
 $baseLineHeight: 1.428571429 !default; // For components (20/14)
+$largeLineHeight: 1.3333333 !default;
+$smallLineHeight: 1.5 !default;
 $computedLineHeight: floor(($baseFontSize * $baseLineHeight)) !default; // For margin/padding (~20px)
 
 // Headings
 $headingsFontFamily: inherit !default; // from <body>
 $headingsFontWeight: 500 !default;
 $headingsLineHeight: 1.1 !default;
-$headingsColor: inherit !default; // from <body>
 
 // Caret
 $baseCaretWidth: 4px !default;

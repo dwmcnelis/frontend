@@ -43,17 +43,17 @@ export default Ember.Component.extend({
   // @property {Ember.Boolean}
   // @default  false
   //
-  dropdownOpen: false,
+  open: false,
 
-  // Convert dropdownOpen to dropdown open class
+  // Convert open to dropdown open class
   //
   // @function openClass
-  // @observes dropdownOpen
+  // @observes open
   // @returns  {Ember.String} [''|'open']
   //
   openClass: (function() {
-    return this.get('dropdownOpen') ? 'open' : null;
-  }).property('dropdownOpen'),
+    return this.get('open') ? 'open' : null;
+  }).property('open'),
   
   // Dropdown toggle selector
   //
@@ -74,7 +74,7 @@ export default Ember.Component.extend({
     // @function toggle
     //
     toggle: function () {
-      this.toggleProperty('dropdownOpen');
+      this.toggleProperty('open');
     },
 
     // Open dropdown 
@@ -82,7 +82,7 @@ export default Ember.Component.extend({
     // @function open
     //
     open: function () {
-      this.set('dropdownOpen', true);
+      this.set('open', true);
     },
 
     // Close dropdown 
@@ -90,23 +90,23 @@ export default Ember.Component.extend({
     // @function close
     //
     close: function () {
-      this.set('dropdownOpen', false);
+      this.set('open', false);
     }
   },
 
   // Toogle clickout handler 
   //
   // @function toggleClickout
-  // @observes dropdownOpen on didInsertElement
+  // @observes open on didInsertElement
   //
   toggleClickout: function () {
     var eventNamespace = 'click.'+this.elementId;
-    if (this.get('dropdownOpen')) {
+    if (this.get('open')) {
       Ember.$(document).bind(eventNamespace, {component: this}, this.clickout);
     } else {
       Ember.$(document).unbind(eventNamespace, this.clickout);
     }
-  }.observes('dropdownOpen').on('didInsertElement'),
+  }.observes('open').on('didInsertElement'),
 
   // Remove clickout handler 
   //
@@ -132,11 +132,11 @@ export default Ember.Component.extend({
     // if this has happened. The safe option then seems to be to not close the dropdown, as occasionaly not closing
     // the dropdown when it should have closed, seems to be less bad for usability than occasionaly closing the
     // dropdown when it should not have closed.
-    if(component.get('dropdownOpen') && target.closest('html').length !== 0 &&
+    if(component.get('open') && target.closest('html').length !== 0 &&
       !(target.closest(element.find(component.get('toggleSelector'))).length ||
         target.closest(element.find(component.get('menuSelector'))).length)
     ) {
-      component.set('dropdownOpen', false);
+      component.set('open', false);
     }
   }
 

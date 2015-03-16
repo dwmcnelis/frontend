@@ -33,7 +33,7 @@ export default Ember.Component.extend({
   //
   // @property {Ember.Array} classNames
   //
-  classNames: ['zz-button-group','btn-group'],
+  classNames: ['zz-button-group'],
 
   // Bind the specified properties as the classes of the DOM element.
   //

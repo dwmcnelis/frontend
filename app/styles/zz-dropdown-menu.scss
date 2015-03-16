@@ -48,6 +48,15 @@
   }
 }
 
+// Kinds
+.zz-dropdown-menu-default {
+  // Links within the dropdown menu
+  > li > a {
+    color: $zzDropdownLinkColor;
+  }
+}
+
+
 // Hover/Focus state
 .zz-dropdown-menu > li > a {
   &:hover,
@@ -68,6 +77,35 @@
     outline: 0;
     font-weight: bold;
     background-color: $zzDropdownLinkActiveBackgroundColor;
+  }
+}
+// Kinds
+.zz-dropdown-menu-default > .active > a {
+  &,
+  &:hover,
+  &:focus {
+    color: $zzDropdownLinkDefaultActiveColor;
+  }
+}
+.zz-dropdown-menu-primary > .active > a {
+  &,
+  &:hover,
+  &:focus {
+    color: $zzDropdownLinkPrimaryActiveColor;
+  }
+}
+.zz-dropdown-menu-secondary > .active > a {
+  &,
+  &:hover,
+  &:focus {
+    color: $zzDropdownLinkSecondaryActiveColor;
+  }
+}
+.zz-dropdown-menu-tertiary > .active > a {
+  &,
+  &:hover,
+  &:focus {
+    color: $zzDropdownLinkTertiaryActiveColor;
   }
 }
 

@@ -33,11 +33,11 @@ export default Ember.Component.extend({
   //
   // @property {Ember.Array} classNames
   //
-  classNames: ['zz-clip-button', 'btn'],
+  classNames: ['zz-clip-button', 'zz-button'],
 
   // Bind the specified properties as the classes of the DOM element.
   //
-  classNameBindings: ['themeClass', 'sizeClass', 'extraClasses'],
+  classNameBindings: ['kindClass', 'sizeClass', 'extraClasses'],
 
   // True if the button is enabled and can be clicked.
   // @property enabled
@@ -59,14 +59,13 @@ export default Ember.Component.extend({
   //
   size: 'medium',
 
-  // The bootstrap "theme" name
+  // The visual "kind" of button
   //
-  // @property {Ember.String} theme
+  // @property {Ember.String} kind
   // @default  "default"
   // @public
   //
-  theme: 'default',
-
+  kind: 'default',
 
   // The button label
   //
@@ -100,18 +99,18 @@ export default Ember.Component.extend({
     return !this.get('enabled') ;
   }).property('enabled'),
 
-  // Converted theme string to Bootstrap button class
+  // Convert kind to button kind class
   //
-  // @function themeClass
-  // @observes theme
-  // @returns  {Ember.String} Defaults to "btn-default"
+  // @function kindClass
+  // @observes kind
+  // @returns  {Ember.String} Defaults to "zz-button-default"
   //
-  themeClass: (function() {
-    var theme = this.get('theme');
-    return !Ember.isEmpty(theme) ? 'btn-'+theme : null;
-  }).property('theme'),
+  kindClass: (function() {
+    var kind = this.get('kind');
+    return !Ember.isEmpty(kind) ? 'zz-button-'+kind : null;
+  }).property('kind'),
   
-  // Converted size string to Bootstrap button class
+  // Converted size string to button size class
   //
   // @function sizeClass
   // @observes size
@@ -123,16 +122,9 @@ export default Ember.Component.extend({
 
     switch (size) {
       case 'tiny':
-        sizeClass = 'btn-xs';
-        break;
       case 'small':
-        sizeClass = 'btn-sm';
-        break;
-      case 'medium':
-        sizeClass = null;
-        break;
       case 'large':
-        sizeClass = 'btn-lg';
+        sizeClass = 'zz-button-'+size;
         break;
       default:
         sizeClass = null;

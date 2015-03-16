@@ -4,7 +4,7 @@
 //
 
 @import "mixins/vendor";
-@import "mixins/box";
+@import "mixins/boxes";
 @import "mixins/visibility";
 @import "mixins/positioning";
 @import "mixins/clearing";
@@ -12,4 +12,9 @@
 @import "mixins/borders";
 @import "mixins/text";
 @import "mixins/images";
+@import "mixins/selection";
+@import "mixins/focus";
 @import "mixins/effects";
+@import "mixins/transforms";
+@import "mixins/transitions";
+

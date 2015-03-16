@@ -8,7 +8,7 @@ export default Ember.ObjectController.extend(AuthenticationControllerMixin, {
 
   authenticator: 'simple-auth-authenticator:jwt',
 
-  canShowErrors: false,
+  errors: null,
 
   actions: {
 
@@ -21,9 +21,10 @@ export default Ember.ObjectController.extend(AuthenticationControllerMixin, {
 
         self.get(config['simple-auth'].sessionPropertyName).authenticate(authenticator, data).then(function() {
           console.debug('session: '+Ember.inspect(self.get('session').get('content')));
+          self.set('errors', null);
           return self.transitionTo('clients');
         }, function() {
-          //self.get('model').set('errors', 'Unauthorized');
+          self.set('errors', 'Invalid Username/Password');
           return rej("Failed");
         });
       }));

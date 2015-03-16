@@ -1,9 +1,35 @@
 {{! app/templates/components/zz-button.hbs }}
-{{#if iconClass}}
-    <i {{bind-attr class=iconClass}}></i>
-{{/if}}
-{{#if labelContent}}
-  {{labelContent}}
+{{#if linkTo}}
+	{{#if resource}}
+		{{#link-to linkTo resource}}
+			{{#if iconClass}}
+		    <i {{bind-attr class=iconClass}}></i>
+			{{/if}}
+			{{#if label}}
+			  {{label}}
+			{{else}}
+			  {{yield}}
+			{{/if}}
+		{{/link-to}}
+	{{else}}
+		{{#link-to linkTo}}
+			{{#if iconClass}}
+		    <i {{bind-attr class=iconClass}}></i>
+			{{/if}}
+			{{#if label}}
+			  {{label}}
+			{{else}}
+			  {{yield}}
+			{{/if}}
+		{{/link-to}}
+	{{/if}}
 {{else}}
-  {{yield}}
+	{{#if iconClass}}
+	    <i {{bind-attr class=iconClass}}></i>
+	{{/if}}
+	{{#if labelContent}}
+	  {{labelContent}}
+	{{else}}
+	  {{yield}}
+	{{/if}}
 {{/if}}

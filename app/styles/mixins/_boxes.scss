@@ -1,0 +1,15 @@
+// app/styles/mixins/_boxes.scss
+
+// Boxes mixins
+//
+
+@mixin box-sizing($boxModel) {
+  -webkit-box-sizing: $boxModel; // Safari <= 5
+     -moz-box-sizing: $boxModel; // Firefox <= 19
+          box-sizing: $boxModel;
+}
+
+@mixin box-shadow($shadow...) {
+  -webkit-box-shadow: $shadow; // iOS <4.3 & Android <4.1
+          box-shadow: $shadow;
+}

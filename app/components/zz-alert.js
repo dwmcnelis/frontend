@@ -20,22 +20,44 @@ export default Ember.Component.extend( {
   //
   // @property {Ember.Array} classNames
   //
-  classNames: ['alert', 'zz-alert'],
+  classNames: ['zz-alert'],
 
   // Array of class name bindings for the alert's div
   //
   // @property {Ember.Array} classNameBindings
   //
-  classNameBindings: ['kindClass', 'dismissable:alert-dismissable', 'extraClasses'],
+  classNameBindings: ['kindClass', 'dismissible:zz-alert-dismissible','openClass', 'extraClasses'],
 
   // Extra css classes 
   //
   // @property {Ember.String}
   // @default  null
-  // @public
   //
   extraClasses: null,
 
+  // Whether to make the alert dismissable or not
+  //
+  // @property {boolean} dismissable
+  // @default  false
+  //
+  dismissible: false,
+
+  // Alert open state
+  //
+  // @property {Ember.Boolean}
+  // @default  false
+  //
+  open: true,
+
+  // Convert open to dropdown open class
+  //
+  // @function openClass
+  // @observes dismissible, alertOpen
+  // @returns  {Ember.String} [''|'open']
+  //
+  openClass: (function() {
+    return !this.get('dismissible') || this.get('open') ? 'open' : null;
+  }).property('dismissible','open'),
 
   // The ARIA role attribute for the alert's div
   //
@@ -44,29 +66,32 @@ export default Ember.Component.extend( {
   //
   ariaRole: 'alert',
 
-  // Actions for the alert component
-  //
-  // @property {Ember.Object} actions
-  //
   actions: {
 
-    // Trigger a bound "dismiss" action when the alert is dismissed
+    // Toggle alert 
     //
-    // @function actions.dismiss
-    // @returns  {void}
+    // @function toggle
     //
-    dismiss: function() {
-      this.sendAction( 'dismiss' );
+    toggle: function () {
+      this.toggleProperty('open');
+    },
+
+    // Open dropdown 
+    //
+    // @function open
+    //
+    open: function () {
+      this.set('open', true);
+    },
+
+    // Close dropdown 
+    //
+    // @function close
+    //
+    close: function () {
+      this.set('open', false);
     }
   },
-
-  // Whether to make the alert dismissable or not
-  //
-  // @property {boolean} dismissable
-  // @default  false
-  //
-  dismissable: false,
-
 
   // The visual "kind" of alert
   //
@@ -79,15 +104,17 @@ export default Ember.Component.extend( {
 
   // Methods
 
-  // The label of the alert
+  // The title of the alert (if any)
   //
-  // @function labelContent
-  // @observes label
-  // @public
+  // @property title
   //
-  labelContent: (function() {
-    return this.get('label');
-  }).property('label'),
+  title: null,
+
+  // The message of the alert
+  //
+  // @property message
+  //
+  message: null,
 
   // Convert kind to alert kind class
   //
@@ -96,7 +123,7 @@ export default Ember.Component.extend( {
   // @returns  {Ember.String}  Defaults to "alert-info"
   //
   kindClass: function() {
-    return 'alert-' + this.get( 'kind' );
+    return 'zz-alert-' + this.get( 'kind' );
   }.property( 'kind' )
 
 });

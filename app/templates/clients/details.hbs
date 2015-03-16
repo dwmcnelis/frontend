@@ -6,6 +6,17 @@
     {{! #if errors}}
       {{! zz-alert kind='danger' label='Invalid Username/Password'}}
     {{! /if}}
+    <div class="form-group has-feedback">                    
+      <label class="control-label" style="margin-right: 6px">Level</label>
+      {{zz-select
+        value=level
+        optionValuePath="id"
+        content=levelNames
+        searchEnabled=false
+        placeholder="Level"
+      }}
+      <span class="form-control-feedback"><i></i></span>
+    </div>
 
     {{zz-input property="firstName" label="First Name" placeholder="First Name"}}
     {{zz-input property="lastName" label="Last Name" placeholder="Last Name"}}

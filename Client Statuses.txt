@@ -1,0 +1,13 @@
+Client Statuses
+
+New – This status indicates that a record requires follow up. This would be the state that the rep first interacts with the lead.
+
+Verified – This status indicates that the rep has looked at the lead and confirmed that the data is real and that he or she has decided to work the record.
+
+Qualified - This status is used on lead conversion.
+
+Disqualified - This status is used to specify the end of an interaction. In most cases you will want a dependent pick-list to store the reason for the disqualification.
+
+Inactive - If your process calls for a lead to potentially be worked through the funnel multiple times, or if you plan on inserting leads before they are ready to be worked by sales its essential to have a status to indicate a lead is not being actively worked.
+
+Active – If the distinction between attempting to contact and contacted is important in your process having a “working” stage to indicate this transition can be helpful.

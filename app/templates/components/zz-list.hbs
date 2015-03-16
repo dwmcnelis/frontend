@@ -1,7 +1,9 @@
 {{! app/templates/components/zz-list.hbs }}
 {{#each result as |item|}}
-	{{#if item.isKey}}
-	<li>{{item.key}}</li>
+	{{#if item.groupHeading}}
+		{{#zz-list-heading}}
+			{{item.heading}}
+		{{/zz-list-heading}}
 	{{else}}
 		{{#zz-list-item}}
 			{{yield item}}

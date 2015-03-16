@@ -11,6 +11,12 @@ export default Ember.ObjectController.extend({
   needsSaving: (function() {
     return this.get('isDirty') && !this.get('isSaving');
   }).property('isDirty', 'isSaving'),
+  
+  levelNames: [
+    {id: 1, text: 'A-List'},
+    {id: 2, text: 'B-List' },
+    {id: 3, text: 'C-List'},
+  ],
 
   actions: {
 

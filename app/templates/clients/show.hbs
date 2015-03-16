@@ -1,7 +1,8 @@
 {{! app/templates/clients/show.hbs }}
 <div>
-  <h1>{{fullName}}</h1>
   <div class="one-of-two">
+  <h1>{{fullName}}</h1>
+
   <p>
       Email: {{email}}
   </p>
@@ -27,5 +28,11 @@
 </div>
 </div>
   <div class="two-of-two">
-    {{zz-statistic value="47" label='Buzzes' size='large' icon='glyphicon glyphicon-bullhorn'}}
-  </div>
+    <div class='clearfix'>
+      <h3 class='float-left' style='margin-right: 20px'>{{levelName}}</h3>
+      <h3 class='float-left' style='margin-right: 20px'>{{rank}}</h3>
+      <h3 class='float-left' style='margin-right: 20px'>{{statusName}}</h3>
+    </div>
+    <div class='clearfix'>
+      {{zz-statistic value=buzzes label='Buzzes' size='large' icon='glyphicon glyphicon-bullhorn'}}
+    </div>  </div>

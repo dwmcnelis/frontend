@@ -10,16 +10,10 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
 
-  //--------------------------------------------------------------------------------
-  // Dependencies
-
-  //--------------------------------------------------------------------------------
-  // Attributes
-
   // The root component element
   //
   // @property {Ember.String} tagName
-  // @default  "div"
+  // @default  "button"
   //
   tagName: 'div',
 
@@ -29,7 +23,7 @@ export default Ember.Component.extend({
   //
   //attributeBindings: ['disabled'],
 
-  // Class names to apply to the statistic
+  // Class names to apply to the button
   //
   // @property {Ember.Array} classNames
   //
@@ -43,6 +37,7 @@ export default Ember.Component.extend({
   //
   // @property {Ember.String}
   // @default  null
+  // @public
   //
   extraClasses: null,
 

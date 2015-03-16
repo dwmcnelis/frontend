@@ -38,6 +38,7 @@ app.import('vendor/glyphicons/fonts/glyphicons-halflings-regular.woff2', {
   destDir: 'fonts'
 });
 
+app.import('vendor/select2/select2.js');
 app.import('vendor/zeroclipboard/ZeroClipboard.js');
 
 module.exports = app.toTree();

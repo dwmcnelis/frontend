@@ -10,8 +10,17 @@ export default DS.Model.extend(EmberValidations.Mixin, {
   lastName: DS.attr('string'),
   email: DS.attr('string'),
   phone: DS.attr('string'),
+  level: DS.attr('number', {
+    defaultValue: 3
+  }),
+  rank: DS.attr('number', {
+    defaultValue: 100
+  }),
   status: DS.attr('string', {
     defaultValue: 'new'
+  }),
+  buzzes: DS.attr('number', {
+    defaultValue: 0
   }),
   notes: DS.attr('string'),
 
@@ -38,8 +47,7 @@ export default DS.Model.extend(EmberValidations.Mixin, {
   fullName: (function() {
     var firstName = this.get('firstName');
     var lastName = this.get('lastName');
-    var status = this.get('status');
-    return (!Ember.isEmpty(firstName) ? firstName : '') + ' ' + (!Ember.isEmpty(lastName) ? lastName : '') + ' ('+status+')';
+    return (!Ember.isEmpty(firstName) ? firstName : '') + ' ' + (!Ember.isEmpty(lastName) ? lastName : '');
   }).property('firstName', 'lastName'),
 
   sortName: (function() {
@@ -48,9 +56,24 @@ export default DS.Model.extend(EmberValidations.Mixin, {
     return (!Ember.isEmpty(lastName) ? lastName : '') + (!Ember.isEmpty(firstName) ? ', '+ firstName : '');
   }).property('firstName', 'lastName'),
 
-  STATUSES: ['new', 'in progress', 'closed', 'bad'],
-  // valid: function(fields) {
-  //   return fields.firstName && fields.lastName;
-  // }
+  levels: [1, 2, 3],
+
+  levelName: (function() {
+    var level = this.get('level');
+    var names = {
+      1: 'A-List',
+      2: 'B-List',
+      3: 'C-List',
+    };
+    return (!Ember.isEmpty(level) ? names[level] : '');
+  }).property('level'),
+
+
+  statuses: ['new', 'verified', 'qualified', 'disqualified', 'inactive', 'active'],
+
+  statusName: (function() {
+    var status = this.get('status');
+    return (!Ember.isEmpty(status) ? status.charAt(0).toUpperCase()+status.substring(1) : '');
+  }).property('status')
 
 });

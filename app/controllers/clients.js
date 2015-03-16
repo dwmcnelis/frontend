@@ -12,13 +12,19 @@ export default Ember.ArrayController.extend({
 
   sortProperties: ['lastName', 'firstName'],
 
-  groupBy: function(item){
-    return item.status;
+  groupByLevel: 'level',
+
+  groupLevelHeadings: function(level) {
+    var headings = {
+      1: 'A-List',
+      2: 'B-List',
+      3: 'C-List',
+    };
+    return headings[level];
   },
-  //['status'],
-  
+
   searchTerm: function() {
     return this.get('search');
-  }.property('search')
+  }.property('search'),
 
 });

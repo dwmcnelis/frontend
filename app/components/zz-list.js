@@ -97,7 +97,7 @@ export default Ember.Component.extend({
     if (this.get('_filterKeys')) {
       return list.filter(this.get('_defaultFilterFn').bind(this));
     }
-   if (this.get('_filterFn')) {
+    if (this.get('_filterFn')) {
       return list.filter(this.get('_filterFn').bind(this));
     }
     return list;
@@ -150,25 +150,48 @@ export default Ember.Component.extend({
   // Group
   groupBy: null,
 
-  groupKeys: [],
+  _groupKey: function(){
+    var source = this.get('groupBy');
+    if (typeof source === 'string') {
+      return source;
+    }
+  }.property('groupBy'),
+
+  _groupFn: function(){
+    var source = this.get('groupBy');
+    if (typeof source === 'function') {
+      return source;
+    }
+  }.property('groupBy'),
+
+  _defaultGroupFn: function(item) {
+    var key = this.get('_groupKey');
+    return key ? item.get(key) : null;
+  },
+
+  groupHeading: null,
 
   _filteredSortedGrouped: function() {
     var groupBy = this.get('groupBy');
     var list = this.get('_filteredSorted').toArray();
+    var groups;
 
     if (!groupBy) {
       return list;
     }
-
-    var groups = this._groupsFromList(list, groupBy);
-    var filteredSortedGrouped = this._listFromGroups(groups);
-
-    return filteredSortedGrouped;
+    if (this.get('_groupKey')) {
+      groups = this._groupsFromList(list, this.get('_defaultGroupFn').bind(this));
+      return this._listFromGroups(groups);
+    }
+    if (this.get('_groupFn')) {
+      groups = this._groupsFromList(list, this.get('_groupFn').bind(this));
+      return this._listFromGroups(groups);
+    }
   }.property('_filteredSorted'),
 
   _groupsFromList: function(list, groupBy) {
     var addItemToGroup = function(groups, item){
-      var key = groupBy(item);
+     var key = groupBy(item);
       if (groups[key]) {
         groups[key].push(item);
       } else {
@@ -180,18 +203,16 @@ export default Ember.Component.extend({
     return list.reduce(addItemToGroup, {});
   },
 
+  _groupHeading: function(key) {
+    var groupHeadings = this.get('groupHeadings');
+    var heading = (groupHeadings ? groupHeadings(key) : key);
+    return {groupHeading: true, heading: heading};
+  },
+
   _listFromGroups: function(groups){
-    var component = this;
     var list = [];
-    var keyItem;
-    var makeKeyItem = function(attr) {
-      var fn = component.get(attr);
-      keyItem[attr] = fn(key);
-    };
     for (var key in groups) {
-      keyItem = {isKey: true, key: key};
-      component.get('groupKeys').forEach(makeKeyItem);
-      list.pushObject(keyItem);
+      list.pushObject(this._groupHeading(key));
       list.pushObjects(groups[key]);
     }
     return list;

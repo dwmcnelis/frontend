@@ -18,25 +18,51 @@ var App = Ember.Application.extend({
 App.reopenClass ({
 
   resizer: function () {
-    // console.debug('resizer: window width: '+Ember.$(window).width()+' height: '+Ember.$(window).height());
+    //var phone = 400;
+    var phablet = 550;
+    //var tablet = 750;
+    //var desktop = 1000;
+    //var workstation = 1200;
+
+    var defaultBannerHeight = 60;
 
     var width = Ember.$(window).width();
     var height = Ember.$(window).height();
 
-    var bannerHeight = (width >= 500 ? 60 : 0);
-    var masterHeight = (height-bannerHeight)+'px';
-    var masterRibbonHeight = 40;
-    var masterContentHeight = (height-bannerHeight-masterRibbonHeight)+'px';
-    var detailHeight = (height-bannerHeight)+'px';
+    var bannerHeight = (width >= 500 ? defaultBannerHeight : 0);
+    var masterHeight, masterRibbonHeight, masterContentHeight, stackedMasterHeight;
+    if (width < phablet) {
+      stackedMasterHeight = defaultBannerHeight;
+      masterHeight = (defaultBannerHeight)+'px';
+      masterContentHeight = (defaultBannerHeight)+'px';
+    } else {
+      stackedMasterHeight = 0;
+      masterHeight = (height-bannerHeight)+'px';
+      masterRibbonHeight = 40;
+      masterContentHeight = (height-bannerHeight-masterRibbonHeight)+'px';
+    }
+    var detailHeight = (height-bannerHeight-stackedMasterHeight)+'px';
     var detailRibbonHeight = 40;
-    var detailContentHeight = (height-bannerHeight-detailRibbonHeight)+'px';
+    var detailContentHeight = (height-bannerHeight-stackedMasterHeight-detailRibbonHeight)+'px';
+    var detailInnerHeight = (height-bannerHeight-stackedMasterHeight-detailRibbonHeight-stackedMasterHeight)+'px';
+
+    // console.debug('resize: height: '+height);
+    // console.debug('resize: width: '+width);
+    // console.debug('resize: bannerHeight: '+bannerHeight);
+    // console.debug('resize: masterHeight: '+masterHeight);
+    // console.debug('resize: masterContentHeight: '+masterContentHeight);
+    // console.debug('resize: stackedMasterHeight: '+stackedMasterHeight);
+    // console.debug('resize: detailHeight: '+detailHeight);
+    // console.debug('resize: detailContentHeight: '+detailContentHeight);
+
     Ember.run.later(function () {
+
       Ember.$('.page').height(height);
       Ember.$('.full').height(height);
       Ember.$('.master').height(masterHeight);
       Ember.$('.master-content').height(masterContentHeight);
       Ember.$('.detail').height(detailHeight);
-      Ember.$('.detail-content').height(detailContentHeight);
+      Ember.$('.detail-content').height(detailInnerHeight);
     }, 50);
   }
 

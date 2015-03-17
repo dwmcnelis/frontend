@@ -10,8 +10,8 @@ export default DS.Model.extend(EmberValidations.Mixin, {
   lastName: DS.attr('string'),
   email: DS.attr('string'),
   phone: DS.attr('string'),
-  level: DS.attr('number', {
-    defaultValue: 3
+  level: DS.attr('string', {
+    defaultValue: 'a_list'
   }),
   rank: DS.attr('number', {
     defaultValue: 100
@@ -56,18 +56,12 @@ export default DS.Model.extend(EmberValidations.Mixin, {
     return (!Ember.isEmpty(lastName) ? lastName : '') + (!Ember.isEmpty(firstName) ? ', '+ firstName : '');
   }).property('firstName', 'lastName'),
 
-  levels: [1, 2, 3],
+  levels: ['a_list', 'b_list', 'c_list', ],
 
   levelName: (function() {
     var level = this.get('level');
-    var names = {
-      1: 'A-List',
-      2: 'B-List',
-      3: 'C-List',
-    };
-    return (!Ember.isEmpty(level) ? names[level] : '');
+    return (!Ember.isEmpty(level) ? level.charAt(0).toUpperCase()+'-'+level.charAt(2).toUpperCase()+level.substring(3) : '');
   }).property('level'),
-
 
   statuses: ['new', 'verified', 'qualified', 'disqualified', 'inactive', 'active'],
 

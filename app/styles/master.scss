@@ -15,7 +15,7 @@ $masterRibbonBorderThickness: 3px !default;
 $masterRibbonBorderColor: $colorGrayLighter !default;
 
 .master {
-	@include visuallyhidden;
+	//@include visuallyhidden;
 
 	@include breakpoint($phablet) {
 		@include visuallyshown;
@@ -25,14 +25,25 @@ $masterRibbonBorderColor: $colorGrayLighter !default;
 }
 
 .master-ribbon {
-	@include span(100%);
-	height: $masterRibbonHeight;
-	padding-left: 15px;
+	@include visuallyhidden;
+
+	@include breakpoint($phablet) {
+		@include visuallyshown;
+		@include span(100%);
+		height: $masterRibbonHeight;
+		padding-left: 15px;
+	}
 	background-color: $masterRibbonBackgroundColor; 
 	border-bottom: $masterRibbonBorderThickness solid $masterRibbonBorderColor;
 }
 
 .master-content {
+	border-bottom: $masterRibbonBorderThickness solid $masterRibbonBorderColor;
+	
+	@include breakpoint($phablet) {
+		border-bottom: none;
+	}
+
 	@include span(100%);
 	overflow-x: hidden !important;
 	overflow-y: auto !important;
@@ -40,6 +51,10 @@ $masterRibbonBorderColor: $colorGrayLighter !default;
 }
 
 .master-inner {
-	margin: 15px 0px 25px 0px;
+	margin: 5px 0px 5px 0px;
+
+	@include breakpoint($phablet) {
+		margin: 15px 0px 25px 0px;
+	}
 	overflow: hidden; 
 }

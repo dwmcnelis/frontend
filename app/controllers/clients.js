@@ -8,6 +8,7 @@ export default Ember.ArrayController.extend({
 
   filterBy: ['fullName'],
 
+  //sortProperties: ['lastName', 'firstName'],
   sortProperties: ['level', 'lastName', 'firstName'],
 
   sortBy: ['lastName:asc', 'firstName:asc'],
@@ -25,6 +26,18 @@ export default Ember.ArrayController.extend({
 
   searchTerm: function() {
     return this.get('search');
-  }.property('search')
+  }.property('search'),
+
+  // clients: function() {
+  //   return this.get('search') ? this.get('searchedClients') : this
+  // }.property('search', 'searchedClients'),
+
+
+  // searchedClients: function() {
+  //   var search = this.get('search').toLowerCase();
+  //   return this.filter(function(client) {
+  //     return client.get('fullName').toLowerCase().indexOf(search) != -1
+  //   })
+  // }.property('search', 'this.@each.fullName')
 
 });

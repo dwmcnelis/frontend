@@ -8,9 +8,9 @@ export default Ember.ArrayController.extend({
 
   filterBy: ['fullName'],
 
-  sortBy: ['lastName:asc', 'firstName:asc'],
+  sortProperties: ['level', 'lastName', 'firstName'],
 
-  sortProperties: ['lastName', 'firstName'],
+  sortBy: ['lastName:asc', 'firstName:asc'],
 
   groupByLevel: 'level',
 
@@ -25,6 +25,6 @@ export default Ember.ArrayController.extend({
 
   searchTerm: function() {
     return this.get('search');
-  }.property('search'),
+  }.property('search')
 
 });

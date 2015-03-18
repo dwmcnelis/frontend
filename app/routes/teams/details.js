@@ -1,4 +1,4 @@
-// app/routes/clients/details.js
+// app/routes/teams/details.js
 
 import Ember from 'ember';
 import AuthenticatedRouteMixin from 'simple-auth/mixins/authenticated-route-mixin';
@@ -6,7 +6,7 @@ import AuthenticatedRouteMixin from 'simple-auth/mixins/authenticated-route-mixi
 export default Ember.Route.extend(AuthenticatedRouteMixin, {
 
   model: function(params) {
-    return this.store.find('client', params.id);
+    return this.store.find('team', params.id);
   },
   
   setupController: function(controller, model) {
@@ -14,11 +14,11 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
   },
 
   renderTemplate: function() {
-	  this.render('clients.details-ribbon', {
+	  this.render('teams.details-ribbon', {
       into: 'master-detail',
 	    outlet: 'detail-ribbon',
 	  });
-	  this.render('clients.details', {
+	  this.render('teams.details', {
       into: 'master-detail',
 	    outlet: 'detail-content',
 	  });

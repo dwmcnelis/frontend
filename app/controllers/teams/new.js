@@ -1,4 +1,4 @@
-// app/controllers/clients/new.js
+// app/controllers/teams/new.js
 
 import Ember from 'ember';
 
@@ -13,9 +13,9 @@ export default Ember.ObjectController.extend({
     cancel: function(promise) {
       var self = this;
       return promise(new Ember.RSVP.Promise(function(res, rej) {
-        var client = self.get('model');
-          if (client.destroyRecord()) {
-            return self.transitionToRoute('clients');
+        var team = self.get('model');
+          if (team.destroyRecord()) {
+            return self.transitionToRoute('teams');
           } else {
             return rej("Failed");
           }
@@ -25,9 +25,9 @@ export default Ember.ObjectController.extend({
     save: function(promise) {
       var self = this;
       return promise(new Ember.RSVP.Promise(function(res, rej) {
-        var client = self.get('model');
-        if (client.save()) {
-          return self.transitionToRoute('clients.show',client);
+        var team = self.get('model');
+        if (team.save()) {
+          return self.transitionToRoute('teams.show',team);
         } else {
           return rej("Failed");
         }

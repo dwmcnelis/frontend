@@ -23,6 +23,13 @@ Router.map(function() {
     this.route("tags", { path: "/:id/tags" });
   });
 
+  // Teams
+  this.resource('teams', { path: '/teams' }, function() {
+    this.route('new');
+    this.route("show", { path: "/:id" });
+    this.route("details", { path: "/:id/details" });
+  });
+
 });
 
 export default Router;

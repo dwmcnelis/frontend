@@ -1,17 +1,13 @@
-{{! app/templates/clients/new.hbs }}
+{{! app/templates/teams/new.hbs }}
 <div>
-  <h1>New Client</h1>
+  <h1>New Team</h1>
 
   {{#zz-form model=model}}
     {{! #if errors}}
       {{! zz-alert kind='danger' label='Invalid Username/Password'}}
     {{! /if}}
 
-    {{zz-input property="firstName" label="First Name" placeholder="First Name"}}
-    {{zz-input property="lastName" label="Last Name" placeholder="Last Name"}}
-    {{zz-input property="email" label="Email" placeholder="Email"}}
-    {{zz-input property="phone" label="Phone" placeholder="Phone"}}
-
+    {{zz-input property="name" label="Name" placeholder="Name"}}
 
     {{zz-button enabled=needsSaving action='save' kind='primary' label='Save' icon='glyphicon glyphicon-save' label-pending='Saving' icon-pending='fa fa-spinner fa-spin'}}
     {{zz-button action='cancel' label='Cancel'}}

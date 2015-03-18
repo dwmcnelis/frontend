@@ -1,11 +1,9 @@
-// app/controllers/clients/show.js
+// app/controllers/teams/show.js
 
 
 import Ember from 'ember';
 
 export default Ember.ObjectController.extend({
-
-  clipboard_content: 'This content should now be in the clipboard!',
 
   showUnsavedMessage: (function() {
     return this.get('isDirty') && !this.get('isSaving');
@@ -18,9 +16,9 @@ export default Ember.ObjectController.extend({
   actions: {
 
     cancel: function() {
-      var client = this.get('model');
-      client.rollback();
-      return this.transitionToRoute('clients.show',client);
+      var team = this.get('model');
+      team.rollback();
+      return this.transitionToRoute('teams.show',team);
     },
 
     save: function(promise) {

@@ -1,4 +1,4 @@
-// app/controllers/clients.js
+// app/controllers/teams.js
 
 import Ember from 'ember';
 
@@ -6,23 +6,23 @@ export default Ember.ArrayController.extend({
 
   filterTerm: 'search',
 
-  filterBy: ['fullName'],
+  filterBy: ['name'],
 
   //sortProperties: ['lastName', 'firstName'],
-  sortProperties: ['level', 'lastName', 'firstName'],
+  sortProperties: ['name'],
 
-  sortBy: ['lastName:asc', 'firstName:asc'],
+  sortBy: ['name:asc'],
 
-  groupByLevel: 'level',
+  //groupByLevel: 'level',
 
-  groupLevelHeadings: function(level) {
-    var headings = {
-      1: 'A-List',
-      2: 'B-List',
-      3: 'C-List',
-    };
-    return headings[level];
-  },
+  // groupLevelHeadings: function(level) {
+  //   var headings = {
+  //     1: 'A-List',
+  //     2: 'B-List',
+  //     3: 'C-List',
+  //   };
+  //   return headings[level];
+  // },
 
   searchTerm: function() {
     return this.get('search');

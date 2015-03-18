@@ -13,9 +13,9 @@ export default Ember.ObjectController.extend({
   }).property('isDirty', 'isSaving'),
   
   levelNames: [
-    {id: 1, text: 'A-List'},
-    {id: 2, text: 'B-List' },
-    {id: 3, text: 'C-List'},
+    {id: 'a-list', text: 'A-List'},
+    {id: 'b-list', text: 'B-List' },
+    {id: 'c-list', text: 'C-List'},
   ],
 
   actions: {

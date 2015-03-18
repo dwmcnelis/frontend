@@ -1,4 +1,4 @@
-// app/controllers/clients/details.js
+// app/controllers/teams/details.js
 
 import Ember from 'ember';
 
@@ -13,25 +13,40 @@ export default Ember.ObjectController.extend({
   }).property('isDirty', 'isSaving'),
   
   levelNames: [
-    {id: 1, text: 'A-List'},
-    {id: 2, text: 'B-List' },
-    {id: 3, text: 'C-List'},
+    {id: 0, text: 'Professional'},
+    {id: 1, text: 'Olympic' },
+    {id: 2, text: 'College'},
+    {id: 3, text: 'High School'},
+    {id: 4, text: 'Middle School'},
+    {id: 5, text: 'Town'},
+    {id: 6, text: 'Club'},
+    {id: 32767, text: 'Other'}
+  ],
+
+  kindNames: [
+    {id: 0, text: 'Football'},
+    {id: 1, text: 'Soccer' },
+    {id: 2, text: 'Basketball'},
+    {id: 3, text: 'Baseball'},
+    {id: 4, text: 'Softball'},
+    {id: 5, text: 'Hockey'},
+    {id: 32767, text: 'Other'}
   ],
 
   actions: {
 
     cancel: function() {
-      var client = this.get('model');
-      client.rollback();
-      return this.transitionToRoute('clients.show',client);
+      var team = this.get('model');
+      team.rollback();
+      return this.transitionToRoute('teams.show',team);
     },
 
     save: function(promise) {
       var self = this;
-      var client = this.get('model');
+      var team = this.get('model');
       return promise(new Ember.RSVP.Promise(function(res, rej) {
         if (self.get('model').save()) {
-          return self.transitionToRoute('clients.show',client);
+          return self.transitionToRoute('teams.show',team);
         } else {
           return rej("Failed");
         }
@@ -41,9 +56,9 @@ export default Ember.ObjectController.extend({
     "delete": function(promise) {
       var self = this;
       return promise(new Ember.RSVP.Promise(function(res, rej) {
-        var client = self.get('model');
-        if (client.destroyRecord()) {
-          return self.transitionToRoute('clients');
+        var team = self.get('model');
+        if (team.destroyRecord()) {
+          return self.transitionToRoute('teams');
         } else {
           return rej("Failed");
         }

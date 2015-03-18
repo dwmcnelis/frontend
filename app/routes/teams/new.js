@@ -1,4 +1,4 @@
-// app/routes/clients/new.js
+// app/routes/teams/new.js
 
 import Ember from 'ember';
 import AuthenticatedRouteMixin from 'simple-auth/mixins/authenticated-route-mixin';
@@ -6,15 +6,15 @@ import AuthenticatedRouteMixin from 'simple-auth/mixins/authenticated-route-mixi
 export default Ember.Route.extend(AuthenticatedRouteMixin, {
 
 	model: function() {
-		return this.store.createRecord('client', {});
+		return this.store.createRecord('team', {});
 	},
 
 	renderTemplate: function() {
-	  // this.render('clients.new-ribbon', {
+	  // this.render('teams.new-ribbon', {
    //    into: 'master-detail',
 	  //   outlet: 'detail-ribbon',
 	  // });
-    this.render('clients.new', {
+    this.render('teams.new', {
       into: 'master-detail',
       outlet: 'detail-content',
     });
@@ -27,7 +27,7 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
 			} else {
 				var client = this.controller.get('model');
 				if (Ember.isEmpty(client.id)) {
-         	client.destroyRecord();
+         	team.destroyRecord();
         }
 				// Bubble the `willTransition` action so that
 				// parent routes can decide whether or not to abort.

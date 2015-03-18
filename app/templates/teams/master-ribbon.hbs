@@ -5,12 +5,13 @@
 	{{#zz-tab-group}}
 		{{#zz-dropdown}}
 		  {{#zz-dropdown-tab-toggle extraClasses="zz-dropdown-tab-toggle-secondary active"}}
-		    Clients <span class="caret"></span>
+		    Teams <span class="caret"></span>
 		  {{/zz-dropdown-tab-toggle}}
 		  
 		  {{#zz-dropdown-menu tagName="ul" extraClasses="zz-dropdown-menu-secondary" closeOnChildClick="a:link"}}
 		    <li>{{#link-to 'index'}}Home{{/link-to}}</li>
-		    <li class="active">{{#link-to 'clients'}}Clients{{/link-to}}</li>
+		    <li>{{#link-to 'clients'}}Clients{{/link-to}}</li>
+		    <li class="active">{{#link-to 'teams'}}Teams{{/link-to}}</li>
 		    <li>{{#link-to 'index'}}Campaigns{{/link-to}}</li>
 		    <li>{{#link-to 'index'}}Analytics{{/link-to}}</li>
 		  {{/zz-dropdown-menu}}

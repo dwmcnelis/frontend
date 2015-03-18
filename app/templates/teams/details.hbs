@@ -1,0 +1,31 @@
+{{! app/templates/clients/details.hbs }}
+<div>  
+  <h1>{{fullName}}</h1>
+
+  {{#zz-form model=model}}
+    {{! #if errors}}
+      {{! zz-alert kind='danger' label='Invalid Username/Password'}}
+    {{! /if}}
+    <div class="form-group has-feedback">                    
+      <label class="control-label" style="margin-right: 6px">Level</label>
+      {{zz-select
+        value=level
+        optionValuePath="id"
+        content=levelNames
+        searchEnabled=false
+        placeholder="Level"
+      }}
+      <span class="form-control-feedback"><i></i></span>
+    </div>
+
+    {{zz-input property="firstName" label="First Name" placeholder="First Name"}}
+    {{zz-input property="lastName" label="Last Name" placeholder="Last Name"}}
+    {{zz-input property="email" label="Email" placeholder="Email"}}
+    {{zz-input property="phone" label="Phone" placeholder="Phone"}}
+    {{zz-text property="notes" label="Notes" placeholder="Notes"}}
+
+
+    {{zz-button enabled=needsSaving action='save' kind='primary' label='Save' icon='glyphicon glyphicon-save' label-pending='Saving' icon-pending='fa fa-spinner fa-spin'}}
+    {{zz-button action='cancel' label='Cancel' classNames='button'}}
+  {{/zz-form}}
+</div>

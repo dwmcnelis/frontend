@@ -1,0 +1,38 @@
+{{! app/templates/clients/show.hbs }}
+<div>
+  <div class="one-of-two">
+  <h1>{{fullName}}</h1>
+
+  <p>
+      Email: {{email}}
+  </p>
+
+  <p>
+      Phone: {{phone}}
+  </p>
+
+  <p>
+      Notes: {{notes}}
+  </p>
+
+  <p>      
+
+  {{#if showUnsavedMessage}}
+    <div class='unsaved'>unsaved changes</div>
+  {{/if}}
+
+  {{#if isSaving}}
+    <div class='saving'>saving...</div>
+  {{/if}}
+  </p>
+</div>
+</div>
+  <div class="two-of-two">
+    <div class='clearfix'>
+      <h3 class='float-left' style='margin-right: 20px'>{{levelName}}</h3>
+      <h3 class='float-left' style='margin-right: 20px'>{{rank}}</h3>
+      <h3 class='float-left' style='margin-right: 20px'>{{statusName}}</h3>
+    </div>
+    <div class='clearfix'>
+      {{zz-statistic value=buzzes label='Buzzes' size='large' icon='glyphicon glyphicon-bullhorn'}}
+    </div>  </div>

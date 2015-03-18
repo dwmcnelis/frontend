@@ -1,0 +1,19 @@
+{{! app/templates/clients/master-content.hbs }}
+{{!-- {{#zz-list list=this filterTerm=searchTerm filterBy=filterBy sortBy=sortBy groupBy=groupByLevel groupHeadings=groupLevelHeadings as |client|}}
+  {{#link-to 'clients.show' client current-when="clients.show clients.details clients.tags"}}
+    {{client.sortName}}
+  {{/link-to}}
+{{/zz-list}} --}}
+
+{{#zz-list list=this filterTerm=searchTerm filterBy=filterBy groupBy=groupByLevel groupHeadings=groupLevelHeadings as |client|}}
+  {{#link-to 'clients.show' client current-when="clients.show clients.details clients.tags"}}
+    {{client.sortName}}
+  {{/link-to}}
+{{/zz-list}}
+
+{{!-- {{#zz-list list=clients as |client|}}
+  {{#link-to 'clients.show' client current-when="clients.show clients.details clients.tags"}}
+    {{client.sortName}}
+  {{/link-to}}
+{{/zz-list}}
+ --}}

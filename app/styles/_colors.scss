@@ -119,6 +119,7 @@ $dangerStateBorderColor: darken(adjust-hue($dangerStateBackgroundColor, -10), 5%
 
 // Base
 $textColor: $colorBlack !default;
+$mutedTextColor: $colorGrayMedium !default;
 $bodyBackgroundColor: $colorWhite !default;
 
 // Headings

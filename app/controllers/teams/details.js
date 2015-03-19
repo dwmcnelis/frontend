@@ -33,6 +33,8 @@ export default Ember.ObjectController.extend({
     {id: 32767, text: 'Other'}
   ],
 
+  chosenTypeaheadTeam: null,
+
   actions: {
 
     cancel: function() {

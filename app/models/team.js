@@ -14,6 +14,9 @@ export default DS.Model.extend(EmberValidations.Mixin, {
   kind: DS.attr('string', {
     defaultValue: 'other_kind'
   }),
+  league_id: DS.attr('number'),
+  division_id: DS.attr('number'),
+  founded: DS.attr('date'),
   location: DS.attr('string'),
   arena: DS.attr('string'),
 

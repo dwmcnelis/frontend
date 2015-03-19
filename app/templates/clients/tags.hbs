@@ -2,20 +2,31 @@
 
 <div>  
   <h1>{{fullName}}</h1>
-  <p>
-      Tags: ...
-  </p>
-  <p>
-      Family: ...
-  </p>
-  <p>
-      Friends: ...
-  </p>
-  <p>
-      Sports: ...
-  </p>
-  <p>
-      Other: ...
-  </p>
+
+  {{#zz-form model=model}}
+    {{! #if errors}}
+      {{! zz-alert kind='danger' label='Invalid Username/Password'}}
+    {{! /if}}
+
+    <div class="form-group has-feedback">                    
+      <label class="control-label" style="margin-right: 6px">Teams</label>
+      {{zz-select
+          placeholder="Search team..."
+          value=chosenTypeaheadTeam
+          typeaheadSearchingText="Searching teams"
+          typeaheadNoMatchesText="No teams found for '%@'"
+          typeaheadErrorText="Loading failed: %@"
+          minimumInputLength=2
+          maximumInputLength=10
+          multiple=true
+          tags=true
+          allowCreateSearchChoice=true
+          query="selectTeams"
+      }}
+      <span class="form-control-feedback"><i></i></span>
+    </div>
+    {{zz-button enabled=needsSaving action='save' kind='primary' label='Save' icon='glyphicon glyphicon-save' label-pending='Saving' icon-pending='fa fa-spinner fa-spin'}}
+    {{zz-button action='cancel' label='Cancel' classNames='button'}}
+  {{/zz-form}}
 
 </div>

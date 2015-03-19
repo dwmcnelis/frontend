@@ -26,7 +26,7 @@ var run = Ember.run;
  
 var Select2Component = Ember.Component.extend({
   tagName: "input",
-  classNames: ["xform-control"],
+  classNames: ["zz-select"],
   classNameBindings: ["inputSize"],
   attributeBindings: ["style"],
   style: "display: hidden;",
@@ -50,6 +50,46 @@ var Select2Component = Ember.Component.extend({
   searchEnabled: true,
   minimumInputLength: null,
   maximumInputLength: null,
+  tags: false,
+  tokenSeparators: [",", " "],
+  allowCreateSearchChoice: false,
+  createSearchChoice: function(term, data) {
+    return {
+      id: '+'+$.trim(term),
+      text: new Ember.Handlebars.SafeString($.trim(term) + ' <span class="text-muted">(new)</span>')
+    };
+  },
+//   initSelection: function (element, callback) {
+//     var data = [];
+
+//     function splitVal(string, separator) {
+//         var val, i, l;
+//         if (string === null || string.length < 1) return [];
+//         val = string.split(separator);
+//         for (i = 0, l = val.length; i < l; i = i + 1) val[i] = $.trim(val[i]);
+//         return val;
+//     }
+
+//     $(splitVal(element.val(), ",")).each(function () {
+//         data.push({
+//             id: this,
+//             text: this
+//         });
+//     });
+
+//     callback(data);
+// },
+    // // max tags is 3
+    // maximumSelectionSize: 3,
+
+    // // override message for max tags
+    // formatSelectionTooBig: function (limit) {
+    //     return "Max tags is only " + limit;
+    // }
+
+
+
+
 
   // internal state
   _hasSelectedMissingItems: false,
@@ -75,6 +115,13 @@ var Select2Component = Ember.Component.extend({
     // setup
     options.placeholder = this.get('placeholder');
     options.multiple = this.get('multiple');
+    if (this.get('tags')) {
+      options.tags = this.get('tags');
+      options.tokenSeparators = this.get('tokenSeparators');
+      if (this.get('allowCreateSearchChoice')) {
+        options.createSearchChoice = this.get('createSearchChoice'); 
+      }
+    }
     options.allowClear = this.get('allowClear');
     options.minimumResultsForSearch = this.get('searchEnabled') ? 0 : -1 ;
 

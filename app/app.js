@@ -43,7 +43,7 @@ App.reopenClass ({
     }
     var detailHeight = (height-bannerHeight-stackedMasterHeight)+'px';
     var detailRibbonHeight = 40;
-    var detailContentHeight = (height-bannerHeight-stackedMasterHeight-detailRibbonHeight)+'px';
+    //var detailContentHeight = (height-bannerHeight-stackedMasterHeight-detailRibbonHeight)+'px';
     var detailInnerHeight = (height-bannerHeight-stackedMasterHeight-detailRibbonHeight-stackedMasterHeight)+'px';
 
     // console.debug('resize: height: '+height);

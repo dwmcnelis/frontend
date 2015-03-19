@@ -53,10 +53,10 @@ var Select2Component = Ember.Component.extend({
   tags: false,
   tokenSeparators: [",", " "],
   allowCreateSearchChoice: false,
-  createSearchChoice: function(term, data) {
+  createSearchChoice: function(term /*,data*/) {
     return {
-      id: '+'+$.trim(term),
-      text: new Ember.Handlebars.SafeString($.trim(term) + ' <span class="text-muted">(new)</span>')
+      id: '+'+Ember.$.trim(term),
+      text: new Ember.Handlebars.SafeString(Ember.$.trim(term) + ' <span class="text-muted">(new)</span>')
     };
   },
 //   initSelection: function (element, callback) {

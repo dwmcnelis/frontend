@@ -25,8 +25,8 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
 			if (this.controller.get('needsSaving')) {
 				transition.abort();
 			} else {
-				var client = this.controller.get('model');
-				if (Ember.isEmpty(client.id)) {
+				var team = this.controller.get('model');
+				if (Ember.isEmpty(team.id)) {
          	team.destroyRecord();
         }
 				// Bubble the `willTransition` action so that

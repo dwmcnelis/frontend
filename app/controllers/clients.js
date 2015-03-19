@@ -17,9 +17,9 @@ export default Ember.ArrayController.extend({
 
   groupLevelHeadings: function(level) {
     var headings = {
-      1: 'A-List',
-      2: 'B-List',
-      3: 'C-List',
+      'a_list': 'A-List',
+      'b_list': 'B-List',
+      'c_list': 'C-List',
     };
     return headings[level];
   },

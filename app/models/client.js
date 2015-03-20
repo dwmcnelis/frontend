@@ -23,6 +23,9 @@ export default DS.Model.extend(EmberValidations.Mixin, {
     defaultValue: 0
   }),
   notes: DS.attr('string'),
+  image: DS.attr('string', {
+    defaultValue: null
+  }),
 
   validations: {
     firstName: {
@@ -68,6 +71,23 @@ export default DS.Model.extend(EmberValidations.Mixin, {
   statusName: (function() {
     var status = this.get('status');
     return (!Ember.isEmpty(status) ? status.charAt(0).toUpperCase()+status.substring(1) : '');
-  }).property('status')
+  }).property('status'),
+
+  image_crop_url: (function() {
+    var image = this.get('image');
+    return this.thumb_url(image,'100x100#');
+  }).property('image'),  
+
+  image_icon_url: (function() {
+    var image = this.get('image');
+    return this.thumb_url(image,'32x32#');
+  }).property('image'),  
+
+  thumb_url: function(url, geometry) {
+    geometry = geometry.replace(/#/g, "%23");
+    var thumb_url = url.replace(/\/content\/|\/static\//, function (location){return location+'thumb/'+geometry+'/';});
+    console.debug('client: thumb_url: '+thumb_url);
+    return thumb_url;
+  }
 
 });

@@ -3,6 +3,9 @@
   <div class="one-of-two">
   <h1>{{fullName}}</h1>
   <img {{bind-attr src=image_crop_url}} alt="Client Photo">
+  <div class="wrapper">
+    {{zz-uploader fileInputChanged="receiveFile"}}
+  </div>
 
   <p>
       Email: {{email}}

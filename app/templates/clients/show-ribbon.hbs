@@ -29,9 +29,9 @@
 {{#zz-button-bar}}
 	{{#zz-button-group}}
 		{{!zz-clip-button clipText='This should now be the text in the clipboard!' icon='glyphicon glyphicon-copy'}}
-		{{#zz-tooltip data-tooltip='Copy message to clipboard'}}
-			{{zz-clip-button clipTarget='target-text' icon='glyphicon glyphicon-copy'}}
-		{{/zz-tooltip}}  
+		{{!#zz-tooltip data-tooltip='Copy message to clipboard'}}
+			{{!zz-clip-button clipTarget='target-text' icon='glyphicon glyphicon-copy'}}
+		{{!/zz-tooltip}}  
  		{{#zz-tooltip data-tooltip='Call'}}
 	  	{{zz-button action='cancel' icon='glyphicon glyphicon-earphone'}}
 		{{/zz-tooltip}}  

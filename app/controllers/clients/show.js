@@ -16,26 +16,23 @@ export default Ember.ObjectController.extend({
   }).property('isDirty', 'isSaving'),
 
   actions: {
-    receiveFile: function(file){
-      // console.debug('attachment: id: '+Ember.inspect(this.model.get('id')));
-      // console.debug('attachment: type: '+Ember.inspect(this.model.constructor.match(/^.*\:(.*)\:$/) ) );
-
-
+    uploadImage: function(file){
+      var self = this;
       var attachment = this.store.createRecord('attachment', {
+        for_type: this.model.constructor.typeKey,
+        for_id: this.model.get('id'),
+        for_attribute: 'image',
         content:  file,
         contentName: file.name,
         contentSize: file.size,
-        contentType: file.type,
-        //for_type: this.model.get('???'),
-        for_type: 'client',
-        for_id: this.model.get('id'),
-        for_attribute: 'image'
+        contentType: file.type
       });
 
       attachment.save().then(function(attachment){
-        console.info('attachment uploaded: '+attachment.get('contentUrl'));
+        //console.info('attachment uploaded: '+attachment.get('contentName'));
+        self.model.reload('refresh');
       }, function(error){
-        console.debug('attachment upload failed: ', error);
+        //console.debug('attachment upload failed: ', error);
       }, 'file upload');
     },
 

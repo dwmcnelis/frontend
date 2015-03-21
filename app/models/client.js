@@ -86,7 +86,6 @@ export default DS.Model.extend(EmberValidations.Mixin, {
   thumb_url: function(url, geometry) {
     geometry = geometry.replace(/#/g, "%23");
     var thumb_url = url.replace(/\/content\/|\/static\//, function (location){return location+'thumb/'+geometry+'/';});
-    console.debug('client: thumb_url: '+thumb_url);
     return thumb_url;
   }
 

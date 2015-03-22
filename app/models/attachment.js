@@ -5,19 +5,18 @@ import DS from 'ember-data';
 import Validation from '../mixins/validation';
 
 export default DS.Model.extend(Validation, {  
-  for_type: DS.attr('string'),
-
-  for_id: DS.attr('string'),
-
-  for_attribute: DS.attr('string'),
-
   content: DS.attr(),
 
-  contentUrl: Ember.computed.alias('content.url'),
+  name: DS.attr('string'),
+  mime_type: DS.attr('string'),
+  size: DS.attr('number'),
+  url: DS.attr('string'),
 
-  contentName: DS.attr(),
-  contentSize: DS.attr(),
-  contentType: DS.attr(),
+  for_type: DS.attr('string'),
+  for_id: DS.attr('string'),
+  for_attribute: DS.attr('string'),
+
+  contentUrl: Ember.computed.alias('content.url'),
 
   contentUrlObserver: function(){
     /*

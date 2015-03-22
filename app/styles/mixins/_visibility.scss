@@ -47,3 +47,7 @@
 @mixin invisible {
   visibility: hidden;
 }
+
+@mixin visible {
+  visibility: visible;
+}

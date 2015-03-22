@@ -42,7 +42,6 @@
     "glob": "^4.0.5"
   },
   "dependencies": {
-    "zz-form": "../zz-form",
-    "zz-uploader": "../zz-uploader"
+    "zz-form": "../zz-form"
   }
 }

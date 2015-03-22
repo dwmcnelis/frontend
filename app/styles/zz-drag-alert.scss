@@ -1,0 +1,15 @@
+.zz-drag-alert {
+
+  .zz-uploader {
+    @include invisible;
+  }
+
+  &.is-dragging {
+
+   .zz-uploader {
+      @include visible;
+    }
+
+  }
+
+}

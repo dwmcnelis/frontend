@@ -19,23 +19,23 @@ export default Ember.ObjectController.extend({
     uploadImage: function(file){
       var self = this;
       var attachment = this.store.createRecord('attachment', {
+        content: file,
+ 
+        name: file.name,
+        mime_type: file.type,
+        size: file.size,
+ 
         for_type: this.model.constructor.typeKey,
         for_id: this.model.get('id'),
-        for_attribute: 'image',
-        content:  file,
-        contentName: file.name,
-        contentSize: file.size,
-        contentType: file.type
+        for_attribute: 'image'
       });
 
       attachment.save().then(function(attachment){
-        //console.info('attachment uploaded: '+attachment.get('contentName'));
-        self.model.reload('refresh');
-      }, function(error){
+        self.model.set('image', attachment.get('url'));
+      }, function(/*error*/){
         //console.debug('attachment upload failed: ', error);
       }, 'file upload');
     },
-
 
     cancel: function() {
       var client = this.get('model');

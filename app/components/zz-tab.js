@@ -10,12 +10,6 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
 
-  //--------------------------------------------------------------------------------
-  // Dependencies
-
-  //--------------------------------------------------------------------------------
-  // Attributes
-
   // The root component element
   //
   // @property {Ember.String} tagName

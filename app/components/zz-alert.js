@@ -10,12 +10,6 @@ import Ember from 'ember';
 
 export default Ember.Component.extend( {
 
-  // Dependencies
-  //
-
-  // Attributes
-  //
-
   // Array of class names for the alert's div
   //
   // @property {Ember.Array} classNames

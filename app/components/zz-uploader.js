@@ -26,7 +26,7 @@ export default Ember.Component.extend(UuidMixin, {
 
   // Bind the specified properties as the classes of the DOM element.
   //
-  classNameBindings: ['isDragging', 'isUploading','isDisabled:is-disabled', 'extraClasses'],
+  classNameBindings: ['isDragging', 'isUploading:is-uploading','isDisabled:is-disabled', 'extraClasses'],
 
   // Extra css classes 
   //
@@ -72,15 +72,45 @@ export default Ember.Component.extend(UuidMixin, {
   //
   dropped: [],
 
-  isUploading: function() {
-    console.debug('isUploading: ');
-    return this.get('dropped').filter(function(item){
-      if (item.get('progress') < 1) {
-        return true;
+  // Number of completed uploads.
+  // @property dropped
+  // @public
+  //
+  uploaded: 0,
+
+  // Number of progress notifications.
+  // @property dropped
+  // @public
+  //
+  progressed: 0,
+
+  isUploading: (function() {
+    var uploading = false;
+    var dropped = this.get('dropped');
+    dropped.forEach(function(item) {
+      if (item['progress'] < 1) {
+        uploading = true;
       }
     });
-  }.property('dropped.@each.progress'),
+    return uploading;
+  }).property('dropped.[]','progressed','uploaded'),
 
+  updateProgress: (function(upload, progress) {
+    var match;
+    var dropped = this.get('dropped');
+    dropped.forEach(function(item) {
+      if (item['upload'] === upload) {
+        match = item;
+      }
+    });
+    if (match) {
+      match['progress'] = progress;
+    }
+    this.incrementProperty('progressed');
+    if (progress === 1) {
+      this.incrementProperty('uploaded');
+    }
+  }),
 
   // Drag start handler.
   // @function dragStart
@@ -177,21 +207,13 @@ export default Ember.Component.extend(UuidMixin, {
     if (this.get('progress')) {
      var self = this;
      this.$().on('uploadProgress', function(event) {
-        console.debug('uploadProgress: upload: '+event.upload+', progress: '+event.progress);
-        var upload = self.get('dropped').filter(function(item){
-          if (item['upload'] === event.upload) {
-            return item;
-          }
-        });
-        if (upload) {
-          upload['progress'] = event.progress;
-        }
         if (self.get('progress')) {
+          self.updateProgress(event.upload, event.progress);
+
           self.sendAction('uploadProgress', event.upload, event.progress);
         }
-        var uploading = self.get('isUploading');
-        //debugger;
-        if (!self.get('multiple') && !self.get('isUploading')) {
+
+        if (self.get('isDisabled')) {
           self.set('isDisabled', false);
         }
       });

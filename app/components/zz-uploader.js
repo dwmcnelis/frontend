@@ -79,7 +79,7 @@ export default Ember.Component.extend(UuidMixin, {
         return true;
       }
     });
-  }.observes('dropped.@each.progress'),
+  }.property('dropped.@each.progress'),
 
 
   // Drag start handler.
@@ -177,14 +177,14 @@ export default Ember.Component.extend(UuidMixin, {
     if (this.get('progress')) {
      var self = this;
      this.$().on('uploadProgress', function(event) {
-        //console.debug('uploadProgress: upload: '+event.upload);
+        console.debug('uploadProgress: upload: '+event.upload+', progress: '+event.progress);
         var upload = self.get('dropped').filter(function(item){
-          if (item.get('upload') === event.upload) {
-              return item;
+          if (item['upload'] === event.upload) {
+            return item;
           }
         });
         if (upload) {
-          upload.set('progress') = event.progress;
+          upload['progress'] = event.progress;
         }
         if (self.get('progress')) {
           self.sendAction('uploadProgress', event.upload, event.progress);

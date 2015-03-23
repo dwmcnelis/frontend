@@ -5,26 +5,6 @@
 
 // Defaults
 
-//.zz-uploader {
-  //width: 400px;
-  //height: 50px;
-  //border: 2px dashed #dee5e7;
-  //background-color: #aaa;
-  //color: #58666e;
-  //text-align: center;
-  //padding: 30px;
-
-  //&.is-dragging {
-  //  border-color: limegreen;
-  //}
-
-  //&.is-disabled{
-  //  border-color: #acacac;
-  //  background: #F2F2F2;
-  //  opacity: 0.3;
-  //}
-//}
-
 .zz-uploader-wrapper {
   position: relative;
   width: 100px;
@@ -61,48 +41,10 @@
   background-color: #ffffff;
   @include horizontal-center;
 
-  // display: inline-block;
-  // width: 100px !important;
-  // height: 100px !important;
-  // border: 10px solid #ffffff;
-
-  // > .zz-uploader-content {
-  //   @include shown;
-  // }
-  // > .zz-uploader-dropzone {
-  //   @include hidden;
-  // }
-  // > .zz-uploader-progress {
-  //   @include hidden;
-  // }
-
   &.is-dragging {
     @include visible;
   }
 
-  //&.is-dragging {
-   //border: 2px dashed #aaaaaa;
-
-    // .zz-uploader-content {
-    //   @include hidden;
-    // }
-
-
-    // .zz-uploader-content {
-    //   @include hidden;
-    // }
-    // .zz-uploader-dropzone {
-    //   @include shown;
-    //   background-color: #aaa;
-    //   color: #000000;
-    //   text-align: center;
-    //   padding: 30px;
-    // }
-    // .zz-uploader-progress {
-    //   @include hidden;
-
-    // }
-  //}
 }
 
 

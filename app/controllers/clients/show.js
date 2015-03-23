@@ -32,6 +32,7 @@ export default Ember.ObjectController.extend({
 
       attachment.save().then(function(attachment){
         self.model.set('image', attachment.get('url'));
+        //self.model.reload();
       }, function(/*error*/){
         //console.debug('attachment upload failed: ', error);
       }, 'file upload');

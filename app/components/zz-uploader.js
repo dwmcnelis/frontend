@@ -49,26 +49,30 @@ export default Ember.Component.extend({
   // @function dragStart
   // @public
   //
-  // dragStart: function(event) {
-  //   event.preventDefault();
-  //   event.dataTransfer.effectAllowed = "copy";
-  // },
+  dragStart: function(event) {
+    event.dataTransfer.effectAllowed = "copy";
+    event.dataTransfer.dropEffect = "copy";
+    event.preventDefault();
+    event.stopPropagation();
+    return false;
+  },
 
   // Drag enter handler.
   // @function dragEnter
   // @public
   //
   dragEnter: function(event) {
-    if (event.dataTransfer.items.length == 1) {
+    this.set('isDragging', true);
+    //if (event.dataTransfer.items.length === 1) {
       event.dataTransfer.effectAllowed = "copy";
       event.dataTransfer.dropEffect = "copy";
-    } else {
-      event.dataTransfer.effectAllowed = "none";
-      event.dataTransfer.dropEffect = "none";
-    }
+    //} else {
+    //  event.dataTransfer.effectAllowed = "none";
+    //  event.dataTransfer.dropEffect = "none";
+    //}
     event.preventDefault();
-    //event.stopPropagation();
-    this.set('isDragging', true);
+    event.stopPropagation();
+    return false;
   },
 
   // Drag over handler.
@@ -76,16 +80,17 @@ export default Ember.Component.extend({
   // @public
   //
   dragOver: function(event) {
-    if (event.dataTransfer.items.length == 1) {
+    this.set('isDragging', true);
+    //if (event.dataTransfer.items.length === 1) {
       event.dataTransfer.effectAllowed = "copy";
       event.dataTransfer.dropEffect = "copy";
-    } else {
-      event.dataTransfer.effectAllowed = "none";
-      event.dataTransfer.dropEffect = "none";
-    }
+    //} else {
+    //  event.dataTransfer.effectAllowed = "none";
+    //  event.dataTransfer.dropEffect = "none";
+    //}
     event.preventDefault();
-    //event.stopPropagation();
-     this.set('isDragging', true);
+    event.stopPropagation();
+    return false;
    },
 
   // Drop handler.
@@ -94,18 +99,25 @@ export default Ember.Component.extend({
   //
   drop: function(event) {
     var file;
-
     if (!this.get('isDisabled')) {
-      event.preventDefault();
       this.set('isDragging', false);
 
       // only 1 file for now
       file = event.dataTransfer.files[0];
+      debugger;
       this.set('isDisabled', true);
       this.sendAction('fileDropped', file);
+      event.stopImmediatePropagation();
+      event.stopPropagation();
+      event.preventDefault();
+      return false;
     } else {
       console.error('you can only upload on file at the time');
     }
+    event.stopImmediatePropagation();
+    event.stopPropagation();
+    event.preventDefault();
+    return false;
   },
 
   // Drag leave handler.
@@ -113,8 +125,10 @@ export default Ember.Component.extend({
   // @public
   //
   dragLeave: function(event) {
-    event.preventDefault();
     this.set('isDragging', false);
+    event.preventDefault();
+    event.stopPropagation();
+    return false;
   },
 
   // Did insert element handler.
@@ -123,7 +137,6 @@ export default Ember.Component.extend({
   //
   didInsertElement: function() {
     var self = this;
-
     this.$().on('uploadProgress', function(event) {
       if (event.progress === 1) {
         self.set('isDisabled', false);

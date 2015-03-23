@@ -1,8 +1,9 @@
 // addon/components/zz_uploader.js
 
 import Ember from 'ember';
+import UuidMixin from '../mixins/uuid';
 
-export default Ember.Component.extend({
+export default Ember.Component.extend(UuidMixin, {
 
   // The root component element
   //
@@ -25,7 +26,7 @@ export default Ember.Component.extend({
 
   // Bind the specified properties as the classes of the DOM element.
   //
-  classNameBindings: ['isDragging', 'isDisabled:is-disabled', 'extraClasses'],
+  classNameBindings: ['isDragging', 'isUploading','isDisabled:is-disabled', 'extraClasses'],
 
   // Extra css classes 
   //
@@ -52,6 +53,34 @@ export default Ember.Component.extend({
   // @public
   //
   message: 'Drop files here',
+
+  // Allow multiple drops.
+  // @property multiple
+  // @public
+  //
+  multiple: false,
+
+  // Show uploading progress.
+  // @property progress
+  // @public
+  //
+  progress: false,
+
+  // Array of files dropped on uploader.
+  // @property dropped
+  // @public
+  //
+  dropped: [],
+
+  isUploading: function() {
+    console.debug('isUploading: ');
+    return this.get('dropped').filter(function(item){
+      if (item.get('progress') < 1) {
+        return true;
+      }
+    });
+  }.observes('dropped.@each.progress'),
+
 
   // Drag start handler.
   // @function dragStart
@@ -97,15 +126,30 @@ export default Ember.Component.extend({
   //
   drop: function(event) {
     var file;
+
     if (!this.get('isDisabled')) {
       this.set('isDragging', false);
 
-      // only 1 file for now
       file = event.dataTransfer.files[0];
-      this.set('isDisabled', true);
-      this.sendAction('fileDropped', file);
-    } else {
-      console.error('you can only upload on file at the time');
+
+      var upload = this.uuid();
+      this.get('dropped').push({
+        upload: upload,
+        name: file.name,
+        mime_type: file.type,
+        size: file.size,
+        progress: 0
+      });
+
+      if (!this.get('multiple')) {
+        this.set('isDisabled', true);
+      }
+
+      if (this.get('progress')) {
+        // create progress indicators here
+      }
+
+      this.sendAction('fileDropped', file, upload);
     }
     //event.stopImmediatePropagation();
     //event.stopPropagation();
@@ -129,13 +173,29 @@ export default Ember.Component.extend({
   // @public
   //
   didInsertElement: function() {
-    var self = this;
-    this.$().on('uploadProgress', function(event) {
-      if (event.progress === 1) {
-        self.set('isDisabled', false);
-      }
-      self.sendAction('uploadProgress', event.progress);
-    });
+
+    if (this.get('progress')) {
+     var self = this;
+     this.$().on('uploadProgress', function(event) {
+        //console.debug('uploadProgress: upload: '+event.upload);
+        var upload = self.get('dropped').filter(function(item){
+          if (item.get('upload') === event.upload) {
+              return item;
+          }
+        });
+        if (upload) {
+          upload.set('progress') = event.progress;
+        }
+        if (self.get('progress')) {
+          self.sendAction('uploadProgress', event.upload, event.progress);
+        }
+        var uploading = self.get('isUploading');
+        //debugger;
+        if (!self.get('multiple') && !self.get('isUploading')) {
+          self.set('isDisabled', false);
+        }
+      });
+    }
 
   }
 });

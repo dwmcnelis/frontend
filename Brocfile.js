@@ -40,5 +40,6 @@ app.import('vendor/glyphicons/fonts/glyphicons-halflings-regular.woff2', {
 
 app.import('vendor/select2/select2.js');
 app.import('vendor/zeroclipboard/ZeroClipboard.js');
+app.import(app.bowerDirectory + '/node-uuid/uuid.js');
 
 module.exports = app.toTree();

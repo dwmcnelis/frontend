@@ -20,20 +20,25 @@ export default Ember.Mixin.create({
        data &&
        this.formDataTypes.contains(type)){
       var formData,
+          uploadId,
           root;
 
       formData = new FormData();
       root = Ember.keys(data)[0];
 
-      Ember.keys(data[root]).forEach(function(key){
-        if(Ember.isPresent(data[root][key])){
-         formData.append(root + "[" + key + "]", data[root][key]);
+      Ember.keys(data[root]).forEach(function(key) {
+        if (Ember.isPresent(data[root][key])) {
+          formData.append(root + "[" + key + "]", data[root][key]);
+          if (key === 'upload') {
+            uploadId = data[root][key];
+          }
         }
       });
 
       hash.processData = false;
       hash.contentType = false;
       hash.data = formData;
+      hash.upload = uploadId;
     }
 
     return hash;
@@ -68,6 +73,7 @@ export default Ember.Mixin.create({
             var percentComplete = evt.loaded / evt.total;
             Ember.$('[data-uploader]').trigger({
               type:"uploadProgress",
+              upload: hash['upload'],
               progress:percentComplete
             });
           }
@@ -78,6 +84,7 @@ export default Ember.Mixin.create({
             var percentComplete = evt.loaded / evt.total;
             Ember.$('[data-uploader]').trigger({
               type:"downloadProgress",
+              upload: hash['upload'],
               progress:percentComplete
             });
           }

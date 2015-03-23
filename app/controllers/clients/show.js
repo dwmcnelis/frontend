@@ -16,10 +16,11 @@ export default Ember.ObjectController.extend({
   }).property('isDirty', 'isSaving'),
 
   actions: {
-    uploadImage: function(file){
-      console.debug('uploadImage: file: '+Ember.inspect(file));
+    uploadImage: function(file, upload){
+      //console.debug('uploadImage: file: '+Ember.inspect(file)+', upload: '+upload);
       var self = this;
       var attachment = this.store.createRecord('attachment', {
+        upload: upload,
         content: file,
  
         name: file.name,
@@ -31,12 +32,16 @@ export default Ember.ObjectController.extend({
         for_attribute: 'image'
       });
 
-      attachment.save().then(function(attachment){
+      attachment.save().then(function(/*attachment*/){
         //self.model.set('image', attachment.get('url'));
         self.model.reload();
-      }, function(/*error*/){
-        //console.debug('attachment upload failed: ', error);
+      }, function(error){
+        console.debug('attachment upload failed: ', error);
       }, 'file upload');
+    },
+
+    uploadProgress: function(id, progress) {
+      console.debug('uploadProgress: id: '+id+', progress: '+progress);
     },
 
     cancel: function() {

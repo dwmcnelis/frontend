@@ -5,6 +5,7 @@ import DS from 'ember-data';
 import Validation from '../mixins/validation';
 
 export default DS.Model.extend(Validation, {  
+  upload: DS.attr(),
   content: DS.attr(),
 
   name: DS.attr('string'),

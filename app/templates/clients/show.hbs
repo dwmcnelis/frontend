@@ -2,13 +2,9 @@
 <div>
   <div class="one-of-two">
   <h1>{{fullName}}</h1>
-  <div class="zz-uploader-wrapper">
-    <img {{bind-attr src=image_crop_url}} alt="Client Photo" class="zz-uploader-content">
-    {{#zz-uploader fileDropped="uploadImage"}}
-      <div class="zz-uploader-message">
-        Drop image file here
-      </div>
-    {{/zz-uploader}}
+  <div class="zz-drop-wrapper" style="width: 100px; height: 100px;">
+    <img {{bind-attr src=image_crop_url}} alt="Client Photo" class="zz-drop-content">
+    {{zz-uploader message='Drop image file here' fileDropped="uploadImage"}}
   </div>
 
   <p>

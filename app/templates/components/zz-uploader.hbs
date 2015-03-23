@@ -1,2 +1,8 @@
 {{! app/templates/components/zz-uploader.hbs }}
-{{yield}}
+<div class="zz-drop-message">
+{{#if message}}
+  {{message}}
+{{else}}
+  {{yield}}
+{{/if}}
+</div>

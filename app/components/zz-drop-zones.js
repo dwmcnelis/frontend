@@ -1,3 +1,7 @@
+// addon/components/zz_drop_zones.js
+
+// Activation of drop zones
+
 import Ember from 'ember';
 
 export default Ember.Component.extend({
@@ -19,7 +23,7 @@ export default Ember.Component.extend({
   //
   // @property {Ember.Array} classNames
   //
-  classNames: ['zz-drag-alert'],
+  classNames: ['zz-drop-zones'],
 
   // Bind the specified properties as the classes of the DOM element.
   //

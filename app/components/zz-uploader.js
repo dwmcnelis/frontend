@@ -1,3 +1,5 @@
+// addon/components/zz_uploader.js
+
 import Ember from 'ember';
 
 export default Ember.Component.extend({
@@ -19,7 +21,7 @@ export default Ember.Component.extend({
   //
   // @property {Ember.Array} classNames
   //
-  classNames: ['zz-uploader', 'dropzone'],
+  classNames: ['zz-uploader', 'zz-drop-zone'],
 
   // Bind the specified properties as the classes of the DOM element.
   //
@@ -44,6 +46,12 @@ export default Ember.Component.extend({
   // @public
   //
   'data-uploader': 'true',
+
+  // The message displayed in the drop zone.
+  // @property message
+  // @public
+  //
+  message: 'Drop files here',
 
   // Drag start handler.
   // @function dragStart

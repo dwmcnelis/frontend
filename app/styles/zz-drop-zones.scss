@@ -1,0 +1,56 @@
+// app/styles/zz-drop-zones.scss
+
+// Drop zones styles
+//
+
+.zz-drop-zones {
+
+  .zz-drop-zone {
+    @include invisible;
+  }
+
+  &.is-dragging {
+
+   .zz-drop-zone {
+      @include visible;
+    }
+
+  }
+
+}
+
+.zz-drop-wrapper {
+  position: relative;
+}
+
+.zz-drop-content {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+}
+
+.zz-drop-message {
+  display: inline-block;
+  padding: 4px; 
+  @include center;
+  text-align: center;
+}
+
+.zz-drop-zone {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  color: #aaaaaa;
+  border: 4px dashed #aaaaaa;
+  background-color: #ffffff;
+
+  &.is-dragging {
+    @include visible;
+  }
+
+}

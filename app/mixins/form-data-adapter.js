@@ -16,7 +16,7 @@ export default Ember.Mixin.create({
 
     var hash = this._super.apply(this, arguments);
 
-    if(typeof FormData === 'function' &&
+    if(typeof FormData !== 'undefined' &&
        data &&
        this.formDataTypes.contains(type)){
       var formData,
@@ -27,7 +27,7 @@ export default Ember.Mixin.create({
 
       Ember.keys(data[root]).forEach(function(key){
         if(Ember.isPresent(data[root][key])){
-          formData.append(root + "[" + key + "]", data[root][key]);
+         formData.append(root + "[" + key + "]", data[root][key]);
         }
       });
 

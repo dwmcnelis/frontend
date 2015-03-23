@@ -50,11 +50,11 @@ export default Ember.Component.extend({
   // @public
   //
   dragStart: function(event) {
-    event.dataTransfer.effectAllowed = "copy";
-    event.dataTransfer.dropEffect = "copy";
-    event.preventDefault();
+    // event.dataTransfer.effectAllowed = "copy";
+    // event.dataTransfer.dropEffect = "copy";
     event.stopPropagation();
-    return false;
+    event.preventDefault();
+    //return false;
   },
 
   // Drag enter handler.
@@ -63,16 +63,11 @@ export default Ember.Component.extend({
   //
   dragEnter: function(event) {
     this.set('isDragging', true);
-    //if (event.dataTransfer.items.length === 1) {
-      event.dataTransfer.effectAllowed = "copy";
-      event.dataTransfer.dropEffect = "copy";
-    //} else {
-    //  event.dataTransfer.effectAllowed = "none";
-    //  event.dataTransfer.dropEffect = "none";
-    //}
-    event.preventDefault();
+    event.dataTransfer.effectAllowed = "copy";
+    event.dataTransfer.dropEffect = "copy";
     event.stopPropagation();
-    return false;
+    event.preventDefault();
+    //return false;
   },
 
   // Drag over handler.
@@ -81,16 +76,11 @@ export default Ember.Component.extend({
   //
   dragOver: function(event) {
     this.set('isDragging', true);
-    //if (event.dataTransfer.items.length === 1) {
-      event.dataTransfer.effectAllowed = "copy";
-      event.dataTransfer.dropEffect = "copy";
-    //} else {
-    //  event.dataTransfer.effectAllowed = "none";
-    //  event.dataTransfer.dropEffect = "none";
-    //}
-    event.preventDefault();
+    event.dataTransfer.effectAllowed = "copy";
+    event.dataTransfer.dropEffect = "copy";
     event.stopPropagation();
-    return false;
+    event.preventDefault();
+    //return false;
    },
 
   // Drop handler.
@@ -104,20 +94,15 @@ export default Ember.Component.extend({
 
       // only 1 file for now
       file = event.dataTransfer.files[0];
-      debugger;
       this.set('isDisabled', true);
       this.sendAction('fileDropped', file);
-      event.stopImmediatePropagation();
-      event.stopPropagation();
-      event.preventDefault();
-      return false;
     } else {
       console.error('you can only upload on file at the time');
     }
-    event.stopImmediatePropagation();
-    event.stopPropagation();
+    //event.stopImmediatePropagation();
+    //event.stopPropagation();
     event.preventDefault();
-    return false;
+    //return false;
   },
 
   // Drag leave handler.
@@ -128,7 +113,7 @@ export default Ember.Component.extend({
     this.set('isDragging', false);
     event.preventDefault();
     event.stopPropagation();
-    return false;
+    //return false;
   },
 
   // Did insert element handler.

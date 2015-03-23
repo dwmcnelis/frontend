@@ -44,9 +44,9 @@ export default Ember.Component.extend({
   // @public
   //
   dragStart: function(event) {
-    event.preventDefault();
     event.stopPropagation();
-    return false;
+    event.preventDefault();
+    //return false;
   },
 
   // Drag enter handler.
@@ -54,12 +54,14 @@ export default Ember.Component.extend({
   // @public
   //
   dragEnter: function(event) {
+    // event.dataTransfer.effectAllowed = "copy";
+    // event.dataTransfer.dropEffect = "copy";
     this.set('isDragging', true);
     event.dataTransfer.effectAllowed = "none";
     event.dataTransfer.dropEffect = "none";
-    event.preventDefault();
     event.stopPropagation();
-    return false;
+    event.preventDefault();
+    //return false;
   },
 
   // Drag over handler.
@@ -70,9 +72,9 @@ export default Ember.Component.extend({
     this.set('isDragging', true);
     event.dataTransfer.effectAllowed = "none";
     //event.dataTransfer.dropEffect = "none";
-    event.preventDefault();
     event.stopPropagation();
-    return false;
+    event.preventDefault();
+    //return false;
   },
 
   // Drop handler.
@@ -81,9 +83,9 @@ export default Ember.Component.extend({
   //
   drop: function(event) { 
     this.set('isDragging', false);
+    //event.stopPropagation();
     event.preventDefault();
-    event.stopPropagation();
-    return false;
+    //return false;
   },
 
   // Drag leave handler. 
@@ -92,9 +94,9 @@ export default Ember.Component.extend({
   //
   dragLeave: function(event) {
     this.set('isDragging', false);
-    event.preventDefault();
     event.stopPropagation();
-    return false;
+    event.preventDefault();
+    //return false;
   }
 
 });

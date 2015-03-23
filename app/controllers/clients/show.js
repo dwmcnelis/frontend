@@ -17,6 +17,7 @@ export default Ember.ObjectController.extend({
 
   actions: {
     uploadImage: function(file){
+      console.debug('uploadImage: file: '+Ember.inspect(file));
       var self = this;
       var attachment = this.store.createRecord('attachment', {
         content: file,
@@ -31,8 +32,8 @@ export default Ember.ObjectController.extend({
       });
 
       attachment.save().then(function(attachment){
-        self.model.set('image', attachment.get('url'));
-        //self.model.reload();
+        //self.model.set('image', attachment.get('url'));
+        self.model.reload();
       }, function(/*error*/){
         //console.debug('attachment upload failed: ', error);
       }, 'file upload');

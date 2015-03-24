@@ -8,6 +8,14 @@ $zzDropZonesBorderColor: darken($zzDropZonesMessageColor, $zzDropZonesDarken) !d
 $zzDropZonesBorderThickness: 4px !default;
 $zzDropZonesBackgroundColor: $componentBackgroundColor !default;
 
+//$zzDropProgressColor: $colorGrayMedium !default;
+$zzDropProgressColor: #ffec80 !default;
+$zzDropProgressDarken: 5% !default;
+$zzDropProgressBorderColor: darken($zzDropProgressColor, $zzDropProgressDarken) !default;
+$zzDropProgressBorderThickness: 4px !default;
+$zzDropProgressBackgroundColor: $componentBackgroundColor !default;
+
+
 .zz-drop-zones {
 
   .zz-drop-zone {
@@ -18,6 +26,9 @@ $zzDropZonesBackgroundColor: $componentBackgroundColor !default;
 
    .zz-drop-zone {
       @include visible;
+    }
+   .zz-drop-content {
+      @include invisible;
     }
 
   }
@@ -54,8 +65,19 @@ $zzDropZonesBackgroundColor: $componentBackgroundColor !default;
   border: $zzDropZonesBorderThickness dashed $zzDropZonesBorderColor;
   background-color: $zzDropZonesBackgroundColor;
 
-  &.is-dragging {
-    @include visible;
-  }
+  // &.is-dragging {
+  //   @include visible;
+  // }
 
+}
+
+.zz-drop-progress {
+  @include invisible;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  border: $zzDropProgressBorderThickness dashed $zzDropProgressBorderColor;
+  background-color: $zzDropProgressColor;
 }

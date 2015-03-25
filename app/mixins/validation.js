@@ -1,7 +1,11 @@
+// app/mixins/validation.js
+
 import Ember from 'ember';
 
 export default Ember.Mixin.create({
+
   validators: Ember.inject.service(),
+  
   init: function(){
     var properties,
         validations,

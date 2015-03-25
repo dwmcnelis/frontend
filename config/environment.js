@@ -47,6 +47,7 @@ module.exports = function(environment) {
     serverTokenRefreshEndpoint: '/api/v1/refresh/',
     tokenExpireName: 'exp',
     timeFactor: 1
+    
   };
 
 

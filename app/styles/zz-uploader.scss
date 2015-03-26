@@ -8,18 +8,18 @@
 .zz-drop-zone.is-dragging {
 	@include visible;	
 }
-.zz-drop-zone.is-dragging ~ .zz-drop-content {
+.zz-drop-zone.is-dragging + .zz-drop-content {
 	@include invisible;	
 }
-.zz-drop-zone.is-dragging ~ .zz-drop-progress {
+.zz-drop-zone.is-dragging + .zz-drop-progress {
 	@include invisible;	
 }
 .zz-drop-zone.is-loading {
 	@include invisible;	
 }
-.zz-drop-zone.is-loading ~ .zz-drop-content {
+.zz-drop-zone.is-loading + .zz-drop-content {
 	@include invisible;	
 }
-.zz-drop-zone.is-loading ~ .zz-drop-progress {
+.zz-drop-zone.is-loading + .zz-drop-progress {
 	@include visible;	
 }

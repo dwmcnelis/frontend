@@ -14,11 +14,15 @@ export default Ember.ObjectController.extend({
 
   actions: {
 
-   selectTeams: function(query, promise) {
+    selectTeams: function(query, promise) {
       this.store.findSelect('team', query.term, promise);
     },
 
-   cancel: function() {
+    selectSportsTags: function(query, promise) {
+      this.store.findSelect2('tag', { as: 'sports', query: query.term }, promise);
+    },
+   
+    cancel: function() {
       var client = this.get('model');
       client.rollback();
       return this.transitionToRoute('clients.show',client);

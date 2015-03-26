@@ -23,6 +23,21 @@ export default DS.Store.extend({
     }, function(reason) {
         promise.reject(reason);
     });
+  },
+
+  findSelect2: function(model, options, promise) {
+    this.find('select_'+model, options).then(function(records) {
+      var options = records.map(function(item) {
+        return {
+          text: item.get('text'),
+          children : item.get('children')
+        };
+      });
+      promise.resolve(options);
+    }, function(reason) {
+        promise.reject(reason);
+    });
   }
+
 
 });

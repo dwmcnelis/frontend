@@ -10,7 +10,7 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
   },
   
   setupController: function(controller, model) {
-    controller.set('model', model);
+    controller.set('model', model);    
   },
 
   renderTemplate: function() {
@@ -23,6 +23,5 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
 	    outlet: 'detail-content',
 	  });
 	}
-
 
 });

@@ -16,7 +16,7 @@ export default Ember.Mixin.create({
     if (options && 'data' in options) {
       data = options.data;
     }
-
+    
     var hash = this._super.apply(this, arguments);
 
     if (typeof FormData !== 'undefined' && data && this.formDataTypes.contains(type)) {

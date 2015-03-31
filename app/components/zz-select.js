@@ -25,14 +25,47 @@ var run = Ember.run;
 //    properties can be computed properties or just plain JavaScript values.
  
 var Select2Component = Ember.Component.extend({
-  tagName: "input",
-  classNames: ["zz-select"],
-  classNameBindings: ["inputSize"],
-  attributeBindings: ["style"],
+
+  // The root component element
+  //
+  // @property {Ember.String} tagName
+  // @default  "input"
+  //
+  tagName: 'input',
+
+  // Bind the specified properties as DOM attributes.
+  // @property attributeBindings
+  // @private
+  //
+  attributeBindings: ['style'],
+
+  // Class names to apply to the button
+  //
+  // @property {Ember.Array} classNames
+  //
+  classNames: ['zz-select'],
+
+  // Bind the specified properties as the classes of the DOM element.
+  //
+  classNameBindings: ['extraClasses'],
+
+  // Extra css classes 
+  //
+  // @property {Ember.String}
+  // @default  null
+  // @public
+  //
+  extraClasses: null,
+
+  // CSS style 
+  //
+  // @property {Ember.String}
+  // @default  display: hidden;
+  // @public
+  //
   style: "display: hidden;",
 
   // Bindings that may be overwritten in the template
-  inputSize: "input-md",
   cssClass: null,
   optionIdPath: "id",
   optionValuePath: null,
@@ -52,11 +85,13 @@ var Select2Component = Ember.Component.extend({
   maximumInputLength: null,
   tags: false,
   tokenSeparators: [",", " "],
+  tokenContent: '',
   allowCreateSearchChoice: false,
   createSearchChoice: function(term /*,data*/) {
     return {
-      id: '+'+Ember.$.trim(term),
-      text: new Ember.Handlebars.SafeString(Ember.$.trim(term) + ' <span class="text-muted">(new)</span>')
+      id: '+'+window.uuid.v4(),
+      text: new Ember.Handlebars.SafeString(Ember.$.trim(term) + ' <span class="text-muted">(new)</span>'),
+      description: null
     };
   },
 //   initSelection: function (element, callback) {
@@ -119,7 +154,11 @@ var Select2Component = Ember.Component.extend({
       options.tags = this.get('tags');
       options.tokenSeparators = this.get('tokenSeparators');
       if (this.get('allowCreateSearchChoice')) {
-        options.createSearchChoice = this.get('createSearchChoice'); 
+        options.createSearchChoice = function (term /*,data*/) {
+          var choice = self.get('createSearchChoice')(term);
+          choice['as'] = self.get('tagContext');
+          return choice;
+        };
       }
     }
     options.allowClear = this.get('allowClear');

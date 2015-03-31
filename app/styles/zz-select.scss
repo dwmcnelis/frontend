@@ -5,6 +5,10 @@
 $select2HighlightColor: $primaryColor !default;
 $select2HighlightMultedColor: $colorGrayLighter !default;
 
+.zz-select.full-width {
+    width: 100%;
+}
+
 .select2-container {
     margin: 0;
     position: relative;

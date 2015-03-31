@@ -3,26 +3,36 @@
 import Ember from 'ember';
 import DS from 'ember-data';
 import EmberValidations from 'ember-validations';
+import TaggedModel from './tagged';
 
-export default DS.Model.extend(EmberValidations.Mixin, {
+export default TaggedModel.extend(EmberValidations.Mixin, {
 
   firstName: DS.attr('string'),
+
   lastName: DS.attr('string'),
+
   email: DS.attr('string'),
+
   phone: DS.attr('string'),
+
   level: DS.attr('string', {
     defaultValue: 'a_list'
   }),
+
   rank: DS.attr('number', {
     defaultValue: 100
   }),
+
   status: DS.attr('string', {
     defaultValue: 'new'
   }),
+
   buzzes: DS.attr('number', {
     defaultValue: 0
   }),
+
   notes: DS.attr('string'),
+
   image: DS.attr('string', {
     defaultValue: null
   }),
@@ -81,7 +91,43 @@ export default DS.Model.extend(EmberValidations.Mixin, {
   image_icon_url: (function() {
     var image = this.get('image');
     return this.thumb_url(image,'32x32#');
-  }).property('image'),  
+  }).property('image'),
+
+  originalTags: (function() {
+    return this.get('tags');
+  }).property('tags.@each.as'), 
+
+  peopleTags: (function() {
+    return this.get('tags').filterBy('as', 'people');
+  }).property('tags.@each.as'), 
+
+  sportsTags: (function() {
+    return this.get('tags').filterBy('as', 'sports');
+  }).property('tags.@each.as'), 
+
+  musicTags: (function() {
+    return this.get('tags').filterBy('as', 'music');
+  }).property('tags.@each.as'), 
+
+  entertainmentTags: (function() {
+    return this.get('tags').filterBy('as', 'entertainment');
+  }).property('tags.@each.as'), 
+
+  foodTags: (function() {
+    return this.get('tags').filterBy('as', 'food');
+  }).property('tags.@each.as'), 
+
+  travelTags: (function() {
+    return this.get('tags').filterBy('as', 'travel');
+  }).property('tags.@each.as'), 
+
+  politicsTags: (function() {
+    return this.get('tags').filterBy('as', 'politics');
+  }).property('tags.@each.as'), 
+
+  otherTags: (function() {
+    return this.get('tags').filterBy('as', null);
+  }).property('tags.@each.as'), 
 
   thumb_url: function(url, geometry) {
     geometry = geometry.replace(/#/g, "%23");

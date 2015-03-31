@@ -9,23 +9,167 @@
     {{! /if}}
 
     <div class="form-group has-feedback">                    
-      <label class="control-label" style="margin-right: 6px">Teams</label>
+      <label class="control-label" style="margin-right: 6px">People</label>
       {{zz-select
-          placeholder="Search team..."
-          value=chosenTypeaheadTeam
-          typeaheadSearchingText="Searching teams"
-          typeaheadNoMatchesText="No teams found for '%@'"
+          placeholder="Search people..."
+          value=peopleTags
+          typeaheadSearchingText="Searching people"
+          typeaheadNoMatchesText="Nothing found for '%@'"
+          typeaheadErrorText="Loading failed: %@"
+          minimumInputLength=2
+          maximumInputLength=20
+          multiple=true
+          tags=true
+          tagContext='people'
+          tokenSeparators=null
+          allowCreateSearchChoice=true
+          query="findPeopleSelectTags"
+          extraClasses="full-width"
+      }}
+      <span class="form-control-feedback"><i></i></span>
+    </div>
+
+    <div class="form-group has-feedback">                    
+      <label class="control-label" style="margin-right: 6px">Sports</label>
+      {{zz-select
+          placeholder="Search sports..."
+          value=sportsTags
+          typeaheadSearchingText="Searching sports"
+          typeaheadNoMatchesText="Nothing found for '%@'"
           typeaheadErrorText="Loading failed: %@"
           minimumInputLength=2
           maximumInputLength=10
           multiple=true
           tags=true
+          tagContext='sports'
           allowCreateSearchChoice=true
-          query="selectSportsTags"
+          query="findSportsSelectTags"
+          extraClasses="full-width"
       }}
       <span class="form-control-feedback"><i></i></span>
     </div>
-    {{zz-button enabled=needsSaving action='save' kind='primary' label='Save' icon='glyphicon glyphicon-save' label-pending='Saving' icon-pending='fa fa-spinner fa-spin'}}
+
+    <div class="form-group has-feedback">                    
+      <label class="control-label" style="margin-right: 6px">Music</label>
+      {{zz-select
+          placeholder="Search music..."
+          value=musicTags
+          typeaheadSearchingText="Searching music"
+          typeaheadNoMatchesText="Nothing found for '%@'"
+          typeaheadErrorText="Loading failed: %@"
+          minimumInputLength=2
+          maximumInputLength=10
+          multiple=true
+          tags=true
+          tagContext='music'
+          allowCreateSearchChoice=true
+          query="findMusicSelectTags"
+          extraClasses="full-width"
+      }}
+      <span class="form-control-feedback"><i></i></span>
+    </div>
+
+    <div class="form-group has-feedback">                    
+      <label class="control-label" style="margin-right: 6px">Entertainment</label>
+      {{zz-select
+          placeholder="Search entertainment..."
+          value=entertainmentTags
+          typeaheadSearchingText="Searching entertainment"
+          typeaheadNoMatchesText="Nothing found for '%@'"
+          typeaheadErrorText="Loading failed: %@"
+          minimumInputLength=2
+          maximumInputLength=10
+          multiple=true
+          tags=true
+          tagContext='entertainment'
+          allowCreateSearchChoice=true
+          query="findEntertainmentSelectTags"
+          extraClasses="full-width"
+      }}
+      <span class="form-control-feedback"><i></i></span>
+    </div>
+
+    <div class="form-group has-feedback">                    
+      <label class="control-label" style="margin-right: 6px">Food</label>
+      {{zz-select
+          placeholder="Search food..."
+          value=foodTags
+          typeaheadSearchingText="Searching food"
+          typeaheadNoMatchesText="Nothing found for '%@'"
+          typeaheadErrorText="Loading failed: %@"
+          minimumInputLength=2
+          maximumInputLength=10
+          multiple=true
+          tags=true
+          tagContext='food'
+          allowCreateSearchChoice=true
+          query="findFoodSelectTags"
+          extraClasses="full-width"
+      }}
+      <span class="form-control-feedback"><i></i></span>
+    </div>
+
+    <div class="form-group has-feedback">                    
+      <label class="control-label" style="margin-right: 6px">Travel</label>
+      {{zz-select
+          placeholder="Search travel..."
+          value=travelTags
+          typeaheadSearchingText="Searching travel"
+          typeaheadNoMatchesText="Nothing found for '%@'"
+          typeaheadErrorText="Loading failed: %@"
+          minimumInputLength=2
+          maximumInputLength=10
+          multiple=true
+          tags=true
+          tagContext='travel'
+          allowCreateSearchChoice=true
+          query="findTravelSelectTags"
+          extraClasses="full-width"
+      }}
+      <span class="form-control-feedback"><i></i></span>
+    </div>
+
+    <div class="form-group has-feedback">                    
+      <label class="control-label" style="margin-right: 6px">Politics</label>
+      {{zz-select
+          placeholder="Search politics..."
+          value=politicsTags
+          typeaheadSearchingText="Searching politics"
+          typeaheadNoMatchesText="Nothing found for '%@'"
+          typeaheadErrorText="Loading failed: %@"
+          minimumInputLength=2
+          maximumInputLength=10
+          multiple=true
+          tags=true
+          tagContext='politics'
+          allowCreateSearchChoice=true
+          query="findPoliticsSelectTags"
+          extraClasses="full-width"
+      }}
+      <span class="form-control-feedback"><i></i></span>
+    </div>
+
+    <div class="form-group has-feedback">                    
+      <label class="control-label" style="margin-right: 6px">Other</label>
+      {{zz-select
+          placeholder="Search other..."
+          value=otherTags
+          typeaheadSearchingText="Searching other"
+          typeaheadNoMatchesText="Nothing found for '%@'"
+          typeaheadErrorText="Loading failed: %@"
+          minimumInputLength=2
+          maximumInputLength=10
+          multiple=true
+          tags=true
+          tagContext='other'
+          allowCreateSearchChoice=true
+          query="findOtherSelectTags"
+          extraClasses="full-width"
+      }}
+      <span class="form-control-feedback"><i></i></span>
+    </div>
+
+    {{zz-button enabled=true action='save' kind='primary' label='Save' icon='glyphicon glyphicon-save' label-pending='Saving' icon-pending='fa fa-spinner fa-spin'}}
     {{zz-button action='cancel' label='Cancel' classNames='button'}}
   {{/zz-form}}
 

@@ -31,7 +31,7 @@ export default Ember.ObjectController.extend({
       var routes = this.container.lookup('router:main').get('router.currentHandlerInfos');
 
       // Get the route name, and model if it has one
-      routes.forEach(function(route, i, arr) {
+      routes.forEach(function(route) {
 
         // Ignore index routes etc.
         var name = route.name;

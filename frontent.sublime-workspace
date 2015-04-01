@@ -40,45 +40,42 @@
 	"buffers":
 	[
 		{
-			"file": "app/templates/clients/show.hbs",
+			"file": "app/controllers/application.js",
 			"settings":
 			{
-				"buffer_size": 1157,
+				"buffer_size": 1695,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/components/zz-uploader.js",
+			"file": "app/routes/clients/go.js",
 			"settings":
 			{
-				"buffer_size": 4759,
+				"buffer_size": 790,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/styles/zz-drop-zones.scss",
+			"file": "/Users/dmcnelis/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
 			"settings":
 			{
-				"buffer_size": 1714,
+				"buffer_size": 171,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "// app/styles/zz-uploader.scss\n\n// Uploader styles\n//\n\n// Defaults\n\n.zz-drop-zone.is-dragging {\n	@include visible;	\n}\n.zz-drop-zone.is-dragging + .zz-drop-content {\n	@include invisible;	\n}\n.zz-drop-zone.is-dragging + .zz-drop-progress {\n	@include invisible;	\n}\n.zz-drop-zone.is-loading {\n	@include invisible;	\n}\n.zz-drop-zone.is-loading + .zz-drop-content {\n	@include invisible;	\n}\n.zz-drop-zone.is-loading + .zz-drop-progress {\n	@include visible;	\n}\n",
-			"file": "app/styles/zz-uploader.scss",
-			"file_size": 451,
-			"file_write_time": 130716342770000000,
+			"file": "app/routes/clients/show.js",
 			"settings":
 			{
-				"buffer_size": 451,
+				"buffer_size": 654,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/templates/components/zz-uploader.hbs",
+			"file": "app/components/zz-select.js",
 			"settings":
 			{
-				"buffer_size": 144,
+				"buffer_size": 18914,
 				"line_ending": "Unix"
 			}
 		}
@@ -145,22 +142,33 @@
 		"/Users/dmcnelis/Development/frontend/app/components",
 		"/Users/dmcnelis/Development/frontend/app/controllers",
 		"/Users/dmcnelis/Development/frontend/app/controllers/clients",
-		"/Users/dmcnelis/Development/frontend/app/styles",
+		"/Users/dmcnelis/Development/frontend/app/models",
+		"/Users/dmcnelis/Development/frontend/app/routes",
+		"/Users/dmcnelis/Development/frontend/app/routes/clients",
 		"/Users/dmcnelis/Development/frontend/app/templates",
+		"/Users/dmcnelis/Development/frontend/app/templates/clients",
 		"/Users/dmcnelis/Development/frontend/app/templates/components",
 		"/Users/dmcnelis/Development/frontend/app/templates/sessions"
 	],
 	"file_history":
 	[
 		"/Users/dmcnelis/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/Users/dmcnelis/Development/frontend/app/store.js",
+		"/Users/dmcnelis/Development/frontend/app/controllers/clients/tags.js",
+		"/Users/dmcnelis/Development/frontend/app/templates/clients/show.hbs",
+		"/Users/dmcnelis/Development/frontend/app/templates/components/zz-uploader.hbs",
+		"/Users/dmcnelis/Development/frontend/app/styles/zz-uploader.scss",
+		"/Users/dmcnelis/Development/frontend/app/styles/zz-drop-zones.scss",
+		"/Users/dmcnelis/Development/frontend/app/components/zz-uploader.js",
+		"/Users/dmcnelis/Development/frontend/app/routes/clients/tags.js",
+		"/Users/dmcnelis/Development/frontend/app/templates/clients/tags.hbs",
+		"/Users/dmcnelis/Development/frontend/app/models/select_tag.js",
 		"/Users/dmcnelis/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
 		"/Users/dmcnelis/Development/frontend/app/templates/master-detail.hbs",
-		"/Users/dmcnelis/Development/frontend/app/styles/zz-uploader.scss",
 		"/Users/dmcnelis/Development/frontend/app/components/zz-drag-alert.js",
 		"/Users/dmcnelis/Development/frontend/app/styles/zz-drag-alert.scss",
 		"/Users/dmcnelis/Development/frontend/app/controllers/clients/show.js",
 		"/Users/dmcnelis/Development/frontend/app/models/client.js",
-		"/Users/dmcnelis/Development/frontend/app/templates/clients/show.hbs",
 		"/Users/dmcnelis/Development/frontend/app/controllers/clients.js",
 		"/Users/dmcnelis/Development/frontend/app/routes/teams/show.js",
 		"/Users/dmcnelis/Development/frontend/app/views/clients/show.js",
@@ -271,15 +279,7 @@
 		"/Users/david/Development/frontend/index.js",
 		"/Users/david/Development/frontend/app/routes/leads/new.js",
 		"/Users/david/Development/frontend/vendor/skeleton/css/normailze.scss",
-		"/Users/david/Development/frontend/vendor/skeleton/css/normalize.css",
-		"/Users/david/Development/frontend/vendor/skeleton/css/skeleton.css",
-		"/Users/david/Development/frontend/app/controllers/leads/new.js",
-		"/Users/david/Development/frontend/app/controllers/lead/edit.js",
-		"/Users/david/Development/frontend/app/templates/leads/Find Results",
-		"/Users/david/Development/frontend/app/templates/sessions/login.hbs",
-		"/Users/david/Development/frontend/app/templates/leads/new.hbs",
-		"/Users/david/Development/frontend/app/controllers/lead.js",
-		"/Users/david/Development/frontend/app/routes/sessions/login.js"
+		"/Users/david/Development/frontend/vendor/skeleton/css/normalize.css"
 	],
 	"find":
 	{
@@ -307,6 +307,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"save_on_focus_lost",
+			"typeaheadErrorText",
 			"tab",
 			"file",
 			"border",
@@ -432,9 +434,7 @@
 			"navbar-nowrap",
 			"gb_Xb",
 			"gb_Uc",
-			"gb_Hb",
-			"gb_Qc",
-			"gb_Uc"
+			"gb_Hb"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -460,54 +460,24 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app/templates/clients/show.hbs",
+					"file": "app/controllers/application.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1157,
+						"buffer_size": 1695,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								373,
-								414
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Handlebars/Handlebars.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "app/components/zz-uploader.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4759,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1685,
-								1685
+								754,
+								754
 							]
 						],
 						"settings":
@@ -517,62 +487,34 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1149.0,
+						"translation.y": 402.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "app/styles/zz-drop-zones.scss",
+					"buffer": 1,
+					"file": "app/routes/clients/go.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1714,
+						"buffer_size": 790,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1710,
-								1710
+								347,
+								347
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 994.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "app/styles/zz-uploader.scss",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 451,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								360,
-								367
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SCSS/SCSS.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -582,31 +524,91 @@
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "app/templates/components/zz-uploader.hbs",
+					"buffer": 2,
+					"file": "/Users/dmcnelis/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 144,
+						"buffer_size": 171,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								140,
+								140
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Handlebars/Handlebars.tmLanguage"
+							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/routes/clients/show.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 654,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								231,
+								231
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/components/zz-select.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 18914,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								9623,
+								9623
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 2.0,
+						"translation.y": 1246.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
 					"type": "text"
 				}
 			]

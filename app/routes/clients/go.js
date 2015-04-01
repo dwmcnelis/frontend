@@ -11,7 +11,7 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
     return this.store.find('client', params.id);
   },
 
-  afterModel: function(model, transition) {
+  afterModel: function(model /*, transition*/) {
     var topRoute = this.controllerFor('application').get('topRoute');
     var topRouteName = topRoute ? topRoute.get('routeName') : '';
     if (topRouteName) {

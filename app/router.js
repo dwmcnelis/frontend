@@ -18,6 +18,7 @@ Router.map(function() {
   // Clients
   this.resource('clients', { path: '/clients' }, function() {
     this.route('new');
+    this.route("go", { path: "/:id/go" });
     this.route("show", { path: "/:id" });
     this.route("details", { path: "/:id/details" });
     this.route("tags", { path: "/:id/tags" });

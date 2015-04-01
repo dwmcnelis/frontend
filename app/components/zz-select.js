@@ -94,37 +94,6 @@ var Select2Component = Ember.Component.extend({
       description: null
     };
   },
-//   initSelection: function (element, callback) {
-//     var data = [];
-
-//     function splitVal(string, separator) {
-//         var val, i, l;
-//         if (string === null || string.length < 1) return [];
-//         val = string.split(separator);
-//         for (i = 0, l = val.length; i < l; i = i + 1) val[i] = $.trim(val[i]);
-//         return val;
-//     }
-
-//     $(splitVal(element.val(), ",")).each(function () {
-//         data.push({
-//             id: this,
-//             text: this
-//         });
-//     });
-
-//     callback(data);
-// },
-    // // max tags is 3
-    // maximumSelectionSize: 3,
-
-    // // override message for max tags
-    // formatSelectionTooBig: function (limit) {
-    //     return "Max tags is only " + limit;
-    // }
-
-
-
-
 
   // internal state
   _hasSelectedMissingItems: false,

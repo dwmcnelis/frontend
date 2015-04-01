@@ -1,8 +1,9 @@
 // app/controllers/clients/sports.js
 
 import Ember from 'ember';
+import FindSelectMixin from '../mixins/find-select';
 
-export default Ember.ObjectController.extend({
+export default Ember.ObjectController.extend(FindSelectMixin, {
 
   showUnsavedMessage: (function() {
     return this.get('isDirty') && !this.get('isSaving');
@@ -15,35 +16,35 @@ export default Ember.ObjectController.extend({
   actions: {
 
     findPeopleSelectTags: function(query, promise) {
-      this.store.findSelect('tag', { as: 'people', query: query.term }, promise);
+      this.findSelect('tag', { as: 'people', query: query.term }, promise);
     },
 
     findSportsSelectTags: function(query, promise) {
-      this.store.findSelect('tag', { as: 'sports', query: query.term }, promise);
+      this.findSelect('tag', { as: 'sports', query: query.term }, promise);
     },
    
     findMusicSelectTags: function(query, promise) {
-      this.store.findSelect('tag', { as: 'music', query: query.term }, promise);
+      this.findSelect('tag', { as: 'music', query: query.term }, promise);
     },
    
     findEntertainmentSelectTags: function(query, promise) {
-      this.store.findSelect('tag', { as: 'entertainment', query: query.term }, promise);
+      this.findSelect('tag', { as: 'entertainment', query: query.term }, promise);
     },
    
     findFoodSelectTags: function(query, promise) {
-      this.store.findSelect('tag', { as: 'food', query: query.term }, promise);
+      this.findSelect('tag', { as: 'food', query: query.term }, promise);
     },
    
     findTravelSelectTags: function(query, promise) {
-      this.store.findSelect('tag', { as: 'travel', query: query.term }, promise);
+      this.findSelect('tag', { as: 'travel', query: query.term }, promise);
     },
    
     findPoliticsSelectTags: function(query, promise) {
-      this.store.findSelect('tag', { as: 'politics', query: query.term }, promise);
+      this.findSelect('tag', { as: 'politics', query: query.term }, promise);
     },
    
     findOtherSelectTags: function(query, promise) {
-      this.store.findSelect('tag', { as: null, query: query.term }, promise);
+      this.findSelect('tag', { as: null, query: query.term }, promise);
     },
    
     cancel: function() {
@@ -53,6 +54,9 @@ export default Ember.ObjectController.extend({
     },
 
     save: function(promise) {
+      // var breadcrumbs = this.get('breadcrumbs');
+      // debugger;
+
       var self = this;
       var client = this.model;
       var tags = Ember.A();
@@ -64,8 +68,6 @@ export default Ember.ObjectController.extend({
           id = tag.get('id');
         }
         var type = tag.constructor.typeKey;
-        console.debug('classify: type: '+type+', id: '+id);
-        //debugger;
         if (id.charAt(0) === '+') {
           delete tag['id'];
           tag['text'] = tag['text']['string'].replace(/\s<span.*<\/span>/g,'');
@@ -76,7 +78,6 @@ export default Ember.ObjectController.extend({
             description: tag['description'],
             tagged: client
           });
-          console.debug('create new tag: '+tag['text']);
           tags.addObject(create);
           promises.push(create.save());
         } else if (typeof type === 'undefined') {
@@ -87,10 +88,8 @@ export default Ember.ObjectController.extend({
             description: tag['description'],
             tagged: client
           });
-          console.debug('add selected tag: '+tag['text']);
           tags.addObject(add);
         } else {
-          console.debug('keep existing tag: '+tag.get('text'));
           tags.addObject(tag);
         }
       };
@@ -109,34 +108,24 @@ export default Ember.ObjectController.extend({
         client.get('tags').addObject(tag);
       });
 
-      if (promises.length > 0) {
-        Ember.RSVP.Promise.all(promises).then(function(/*resolved*/) {
-          console.debug('all added tags saved');
-          return promise(new Ember.RSVP.Promise(function(res, rej) {
-            console.debug('save client: '+client.get('fullName'));
-            if (client.save()) {
-              console.debug('saved client: '+client.get('fullName'));
-              return res("OK");
-            } else {
-              return rej("Failed");
-            }
-          }));
-        }, function(/*failed*/) {
-          console.debug('some added tags failed');
-        });
-      } else {
-        console.debug('no added tags, just save client');
+      var save = function() {
         return promise(new Ember.RSVP.Promise(function(res, rej) {
-          console.debug('save client: '+client.get('fullName'));
           if (client.save()) {
-            console.debug('saved client: '+client.get('fullName'));
             return res("OK");
           } else {
             return rej("Failed");
           }
         }));
-      }
+      };
 
+      if (promises.length > 0) {
+        Ember.RSVP.Promise.all(promises).then(function(/*resolved*/) {
+          save();
+        }, function(/*failed*/) {
+        });
+      } else {
+        save();
+      }
     }
 
   }

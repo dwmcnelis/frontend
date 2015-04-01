@@ -6,7 +6,7 @@
 {{/zz-list}} --}}
 
 {{#zz-list list=this filterTerm=searchTerm filterBy=filterBy groupBy=groupByLevel groupHeadings=groupLevelHeadings as |client|}}
-  {{#link-to 'clients.show' client current-when="clients.show clients.details clients.tags"}}
+  {{#link-to 'clients.go' client current-when="clients.go clients.show clients.details clients.tags"}}
     {{client.sortName}}
   {{/link-to}}
 {{/zz-list}}

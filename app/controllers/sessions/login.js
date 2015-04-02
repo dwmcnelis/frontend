@@ -22,7 +22,7 @@ export default Ember.ObjectController.extend(AuthenticationControllerMixin, {
         self.get(config['simple-auth'].sessionPropertyName).authenticate(authenticator, data).then(function() {
           console.debug('session: '+Ember.inspect(self.get('session').get('content')));
           self.set('errors', null);
-          return self.transitionTo('clients');
+          return self.transitionToRoute('clients');
         }, function() {
           self.set('errors', 'Invalid Username/Password');
           return rej("Failed");

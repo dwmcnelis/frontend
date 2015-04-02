@@ -4,12 +4,20 @@
 		"selected_items":
 		[
 			[
-				"pe",
-				"property"
+				"is",
+				"isDynamic"
 			],
 			[
-				"th",
-				"thumb_url"
+				"cons",
+				"console"
+			],
+			[
+				"tag",
+				"tagContext"
+			],
+			[
+				"de",
+				"description"
 			],
 			[
 				"ban",
@@ -40,42 +48,10 @@
 	"buffers":
 	[
 		{
-			"file": "app/controllers/application.js",
-			"settings":
-			{
-				"buffer_size": 1695,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/routes/clients/go.js",
-			"settings":
-			{
-				"buffer_size": 790,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/Users/dmcnelis/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
-			"settings":
-			{
-				"buffer_size": 171,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/routes/clients/show.js",
-			"settings":
-			{
-				"buffer_size": 654,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "app/components/zz-select.js",
 			"settings":
 			{
-				"buffer_size": 18914,
+				"buffer_size": 18918,
 				"line_ending": "Unix"
 			}
 		}
@@ -96,14 +72,6 @@
 				"Package Control: Install Package"
 			],
 			[
-				"p",
-				"Package Control: Install Package"
-			],
-			[
-				"Package Control: ",
-				"Package Control: Install Package"
-			],
-			[
 				"in",
 				"Package Control: Install Package"
 			],
@@ -116,7 +84,7 @@
 				"Preferences: Browse Packages"
 			]
 		],
-		"width": 449.0
+		"width": 746.0
 	},
 	"console":
 	{
@@ -137,77 +105,50 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/dmcnelis/Development/frontend",
-		"/Users/dmcnelis/Development/frontend/app",
-		"/Users/dmcnelis/Development/frontend/app/components",
-		"/Users/dmcnelis/Development/frontend/app/controllers",
-		"/Users/dmcnelis/Development/frontend/app/controllers/clients",
-		"/Users/dmcnelis/Development/frontend/app/models",
-		"/Users/dmcnelis/Development/frontend/app/routes",
-		"/Users/dmcnelis/Development/frontend/app/routes/clients",
-		"/Users/dmcnelis/Development/frontend/app/templates",
-		"/Users/dmcnelis/Development/frontend/app/templates/clients",
-		"/Users/dmcnelis/Development/frontend/app/templates/components",
-		"/Users/dmcnelis/Development/frontend/app/templates/sessions"
+		"/Users/david/Development/frontend",
+		"/Users/david/Development/frontend/app",
+		"/Users/david/Development/frontend/app/components",
+		"/Users/david/Development/frontend/app/controllers/clients",
+		"/Users/david/Development/frontend/app/controllers/mixins",
+		"/Users/david/Development/frontend/app/controllers/sessions",
+		"/Users/david/Development/frontend/app/models/mixins",
+		"/Users/david/Development/frontend/app/routes",
+		"/Users/david/Development/frontend/app/routes/clients",
+		"/Users/david/Development/frontend/app/routes/mixins",
+		"/Users/david/Development/frontend/app/templates/clients",
+		"/Users/david/Development/frontend/config"
 	],
 	"file_history":
 	[
-		"/Users/dmcnelis/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
-		"/Users/dmcnelis/Development/frontend/app/store.js",
-		"/Users/dmcnelis/Development/frontend/app/controllers/clients/tags.js",
-		"/Users/dmcnelis/Development/frontend/app/templates/clients/show.hbs",
-		"/Users/dmcnelis/Development/frontend/app/templates/components/zz-uploader.hbs",
-		"/Users/dmcnelis/Development/frontend/app/styles/zz-uploader.scss",
-		"/Users/dmcnelis/Development/frontend/app/styles/zz-drop-zones.scss",
-		"/Users/dmcnelis/Development/frontend/app/components/zz-uploader.js",
-		"/Users/dmcnelis/Development/frontend/app/routes/clients/tags.js",
-		"/Users/dmcnelis/Development/frontend/app/templates/clients/tags.hbs",
-		"/Users/dmcnelis/Development/frontend/app/models/select_tag.js",
-		"/Users/dmcnelis/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
-		"/Users/dmcnelis/Development/frontend/app/templates/master-detail.hbs",
-		"/Users/dmcnelis/Development/frontend/app/components/zz-drag-alert.js",
-		"/Users/dmcnelis/Development/frontend/app/styles/zz-drag-alert.scss",
-		"/Users/dmcnelis/Development/frontend/app/controllers/clients/show.js",
-		"/Users/dmcnelis/Development/frontend/app/models/client.js",
-		"/Users/dmcnelis/Development/frontend/app/controllers/clients.js",
-		"/Users/dmcnelis/Development/frontend/app/routes/teams/show.js",
-		"/Users/dmcnelis/Development/frontend/app/views/clients/show.js",
-		"/Users/dmcnelis/Development/frontend/app/templates/components/zz-list.hbs",
-		"/Users/dmcnelis/Development/frontend/app/components/zz-list.js",
-		"/Users/dmcnelis/Development/frontend/app/templates/clients/details.hbs",
-		"/Users/dmcnelis/Development/frontend/app/templates/teams/master-ribbon.hbs",
-		"/Users/dmcnelis/Development/frontend/app/controllers/clients/details.js",
-		"/Users/dmcnelis/Development/frontend/app/controllers/teams/show.js",
-		"/Users/dmcnelis/Development/frontend/app/templates/teams/show.hbs",
-		"/Users/dmcnelis/Development/frontend/app/controllers/teams/new.js",
-		"/Users/dmcnelis/Development/frontend/app/controllers/teams/details.js",
-		"/Users/dmcnelis/Development/frontend/app/templates/master.hbs",
-		"/Users/dmcnelis/Development/frontend/app/templates/teams/master-content.hbs",
-		"/Users/dmcnelis/Development/frontend/app/templates/teams/details.hbs",
-		"/Users/dmcnelis/Development/frontend/app/models/team.js",
-		"/Users/dmcnelis/Development/frontend/app/routes/teams.js",
-		"/Users/dmcnelis/Development/frontend/app/templates/teams.hbs",
-		"/Users/dmcnelis/Development/frontend/app/templates/teams/index-ribbon.hbs",
-		"/Users/dmcnelis/Development/frontend/app/templates/teams/new.hbs",
-		"/Users/dmcnelis/Development/frontend/app/templates/teams/search-content.hbs",
-		"/Users/dmcnelis/Development/frontend/app/templates/teams/show-ribbon.hbs",
-		"/Users/dmcnelis/Development/frontend/app/templates/teams/details-ribbon.hbs",
-		"/Users/dmcnelis/Development/frontend/app/templates/teams/detail-content.hbs",
-		"/Users/dmcnelis/Development/frontend/app/routes/teams/new.js",
-		"/Users/dmcnelis/Development/frontend/app/routes/teams/details.js",
-		"/Users/dmcnelis/Development/frontend/app/routes/teams/tags.js",
-		"/Users/dmcnelis/Development/frontend/app/templates/teams/tags.hbs",
-		"/Users/dmcnelis/Development/frontend/app/templates/teams/tags-ribbon.hbs",
-		"/Users/dmcnelis/Development/frontend/app/controllers/teams/tags.js",
-		"/Users/dmcnelis/Development/frontend/app/controllers/teams.js",
-		"/Users/dmcnelis/Development/frontend/app/router.js",
-		"/Users/dmcnelis/Development/frontend/app/templates/clients/master-ribbon.hbs",
-		"/Users/dmcnelis/Development/frontend/app/templates/index/master-ribbon.hbs",
-		"/Users/dmcnelis/Development/frontend/tests/test-helper.js",
-		"/Users/dmcnelis/Development/frontend/vendor/bootstrap/fonts/glyphicons-halflings-regular.svg",
-		"/Users/dmcnelis/Development/frontend/vendor/susy/susy/output/shared/_background.scss",
-		"/Users/dmcnelis/Development/frontend/package.json",
-		"/Users/dmcnelis/Development/frontend/vendor/susy/susy/output/support/_background.scss",
+		"/Users/david/Development/frontend/app/controllers/clients/tags.js",
+		"/Users/david/Development/frontend/app/controllers/sessions/login.js",
+		"/Users/david/Development/frontend/app/components/zz-select.js",
+		"/Users/david/Development/frontend/app/templates/clients/tags.hbs",
+		"/Users/david/Development/frontend/app/controllers/mixins/find-select.js",
+		"/Users/david/Development/frontend/app/initializers/array-to-select.js",
+		"/Users/david/Development/frontend/app/store.js",
+		"/Users/david/Development/frontend/app/router.js",
+		"/Users/david/Development/frontend/app/routes/clients/go.js",
+		"/Users/david/Development/frontend/app/templates/clients/master-content.hbs",
+		"/Users/david/Development/frontend/app/routes/clients/tags.js",
+		"/Users/david/Development/frontend/app/controllers/application.js",
+		"/Users/david/Development/frontend/app/routes/clients/show.js",
+		"/Users/david/Development/frontend/app/routes/clients/default.js",
+		"/Users/david/Development/frontend/app/models/tag.js",
+		"/Users/david/Development/frontend/app/initializers/validator-upload.js",
+		"/Users/david/Development/frontend/app/models/client.js",
+		"/Users/david/Development/frontend/app/models/tagged.js",
+		"/Users/david/Development/frontend/app/serializers/tag.js",
+		"/Users/david/Development/frontend/app/serializers/client.js",
+		"/Users/david/Development/frontend/app/models/mixins/tagged.js",
+		"/Users/david/Development/frontend/app/adapters/mixins/form-data-adapter.js",
+		"/Users/david/Development/frontend/app/models/mixins/tagger.js",
+		"/Users/david/Development/frontend/app/adapters/attachment.js",
+		"/Users/david/Development/frontend/bower.json",
+		"/Users/david/Development/frontend/package.json",
+		"/Users/david/Development/frontend/app/styles/zz-select.scss",
+		"/Users/david/Development/frontend/app/controllers/clients/details.js",
+		"/Users/david/Development/frontend/app/templates/clients/details.hbs",
 		"/Users/david/Development/frontend/app/templates/application.hbs",
 		"/Users/david/Development/frontend/app/styles/app.scss",
 		"/Users/david/Development/frontend/app/app.js",
@@ -279,7 +220,26 @@
 		"/Users/david/Development/frontend/index.js",
 		"/Users/david/Development/frontend/app/routes/leads/new.js",
 		"/Users/david/Development/frontend/vendor/skeleton/css/normailze.scss",
-		"/Users/david/Development/frontend/vendor/skeleton/css/normalize.css"
+		"/Users/david/Development/frontend/vendor/skeleton/css/normalize.css",
+		"/Users/david/Development/frontend/vendor/skeleton/css/skeleton.css",
+		"/Users/david/Development/frontend/app/controllers/leads/new.js",
+		"/Users/david/Development/frontend/app/controllers/lead/edit.js",
+		"/Users/david/Development/frontend/app/templates/leads/Find Results",
+		"/Users/david/Development/frontend/app/templates/sessions/login.hbs",
+		"/Users/david/Development/frontend/app/templates/leads/new.hbs",
+		"/Users/david/Development/frontend/app/controllers/lead.js",
+		"/Users/david/Development/frontend/app/routes/sessions/login.js",
+		"/Users/david/Development/frontend/app/models/lead.js",
+		"/Users/david/Development/frontend/app/models/identification.js",
+		"/Users/david/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/david/Development/zz-button/Brocfile.js",
+		"/Users/david/Development/zz-button/package.json",
+		"/Users/david/Development/zz-button/app/templates/components/zz-button.hbs",
+		"/Users/david/Development/zz-button/app/components/zz-button.js",
+		"/Users/david/Development/zz-button/addon/components/zz-button.js",
+		"/Users/david/Development/zz-button/README.md",
+		"/Users/david/Development/zz-button/addon/zz-button.js",
+		"/Users/david/Development/zz-button/zz-button.sublime-project"
 	],
 	"find":
 	{
@@ -290,7 +250,8 @@
 		"height": 93.0,
 		"where_history":
 		[
-			"/Users/dmcnelis/Development/frontend",
+			"/Users/david/Development/frontend/app",
+			"/Users/david/Development/frontend",
 			"/Users/david/Development/frontend/app/styles",
 			"/Users/david/Development/frontend/app/templates/application.hbs",
 			"/Users/david/Development/frontend/app/styles",
@@ -307,14 +268,29 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"save_on_focus_lost",
-			"typeaheadErrorText",
-			"tab",
-			"file",
-			"border",
-			"image_crop_url",
-			"clie",
+			"didSelect",
+			"valueChanged",
+			"console",
+			"select_tag",
+			"group",
+			"added",
 			"client",
+			"cssClass",
+			"inputSize",
+			"classNames",
+			"extraClasses",
+			"100%",
+			"createSearchChoice",
+			"merge",
+			"createSearchChoice",
+			"debugger",
+			"RSVP",
+			"query",
+			";\n",
+			"+",
+			"uuid",
+			"chosenTypeaheadPeople",
+			"optionValuePath",
 			"/style",
 			".gb_lb{display:inline-block;padding:0 0 0 15px;vertical-align:middle}.gb_lb:first-child",
 			"gb_lb",
@@ -419,22 +395,7 @@
 			"nav-pills",
 			"fb",
 			"like",
-			"navbar-fixed-top",
-			"zavbar",
-			"sidebar",
-			".gb_h .gb_g",
-			"gb_Uc",
-			"gb_i",
-			"gb_Xb",
-			"gb_Uc",
-			"gb_i",
-			"gb_Uc",
-			"gb_i",
-			"gb_8",
-			"navbar-nowrap",
-			"gb_Xb",
-			"gb_Uc",
-			"gb_Hb"
+			"navbar-fixed-top"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -460,155 +421,96 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app/controllers/application.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1695,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								754,
-								754
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 402.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "app/routes/clients/go.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 790,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								347,
-								347
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/Users/dmcnelis/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 171,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								140,
-								140
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JSON.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "app/routes/clients/show.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 654,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								231,
-								231
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
 					"file": "app/components/zz-select.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 18914,
+						"buffer_size": 18918,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								9623,
-								9623
+								9574,
+								9574
 							]
 						],
 						"settings":
 						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": 2.0,
-						"translation.y": 1246.0,
+						"translation.x": 0.0,
+						"translation.y": 5248.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -616,7 +518,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 27.0
+		"height": 26.0
 	},
 	"input":
 	{
@@ -653,7 +555,7 @@
 	"project": "frontent.sublime-project",
 	"replace":
 	{
-		"height": 50.0
+		"height": 64.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -667,12 +569,12 @@
 	},
 	"select_project":
 	{
-		"height": 500.0,
+		"height": 0.0,
 		"last_filter": "",
 		"selected_items":
 		[
 		],
-		"width": 380.0
+		"width": 0.0
 	},
 	"select_symbol":
 	{
@@ -691,7 +593,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 248.0,
+	"side_bar_width": 243.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

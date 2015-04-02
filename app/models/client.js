@@ -126,7 +126,7 @@ export default TaggedModel.extend(EmberValidations.Mixin, {
   }).property('tags.@each.as'), 
 
   otherTags: (function() {
-    return this.get('tags').filterBy('as', null);
+    return this.get('tags').filterBy('as', 'other');
   }).property('tags.@each.as'), 
 
   thumb_url: function(url, geometry) {

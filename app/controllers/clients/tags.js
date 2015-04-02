@@ -44,7 +44,7 @@ export default Ember.ObjectController.extend(FindSelectMixin, {
     },
    
     findOtherSelectTags: function(query, promise) {
-      this.findSelect('tag', { as: null, query: query.term }, promise);
+      this.findSelect('tag', { as: 'other', query: query.term }, promise);
     },
    
     cancel: function() {

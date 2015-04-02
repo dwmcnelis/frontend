@@ -287,7 +287,7 @@ var Select2Component = Ember.Component.extend({
       Format the error message, substituting the %@ placeholder with the promise
       rejection reason
      */
-    options.formatAjaxError = function(jqXHR, textStatus, errorThrown) {
+    options.formatAjaxError = function(/*jqXHR, textStatus, errorThrown*/) {
       var text = self.get('typeaheadErrorText');
       return Ember.String.htmlSafe(Ember.String.fmt(text));
     };

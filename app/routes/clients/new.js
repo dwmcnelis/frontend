@@ -1,14 +1,21 @@
 // app/routes/clients/new.js
 
+// Client new route
+//
+
 import Ember from 'ember';
 import AuthenticatedRouteMixin from 'simple-auth/mixins/authenticated-route-mixin';
 
 export default Ember.Route.extend(AuthenticatedRouteMixin, {
 
+  // Model for route
+  //
 	model: function() {
 		return this.store.createRecord('client', {});
 	},
 
+  // Render template
+  //
 	renderTemplate: function() {
 	  // this.render('clients.new-ribbon', {
    //    into: 'master-detail',

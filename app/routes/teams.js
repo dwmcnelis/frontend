@@ -1,14 +1,21 @@
 // app/routes/teams.js
 
+// Team index route
+//
+
 import Ember from 'ember';
 import AuthenticatedRouteMixin from 'simple-auth/mixins/authenticated-route-mixin';
 
 export default Ember.Route.extend(AuthenticatedRouteMixin, {
 
+  // Model for route
+  //
   model: function() {
     return this.store.find('team');
   },
 
+  // Render template
+  //
   renderTemplate: function() {
 	  this.render('master-detail');
 	  this.render('teams.search-content', {

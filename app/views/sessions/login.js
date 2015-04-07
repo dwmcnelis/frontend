@@ -1,5 +1,8 @@
 // app/views/sessions/login.js
 
+// Session login view
+//
+
 import Ember from 'ember';
 import FocusFirstViewMixin from 'frontend/views/mixins/focus_first';
 

@@ -1,14 +1,23 @@
 // app/controllers/application.js
 
+// Application controller
+//
+
 import Ember from 'ember';
 import App from '../app';
 
 export default Ember.ObjectController.extend({
 
+  // List of nested routes
+  //
   nestedRoutes: [],
 
+  // Top most route
+  //
   topRoute: null,
 
+  // Current path observer
+  //
 	currentPathChange: function () {
 		App.resizer();
     this.send('setNestedRoutes');
@@ -16,10 +25,14 @@ export default Ember.ObjectController.extend({
 
 	actions: {
 
+    // Current path changed
+    //
     currentPathDidChange: function () {
       this.send('setNestedRoutes');
     },
 
+    // Set nested routes
+    //
     setNestedRoutes: function() {
 
       var nestedRoutes = [];

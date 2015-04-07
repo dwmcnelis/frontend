@@ -1,4 +1,4 @@
-// app/mixins/form-data-adapter.js
+// app/adapters/mixins/form-data-adapter.js
 
 import Ember from 'ember';
 import DS from 'ember-data';

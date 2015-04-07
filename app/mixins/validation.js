@@ -1,5 +1,8 @@
 // app/mixins/validation.js
 
+// Validation mixin
+//
+
 import Ember from 'ember';
 
 export default Ember.Mixin.create({

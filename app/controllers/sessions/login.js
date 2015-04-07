@@ -1,5 +1,8 @@
 // app/controllers/sessions/login.js
 
+// Session login controller
+//
+
 import Ember from 'ember';
 import AuthenticationControllerMixin from 'simple-auth/mixins/authentication-controller-mixin';
 import config from '../../config/environment';
@@ -12,6 +15,10 @@ export default Ember.ObjectController.extend(AuthenticationControllerMixin, {
 
   actions: {
 
+    // Login
+    //
+    // @param {Ember.RSVP.Promise} promise
+    //
     login: function(promise) {
       var self = this;
       return promise(new Ember.RSVP.Promise(function(res, rej) {

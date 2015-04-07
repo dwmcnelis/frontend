@@ -1,11 +1,16 @@
 // app/routes/index.js
 
+// Home index route
+//
+
 import Ember from 'ember';
 import AuthenticatedRouteMixin from 'simple-auth/mixins/authenticated-route-mixin';
 
 export default Ember.Route.extend(AuthenticatedRouteMixin, {
 
-renderTemplate: function() {
+  // Render template
+  //
+	renderTemplate: function() {
 	  this.render('master-detail');
 	  this.render('index.search-content', {
       into: 'master-detail',

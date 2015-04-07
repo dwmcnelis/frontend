@@ -1,14 +1,21 @@
 // app/routes/teams/new.js
 
+// Team new route
+//
+
 import Ember from 'ember';
 import AuthenticatedRouteMixin from 'simple-auth/mixins/authenticated-route-mixin';
 
 export default Ember.Route.extend(AuthenticatedRouteMixin, {
 
+  // Model for route
+  //
 	model: function() {
 		return this.store.createRecord('team', {});
 	},
 
+  // Render template
+  //
 	renderTemplate: function() {
 	  // this.render('teams.new-ribbon', {
    //    into: 'master-detail',

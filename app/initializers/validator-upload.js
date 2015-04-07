@@ -1,5 +1,8 @@
 // app/initializers/validator-upload.js
 
+// Validator for file upload
+//
+
 import Ember from 'ember';
 
 var UploadValidator = Ember.Object.create({

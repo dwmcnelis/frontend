@@ -1,11 +1,16 @@
 // app/models/attachment.js
 
+// Attachment
+//
+
 import Ember from 'ember';
 import DS from 'ember-data';
 import Validation from '../mixins/validation';
 
 export default DS.Model.extend(Validation, {
   
+  // Attributes
+  //
   upload: DS.attr(),
   content: DS.attr(),
 
@@ -18,10 +23,13 @@ export default DS.Model.extend(Validation, {
   for_id: DS.attr('string'),
   for_attribute: DS.attr('string'),
 
+  // Content url
+  //
   contentUrl: Ember.computed.alias('content.url'),
 
+  // Content url observer
+  //
   contentUrlObserver: function() {
-
     var url,
         contentName;
 
@@ -39,6 +47,8 @@ export default DS.Model.extend(Validation, {
     }
   }.observes('contentUrl'),
 
+  // Validations
+  //
   validations: {
     contentName: {
       file: {

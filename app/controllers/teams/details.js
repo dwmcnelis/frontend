@@ -1,17 +1,30 @@
 // app/controllers/teams/details.js
 
+// Team details controller
+//
+
 import Ember from 'ember';
 
 export default Ember.ObjectController.extend({
 
+  // Show unsaved messages
+  //
+  // @property {Ember.Boolean} show
+  //
   showUnsavedMessage: (function() {
     return this.get('isDirty') && !this.get('isSaving');
   }).property('isDirty', 'isSaving'),
   
+  // Needs saving
+  //
+  // @property {Ember.Boolean} needs
+  //
   needsSaving: (function() {
     return this.get('isDirty') && !this.get('isSaving');
   }).property('isDirty', 'isSaving'),
   
+  // Level names to display
+  // 
   levelNames: [
     {id: 0, text: 'Professional'},
     {id: 1, text: 'Olympic' },
@@ -23,6 +36,8 @@ export default Ember.ObjectController.extend({
     {id: 32767, text: 'Other'}
   ],
 
+  // Kind names to display
+  // 
   kindNames: [
     {id: 0, text: 'Football'},
     {id: 1, text: 'Soccer' },
@@ -37,12 +52,16 @@ export default Ember.ObjectController.extend({
 
   actions: {
 
+    // Cancel team changes
+    //
     cancel: function() {
       var team = this.get('model');
       team.rollback();
       return this.transitionToRoute('teams.show',team);
     },
 
+    // Save team changes
+    //
     save: function(promise) {
       var self = this;
       var team = this.get('model');
@@ -55,6 +74,8 @@ export default Ember.ObjectController.extend({
       }));
     },
     
+    // Delete team
+    //
     "delete": function(promise) {
       var self = this;
       return promise(new Ember.RSVP.Promise(function(res, rej) {

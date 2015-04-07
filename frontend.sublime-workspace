@@ -47,14 +47,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "app/components/zz-select.js",
-			"settings":
-			{
-				"buffer_size": 18918,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -103,26 +95,11 @@
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
-	"expanded_folders":
-	[
-		"/Users/david/Development/frontend",
-		"/Users/david/Development/frontend/app",
-		"/Users/david/Development/frontend/app/components",
-		"/Users/david/Development/frontend/app/controllers/clients",
-		"/Users/david/Development/frontend/app/controllers/mixins",
-		"/Users/david/Development/frontend/app/controllers/sessions",
-		"/Users/david/Development/frontend/app/models/mixins",
-		"/Users/david/Development/frontend/app/routes",
-		"/Users/david/Development/frontend/app/routes/clients",
-		"/Users/david/Development/frontend/app/routes/mixins",
-		"/Users/david/Development/frontend/app/templates/clients",
-		"/Users/david/Development/frontend/config"
-	],
 	"file_history":
 	[
+		"/Users/david/Development/frontend/app/components/zz-select.js",
 		"/Users/david/Development/frontend/app/controllers/clients/tags.js",
 		"/Users/david/Development/frontend/app/controllers/sessions/login.js",
-		"/Users/david/Development/frontend/app/components/zz-select.js",
 		"/Users/david/Development/frontend/app/templates/clients/tags.hbs",
 		"/Users/david/Development/frontend/app/controllers/mixins/find-select.js",
 		"/Users/david/Development/frontend/app/initializers/array-to-select.js",
@@ -195,7 +172,7 @@
 		"/Users/david/Development/frontend/app/templates/xxx.html",
 		"/Users/david/Development/frontend/xxx",
 		"/Users/david/Development/frontend/app/templates/components/zz-navbar.hbs",
-		"/Users/david/Development/frontend/frontent.sublime-project",
+		"/Users/david/Development/frontend/frontend.sublime-project",
 		"/Users/david/Development/frontend/vendor/skeleton/styles/skeleton.scss",
 		"/Users/david/Development/frontend/app/templates/lead.hbs",
 		"/Users/david/Development/frontend/Brocfile.js",
@@ -421,98 +398,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "app/components/zz-select.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 18918,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								9574,
-								9574
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content"
-							],
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 5248.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -552,7 +439,7 @@
 		"height": 0.0
 	},
 	"pinned_build_system": "",
-	"project": "frontent.sublime-project",
+	"project": "frontend.sublime-project",
 	"replace":
 	{
 		"height": 64.0

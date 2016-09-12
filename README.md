@@ -1,7 +1,11 @@
 # Frontend
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+
+Ember Single Page Application for ClientBuzz - a client personal marketing application.  ClientBuzz monitors news feeds and suggests content matching client interests to facilitate personal marketing to your client base.
+
+![ClientBuzz1](https://www.dropbox.com/s/yi3jc7rr3i0w0he/clientbuzz1.png?raw=1 =696x456)
+![ClientBuzz2](https://www.dropbox.com/s/pd4nlfyr6t7zc28/clientbuzz2.png?raw=1 =696x456)
+
 
 ## Prerequisites
 

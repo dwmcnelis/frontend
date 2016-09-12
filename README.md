@@ -3,8 +3,8 @@
 
 Ember Single Page Application for ClientBuzz - a client personal marketing application.  ClientBuzz monitors news feeds and suggests content matching client interests to facilitate personal marketing to your client base.
 
-![ClientBuzz1](https://dwmcnelis.github.io/public/images/clientbuzz1.png =696x456)
-![ClientBuzz2](https://dwmcnelis.github.io/public/images/clientbuzz2.png =696x456)
+![ClientBuzz1](http://dwmcnelis.github.io/public/images/clientbuzz1.png =696x456)
+![ClientBuzz2](http://dwmcnelis.github.io/public/images/clientbuzz2.png =696x456)
 
 
 ## Prerequisites
